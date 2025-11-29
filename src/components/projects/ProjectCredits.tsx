@@ -59,7 +59,7 @@ function ProjectCredits() {
         <div id="overview">
           <h3>Overview</h3>
           <p>SI: Credits is a comprehensive credit and attribution management mod for Minecraft. It provides an elegant way to display credits for Soncresity Industries directly within the game interface.</p>
-          <p>This mod ensures proper recognition and attribution for all contributors to your Minecraft experience, making it easy to acknowledge the hard work of the Soncresity Industries team.</p>
+          <p>This mod is now <strong>available for download</strong> and ensures proper recognition and attribution for all contributors to your Minecraft experience, making it easy to acknowledge the hard work of the Soncresity Industries team.</p>
           
           <h4>Key Benefits</h4>
           <ul>

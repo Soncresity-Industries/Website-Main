@@ -80,7 +80,7 @@ const projectsData = [
     type: 'Mods',
     logo: '/assets/images/projects/si_credits.png',
     route: '/projects/credits',
-    tags: ['Native']
+    tags: ['Native', 'Available']
   },
   {
     id: 'crownfall',
@@ -96,7 +96,7 @@ const projectsData = [
     type: 'Mods',
     logo: '/assets/images/projects/si_death_bolt.png',
     route: '/projects/death-bolt',
-    tags: ['WIP', 'Native']
+    tags: ['Native', 'Available']
   },
   {
     id: 'height-datapack-generator',
@@ -112,7 +112,7 @@ const projectsData = [
     type: 'Mods',
     logo: '/assets/images/projects/si_item_remover.png',
     route: '/projects/item-remover',
-    tags: ['WIP', 'Native']
+    tags: ['Native', 'Available']
   },
   {
     id: 'lifesteal',
@@ -128,15 +128,7 @@ const projectsData = [
     type: 'Mods',
     logo: '/assets/images/projects/si_refined_obsidian.png',
     route: '/projects/refined-obsidian',
-    tags: ['WIP', 'Native']
-  },
-  {
-    id: 'scriptified',
-    name: 'SI: Scriptified',
-    type: 'Mods',
-    logo: '/assets/images/projects/si_scriptified.png',
-    route: '/projects/scriptified',
-    tags: ['WIP', 'Native']
+    tags: ['Native', 'Available']
   },
   {
     id: 'soncresity-aftermath',
@@ -160,8 +152,16 @@ const projectsData = [
     type: 'Shaderpacks',
     logo: '/assets/images/projects/si_spectre.png',
     route: '/projects/spectre',
-    tags: ['WIP', 'Native']
-  }
+    tags: ['Native', 'Available']
+  },
+  {
+    id: 'scriptified',
+    name: 'SI: Scriptified',
+    type: 'Mods',
+    logo: '/assets/images/projects/si_scriptified.png',
+    route: '/projects/scriptified',
+    tags: ['WIP', 'NeoForge']
+  },
 ];
 
 const projectTypes = ['All', 'Mods', 'Modpacks', 'Modloaders', 'Resourcepacks', 'Datapacks', 'Shaderpacks', 'Tools', 'Games'];

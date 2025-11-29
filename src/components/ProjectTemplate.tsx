@@ -14,7 +14,7 @@ interface ProjectTemplateProps {
   projectLogo: string
   projectType: 'Native' | 'Partnered'
   sections: Section[]
-  badges?: { category: string; items: { name: string; url: string; image: string }[] }[]
+  badges?: { category: string; items: { name: string; url?: string; image: string }[] }[]
   children: React.ReactNode
 }
 
@@ -51,6 +51,11 @@ function ProjectTemplate({
       }
     }
   }
+
+  useEffect(() => {
+    // Scroll to top when component mounts
+    window.scrollTo(0, 0);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -161,16 +166,26 @@ function ProjectTemplate({
                       <div key={category.category} className="badge-category">
                         <div className="badge-row">
                           {category.items.map(badge => (
-                            <a
-                              key={badge.name}
-                              href={badge.url}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="platform-badge"
-                              title={badge.name}
-                            >
-                              <img src={badge.image} alt={badge.name} />
-                            </a>
+                            badge.url ? (
+                              <a
+                                key={badge.name}
+                                href={badge.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="platform-badge"
+                                title={badge.name}
+                              >
+                                <img src={badge.image} alt={badge.name} />
+                              </a>
+                            ) : (
+                              <span
+                                key={badge.name}
+                                className="platform-badge"
+                                title={badge.name}
+                              >
+                                <img src={badge.image} alt={badge.name} />
+                              </span>
+                            )
                           ))}
                         </div>
                       </div>

@@ -8,6 +8,11 @@ import ProjectBeta from './components/ProjectBeta'
 import ProjectSuite from './components/ProjectSuite'
 import ProjectGamma from './components/ProjectGamma'
 import ProjectCredits from './components/projects/ProjectCredits'
+import ProjectDeathBolt from './components/projects/ProjectDeathBolt'
+import ProjectRefinedObsidian from './components/projects/ProjectRefinedObsidian'
+import ProjectItemRemover from './components/projects/ProjectItemRemover'
+import ProjectSpectre from './components/projects/ProjectSpectre';
+import ProjectScriptified from './components/projects/ProjectScriptified';
 import './App.css'
 
 function Home() {
@@ -124,6 +129,11 @@ function App() {
       <Route path="/projects/suite" element={<ProjectSuite />} />
       <Route path="/projects/gamma" element={<ProjectGamma />} />
       <Route path="/projects/credits" element={<ProjectCredits />} />
+      <Route path="/projects/death-bolt" element={<ProjectDeathBolt />} />
+      <Route path="/projects/refined-obsidian" element={<ProjectRefinedObsidian />} />
+      <Route path="/projects/item-remover" element={<ProjectItemRemover />} />
+      <Route path="/projects/spectre" element={<ProjectSpectre />} />
+      <Route path="/projects/scriptified" element={<ProjectScriptified />} />
       <Route path="/contact" element={<Contact />} />
     </Routes>
   )
