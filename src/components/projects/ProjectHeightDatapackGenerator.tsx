@@ -41,7 +41,7 @@ function ProjectHeightDatapackGenerator() {
       // Generate the datapack content
       const heightRange = upperLimit - lowerLimit;
       const datapackName = `height-limit-${lowerLimit}-to-${upperLimit}`;
-      const datapackContent = generateDatapackContent(version, lowerLimit, heightRange, description, datapackName);
+      const datapackContent = generateDatapackContent(version, lowerLimit, heightRange, description);
       
       // Create and trigger download
       downloadDatapack(datapackContent, `${datapackName}-mc${version}`, packImage);
@@ -54,9 +54,8 @@ function ProjectHeightDatapackGenerator() {
     }
   };
 
-  const generateDatapackContent = (version: string, minHeight: number, heightRange: number, description: string, name: string) => {
+  const generateDatapackContent = (version: string, minHeight: number, heightRange: number, description: string) => {
     // Create proper datapack structure
-    const maxHeight = minHeight + heightRange;
     
     return {
       'pack.mcmeta': JSON.stringify({
