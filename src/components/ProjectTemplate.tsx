@@ -19,7 +19,6 @@ interface ProjectTemplateProps {
 }
 
 function ProjectTemplate({ 
-  projectId, 
   projectName, 
   projectLogo, 
   projectType, 

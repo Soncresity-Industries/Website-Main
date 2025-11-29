@@ -108,8 +108,8 @@ const HeightDatapackGenerator: React.FC<HeightDatapackGeneratorProps> = ({ onGen
     // Auto-suggest closest valid value
     const num = parseInt(value);
     if (!isNaN(num) && num % 16 !== 0) {
-      const closest = Math.round(num / 16) * 16;
-      // You could show a hint here
+      // Could show a hint here
+      Math.round(num / 16) * 16;
     }
   };
 
@@ -118,8 +118,8 @@ const HeightDatapackGenerator: React.FC<HeightDatapackGeneratorProps> = ({ onGen
     // Auto-suggest closest valid value
     const num = parseInt(value);
     if (!isNaN(num) && num % 16 !== 0) {
-      const closest = Math.round(num / 16) * 16;
-      // You could show a hint here
+      // Could show a hint here
+      Math.round(num / 16) * 16;
     }
   };
 

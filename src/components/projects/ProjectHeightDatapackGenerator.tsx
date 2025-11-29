@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import ProjectTemplate from '../ProjectTemplate';
 import HeightDatapackGenerator from '../HeightDatapackGenerator';
 

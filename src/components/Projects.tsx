@@ -3,7 +3,7 @@ import { useState, useMemo, useEffect } from 'react'
 import '../App.css'
 
 // Tag priority order
-const tagPriority = {
+const tagPriority: Record<string, number> = {
   'WIP': 1,
   'Native': 2,
   'Partnered': 3,
@@ -22,7 +22,7 @@ function StatusIndicator({ tags }: { tags: string[] }) {
 }
 
 // Collapsible Tags Component
-function CollapsibleTags({ tags, projectId, isHovered }: { tags: string[], projectId: string, isHovered: boolean }) {
+function CollapsibleTags({ tags, isHovered }: { tags: string[], isHovered: boolean }) {
   const [expanded, setExpanded] = useState(false);
   
   // Auto-collapse when not hovering
@@ -304,7 +304,6 @@ function Projects() {
                   <div className="project-overlay">
                     <CollapsibleTags 
                       tags={project.tags} 
-                      projectId={project.id} 
                       isHovered={hoveredProject === project.id}
                     />
                     <h3>{project.name}</h3>
