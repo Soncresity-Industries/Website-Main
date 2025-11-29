@@ -18,6 +18,7 @@ import ProjectCrownfall from './components/projects/ProjectCrownfall';
 import ProjectSoncresityAftermath from './components/projects/ProjectSoncresityAftermath';
 import ProjectSoncresityFracturedHorizons from './components/projects/ProjectSoncresityFracturedHorizons';
 import ProjectHeightDatapackGenerator from './components/projects/ProjectHeightDatapackGenerator';
+import ElectricBorder from './components/ElectricBorder';
 import './App.css'
 
 function Home() {
@@ -81,13 +82,21 @@ function Home() {
                 >
                   Search Site
                 </button>
-                <button 
-                  className="search-btn google-search"
-                  onClick={handleGoogleSearch}
-                  disabled={!searchQuery.trim()}
+                <ElectricBorder
+                  color="#7df9ff"
+                  speed={1}
+                  chaos={0.5}
+                  thickness={2}
+                  style={{ borderRadius: 25 }}
                 >
-                  Search Google
-                </button>
+                  <button 
+                    className="search-btn google-search"
+                    onClick={handleGoogleSearch}
+                    disabled={!searchQuery.trim()}
+                  >
+                    Search Google
+                  </button>
+                </ElectricBorder>
               </div>
             </div>
           </div>
@@ -125,27 +134,33 @@ function Home() {
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/about" element={<About />} />
-      <Route path="/projects" element={<Projects />} />
-      <Route path="/projects/alpha" element={<ProjectAlpha />} />
-      <Route path="/projects/beta" element={<ProjectBeta />} />
-      <Route path="/projects/suite" element={<ProjectSuite />} />
-      <Route path="/projects/gamma" element={<ProjectGamma />} />
-      <Route path="/projects/credits" element={<ProjectCredits />} />
-      <Route path="/projects/death-bolt" element={<ProjectDeathBolt />} />
-      <Route path="/projects/refined-obsidian" element={<ProjectRefinedObsidian />} />
-      <Route path="/projects/item-remover" element={<ProjectItemRemover />} />
-      <Route path="/projects/spectre" element={<ProjectSpectre />} />
-      <Route path="/projects/scriptified" element={<ProjectScriptified />} />
-      <Route path="/projects/lifesteal" element={<ProjectLifesteal />} />
-      <Route path="/projects/crownfall" element={<ProjectCrownfall />} />
-      <Route path="/projects/soncresity-aftermath" element={<ProjectSoncresityAftermath />} />
-      <Route path="/projects/soncresity-fractured-horizons" element={<ProjectSoncresityFracturedHorizons />} />
-      <Route path="/projects/height-datapack-generator" element={<ProjectHeightDatapackGenerator />} />
-      <Route path="/contact" element={<Contact />} />
-    </Routes>
+    <>
+      <video autoPlay muted loop className="background-video">
+        <source src="/assets/videos/bg.mp4" type="video/mp4" />
+      </video>
+      
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<div className="page-overlay"><About /></div>} />
+        <Route path="/projects" element={<div className="page-overlay"><Projects /></div>} />
+        <Route path="/projects/alpha" element={<div className="page-overlay"><ProjectAlpha /></div>} />
+        <Route path="/projects/beta" element={<div className="page-overlay"><ProjectBeta /></div>} />
+        <Route path="/projects/suite" element={<div className="page-overlay"><ProjectSuite /></div>} />
+        <Route path="/projects/gamma" element={<div className="page-overlay"><ProjectGamma /></div>} />
+        <Route path="/projects/credits" element={<div className="page-overlay"><ProjectCredits /></div>} />
+        <Route path="/projects/death-bolt" element={<div className="page-overlay"><ProjectDeathBolt /></div>} />
+        <Route path="/projects/refined-obsidian" element={<div className="page-overlay"><ProjectRefinedObsidian /></div>} />
+        <Route path="/projects/item-remover" element={<div className="page-overlay"><ProjectItemRemover /></div>} />
+        <Route path="/projects/spectre" element={<div className="page-overlay"><ProjectSpectre /></div>} />
+        <Route path="/projects/scriptified" element={<div className="page-overlay"><ProjectScriptified /></div>} />
+        <Route path="/projects/lifesteal" element={<div className="page-overlay"><ProjectLifesteal /></div>} />
+        <Route path="/projects/crownfall" element={<div className="page-overlay"><ProjectCrownfall /></div>} />
+        <Route path="/projects/soncresity-aftermath" element={<div className="page-overlay"><ProjectSoncresityAftermath /></div>} />
+        <Route path="/projects/soncresity-fractured-horizons" element={<div className="page-overlay"><ProjectSoncresityFracturedHorizons /></div>} />
+        <Route path="/projects/height-datapack-generator" element={<div className="page-overlay"><ProjectHeightDatapackGenerator /></div>} />
+        <Route path="/contact" element={<div className="page-overlay"><Contact /></div>} />
+      </Routes>
+    </>
   )
 }
 

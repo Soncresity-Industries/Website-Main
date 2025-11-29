@@ -13,6 +13,8 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
   line-height: 1.6;
   overflow-x: hidden;
+  margin: 0;
+  padding: 0;
 }
 
 #root {
@@ -20,6 +22,25 @@ body {
   display: flex;
   flex-direction: column;
   width: 100%;
+  position: relative;
+}
+
+/* Background Video */
+.background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* Page Overlay for non-home pages */
+.page-overlay {
+  background: rgba(78, 78, 78, 0.196);
+  backdrop-filter: blur(5px);
+  min-height: 100vh;
 }
 
 .container {
@@ -31,10 +52,13 @@ body {
 
 /* Header Styles */
 .header {
-  background-color: #1a1a1a;
+  background-color: rgba(26, 26, 26, 0.9);
+  backdrop-filter: blur(10px);
   color: white;
   padding: 1rem 0;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  position: relative;
+  z-index: 10;
 }
 
 .header .container {
@@ -90,14 +114,16 @@ body {
 
 /* Hero Section */
 .hero {
-  background: linear-gradient(135deg, #2F97DD 0%, #026DCA 100%);
+  background: transparent;
   color: white;
   padding: 4rem 0;
   text-align: center;
+  position: relative;
 }
 
 .search-hero {
   padding: 6rem 0;
+  background: transparent;
 }
 
 .hero h2 {
@@ -168,9 +194,9 @@ body {
 }
 
 .site-search {
-  background-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.9);
   color: #026DCA;
-  border: 2px solid #ffffff;
+  border: 2px solid rgba(255, 255, 255, 0.9);
 }
 
 .site-search:hover:not(:disabled) {
@@ -181,9 +207,9 @@ body {
 }
 
 .google-search {
-  background: linear-gradient(135deg, #2F97DD 0%, #026DCA 100%);
+  background: rgba(47, 151, 221, 0.9);
   color: white;
-  border: 2px solid #026DCA;
+  border: 2px solid rgba(2, 109, 202, 0.9);
 }
 
 .google-search:hover:not(:disabled) {
@@ -213,14 +239,15 @@ body {
 /* Features Section */
 .features {
   padding: 4rem 0;
-  background-color: #f8f9fa;
+  background-color: rgba(78, 78, 78, 0.196);
+  backdrop-filter: blur(10px);
 }
 
 .features h3 {
   text-align: center;
   font-size: clamp(2rem, 4vw, 2.5rem);
   margin-bottom: 3rem;
-  color: #333;
+  color: #fff;
 }
 
 .features-grid {
@@ -231,7 +258,8 @@ body {
 }
 
 .feature-card {
-  background: white;
+  background: rgba(78, 78, 78, 0.196);
+  backdrop-filter: blur(10px);
   padding: 2rem;
   border-radius: 12px;
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
@@ -247,17 +275,18 @@ body {
 .feature-card h4 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
-  color: #333;
+  color: #fff;
 }
 
 .feature-card p {
-  color: #666;
+  color: #e0e0e0;
   line-height: 1.6;
 }
 
 /* Footer */
 .footer {
-  background-color: #1a1a1a;
+  background-color: rgba(26, 26, 26, 0.9);
+  backdrop-filter: blur(10px);
   color: white;
   text-align: center;
   padding: 2rem 0;
@@ -267,7 +296,8 @@ body {
 /* Content Pages Styles */
 .content-section {
   padding: 4rem 0;
-  background-color: #f8f9fa;
+  background-color: rgba(78, 78, 78, 0.196);
+  backdrop-filter: blur(5px);
 }
 
 .about-content h3 {
@@ -294,19 +324,20 @@ body {
 }
 
 .value-card {
-  background: white;
+  background: rgba(78, 78, 78, 0.196);
+  backdrop-filter: blur(10px);
   padding: 1.5rem;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
 .value-card h4 {
-  color: #333;
+  color: #fff;
   margin-bottom: 0.5rem;
 }
 
 .value-card p {
-  color: #666;
+  color: #e0e0e0;
   font-size: 0.9rem;
   margin: 0;
 }
@@ -447,7 +478,8 @@ body {
 }
 
 .project-card {
-  background: white;
+  background: rgba(78, 78, 78, 0.196);
+  backdrop-filter: blur(10px);
   padding: 2rem;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
@@ -460,12 +492,12 @@ body {
 }
 
 .project-card h3 {
-  color: #333;
+  color: #fff;
   margin-bottom: 1rem;
 }
 
 .project-card p {
-  color: #666;
+  color: #e0e0e0;
   line-height: 1.6;
   margin-bottom: 1.5rem;
 }
@@ -835,12 +867,12 @@ body {
 }
 
 .contact-info h3, .contact-form h3 {
-  color: #333;
+  color: #fff;
   margin-bottom: 1.5rem;
 }
 
 .contact-info p {
-  color: #666;
+  color: #e0e0e0;
   line-height: 1.6;
   margin-bottom: 2rem;
 }
@@ -852,18 +884,19 @@ body {
 }
 
 .contact-item h4 {
-  color: #333;
+  color: #fff;
   margin-bottom: 0.5rem;
 }
 
 .contact-item p {
-  color: #666;
+  color: #e0e0e0;
   margin: 0;
 }
 
 /* Contact Form */
 .contact-form {
-  background: white;
+  background: rgba(78, 78, 78, 0.196);
+  backdrop-filter: blur(10px);
   padding: 2rem;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
@@ -875,7 +908,7 @@ body {
 
 .form-group label {
   display: block;
-  color: #333;
+  color: #fff;
   margin-bottom: 0.5rem;
   font-weight: 500;
 }
@@ -1004,14 +1037,15 @@ body {
 }
 
 .spec-item {
-  background: #f8f9fa;
+  background: rgba(78, 78, 78, 0.196);
+  backdrop-filter: blur(10px);
   padding: 1.5rem;
   border-radius: 8px;
   border-left: 4px solid #2F97DD;
 }
 
 .spec-item h4 {
-  color: #333;
+  color: #fff;
   margin-bottom: 0.5rem;
 }
 
@@ -1052,7 +1086,8 @@ body {
 }
 
 .team-member {
-  background: white;
+  background: rgba(78, 78, 78, 0.196);
+  backdrop-filter: blur(10px);
   padding: 1.5rem;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
@@ -1068,7 +1103,7 @@ body {
 }
 
 .team-member p {
-  color: #333;
+  color: #fff;
   font-weight: 600;
   margin: 0;
 }
@@ -1082,7 +1117,8 @@ body {
 }
 
 .deployment-item {
-  background: white;
+  background: rgba(78, 78, 78, 0.196);
+  backdrop-filter: blur(10px);
   padding: 1.5rem;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
@@ -1090,7 +1126,7 @@ body {
 }
 
 .deployment-item h4 {
-  color: #333;
+  color: #fff;
   margin-bottom: 0.5rem;
 }
 
@@ -1156,14 +1192,15 @@ body {
 }
 
 .story-card {
-  background: white;
+  background: rgba(78, 78, 78, 0.196);
+  backdrop-filter: blur(10px);
   padding: 1.5rem;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
 .story-card h4 {
-  color: #333;
+  color: #fff;
   margin-bottom: 1rem;
 }
 
@@ -1191,12 +1228,13 @@ body {
 }
 
 .partner-item {
-  background: #f8f9fa;
+  background: rgba(78, 78, 78, 0.196);
+  backdrop-filter: blur(10px);
   padding: 1rem;
   border-radius: 8px;
   text-align: center;
   font-weight: 600;
-  color: #333;
+  color: #fff;
 }
 
 /* Security specific styles */
@@ -1208,7 +1246,8 @@ body {
 }
 
 .protection-item, .compliance-badge {
-  background: white;
+  background: rgba(78, 78, 78, 0.196);
+  backdrop-filter: blur(10px);
   padding: 1.5rem;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
@@ -1244,7 +1283,8 @@ body {
 
 .stat-item {
   text-align: center;
-  background: white;
+  background: rgba(78, 78, 78, 0.196);
+  backdrop-filter: blur(10px);
   padding: 2rem;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
@@ -1307,7 +1347,7 @@ body {
 /* Project Template Styles */
 .project-main {
   padding: 0;
-  background: #f8f9fa;
+  background: transparent;
 }
 
 .project-layout {
@@ -1319,8 +1359,9 @@ body {
 
 /* Project Sidebar */
 .project-sidebar {
-  background: white;
-  border-right: 1px solid #e9ecef;
+  background: rgba(78, 78, 78, 0.196);
+  backdrop-filter: blur(10px);
+  border-right: 1px solid rgba(233, 236, 239, 0.3);
   padding: 2rem 0;
   position: sticky;
   top: 0;
@@ -1347,7 +1388,7 @@ body {
   background: none;
   border: none;
   padding: 0.75rem 1rem;
-  color: #333;
+  color: #fff;
   font-weight: 500;
   cursor: pointer;
   border-radius: 8px;
@@ -1388,7 +1429,7 @@ body {
   background: none;
   border: none;
   padding: 0.5rem 1rem;
-  color: #666;
+  color: #e0e0e0;
   cursor: pointer;
   border-radius: 6px;
   transition: all 0.3s ease;
@@ -1403,7 +1444,8 @@ body {
 /* Project Content */
 .project-content {
   padding: 2rem;
-  background: white;
+  background: rgba(78, 78, 78, 0.196);
+  backdrop-filter: blur(10px);
   margin: 2rem;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
@@ -1743,8 +1785,9 @@ body {
 
 /* Height Datapack Generator Styles */
 .height-generator {
-  background: #f8f9fa;
-  border: 1px solid #dee2e6;
+  background: rgba(78, 78, 78, 0.196);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(222, 226, 230, 0.3);
   border-radius: 12px;
   padding: 2rem;
   margin: 1.5rem 0;
@@ -1947,8 +1990,9 @@ body {
 }
 
 .version-category {
-  background: #f8f9fa;
-  border: 1px solid #dee2e6;
+  background: rgba(78, 78, 78, 0.196);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(222, 226, 230, 0.3);
   border-radius: 8px;
   padding: 1rem;
 }
