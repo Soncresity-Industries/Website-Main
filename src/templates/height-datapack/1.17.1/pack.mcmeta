@@ -1,0 +1,10 @@
+{
+	"pack": {
+    "supported_formats": [
+      7,
+      7
+    ],
+		"pack_format": 7,
+		"description": "{{PACK_DESCRIPTION}}"
+	}
+}
