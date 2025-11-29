@@ -31,7 +31,7 @@ function ProjectHeightDatapackGenerator() {
     }
   ];
 
-  const handleGenerate = async (version: string, minHeight: number, maxHeight: number) => {
+  const handleGenerate = async (version: string, lowerLimit: number, upperLimit: number, description: string, packImage?: File) => {
     setIsGenerating(true);
     
     try {
@@ -39,13 +39,14 @@ function ProjectHeightDatapackGenerator() {
       await new Promise(resolve => setTimeout(resolve, 2000));
       
       // Generate the datapack content
-      const datapackName = `height-limit-${minHeight}-to-${maxHeight}`;
-      const datapackContent = generateDatapackContent(version, minHeight, maxHeight, datapackName);
+      const heightRange = upperLimit - lowerLimit;
+      const datapackName = `height-limit-${lowerLimit}-to-${upperLimit}`;
+      const datapackContent = generateDatapackContent(version, lowerLimit, heightRange, description, datapackName);
       
       // Create and trigger download
-      downloadDatapack(datapackContent, `${datapackName}-mc${version}.zip`);
+      downloadDatapack(datapackContent, `${datapackName}-mc${version}.zip`, packImage);
       
-      setGeneratedDatapack(`Successfully generated datapack for Minecraft ${version} with height limits ${minHeight} to ${maxHeight}!`);
+      setGeneratedDatapack(`Successfully generated datapack for Minecraft ${version} with height limits ${lowerLimit} to ${upperLimit}!`);
     } catch (error) {
       setGeneratedDatapack('Error generating datapack. Please try again.');
     } finally {
@@ -53,14 +54,14 @@ function ProjectHeightDatapackGenerator() {
     }
   };
 
-  const generateDatapackContent = (version: string, minHeight: number, maxHeight: number, name: string) => {
-    // This would typically read from the template files and modify them
-    // For now, we'll create a basic structure
+  const generateDatapackContent = (version: string, minHeight: number, heightRange: number, description: string, name: string) => {
+    // This would typically read from the template files and replace placeholders
+    // For now, we'll create a basic structure with the actual placeholders you'll use
     return {
       'pack.mcmeta': JSON.stringify({
         pack: {
           pack_format: getPackFormat(version),
-          description: `Custom height limits: ${minHeight} to ${maxHeight}`
+          description: description
         }
       }, null, 2),
       [`data/${name}/dimension/overworld.json`]: JSON.stringify({
@@ -74,7 +75,7 @@ function ProjectHeightDatapackGenerator() {
           settings: {
             name: 'minecraft:overworld',
             min_y: minHeight,
-            height: maxHeight - minHeight
+            height: heightRange
           }
         }
       }, null, 2)
@@ -95,10 +96,22 @@ function ProjectHeightDatapackGenerator() {
     return versionMap[version] || 48;
   };
 
-  const downloadDatapack = (content: any, filename: string) => {
+  const downloadDatapack = (content: any, filename: string, packImage?: File) => {
     // In a real implementation, this would create a proper ZIP file
-    // For now, we'll create a JSON representation
-    const blob = new Blob([JSON.stringify(content, null, 2)], { type: 'application/json' });
+    // For now, we'll create a JSON representation with image info
+    const datapackData = {
+      ...content,
+      _metadata: {
+        note: "This is a preview. Real implementation would create a proper ZIP file.",
+        customImage: packImage ? {
+          name: packImage.name,
+          size: packImage.size,
+          type: packImage.type
+        } : "Using default pack.png from template"
+      }
+    };
+    
+    const blob = new Blob([JSON.stringify(datapackData, null, 2)], { type: 'application/json' });
     const url = URL.createObjectURL(blob);
     const link = document.createElement('a');
     link.href = url;

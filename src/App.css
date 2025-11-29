@@ -1763,6 +1763,12 @@ body {
   gap: 0.5rem;
 }
 
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
 .form-group label {
   font-weight: 600;
   color: #333;
@@ -1788,6 +1794,50 @@ body {
   color: #6c757d;
   font-size: 0.85rem;
   font-style: italic;
+}
+
+.image-preview {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 0.75rem;
+  padding: 1rem;
+  background: white;
+  border: 2px dashed #ddd;
+  border-radius: 8px;
+}
+
+.pack-preview {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.remove-image {
+  background: #dc3545;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: background-color 0.3s ease;
+}
+
+.remove-image:hover {
+  background: #c82333;
+}
+
+.height-range-display {
+  background: #e7f3ff;
+  border: 1px solid #b8daff;
+  border-radius: 8px;
+  padding: 1rem;
+  color: #0056b3;
+  font-size: 1rem;
+  text-align: center;
 }
 
 .error-messages {
@@ -1928,6 +1978,10 @@ body {
     gap: 1rem;
   }
   
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+  
   .generate-button {
     align-self: stretch;
   }
@@ -1935,5 +1989,10 @@ body {
   .version-grid {
     grid-template-columns: 1fr;
     gap: 1rem;
+  }
+
+  .image-preview {
+    flex-direction: column;
+    text-align: center;
   }
 }
