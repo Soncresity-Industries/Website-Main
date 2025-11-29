@@ -65,14 +65,13 @@ function ProjectHeightDatapackGenerator() {
           description: description
         }
       }, null, 2),
-      [`data/${name}/dimension_type/overworld.json`]: JSON.stringify({
+      'data/minecraft/dimension_type/overworld.json': JSON.stringify({
         ultrawarm: false,
         natural: true,
         coordinate_scale: 1.0,
         has_skylight: true,
         has_ceiling: false,
         ambient_light: 0.0,
-        fixed_time: null,
         piglin_safe: false,
         bed_works: true,
         respawn_anchor_works: false,
@@ -82,39 +81,7 @@ function ProjectHeightDatapackGenerator() {
         logical_height: Math.min(heightRange, 384),
         infiniburn: "#minecraft:infiniburn_overworld",
         effects: "minecraft:overworld",
-        monster_spawn_light_level: {
-          type: "minecraft:uniform",
-          value: {
-            min_inclusive: 0,
-            max_inclusive: 7
-          }
-        },
-        monster_spawn_block_light_limit: 0
-      }, null, 2),
-      [`data/minecraft/dimension_type/overworld.json`]: JSON.stringify({
-        ultrawarm: false,
-        natural: true,
-        coordinate_scale: 1.0,
-        has_skylight: true,
-        has_ceiling: false,
-        ambient_light: 0.0,
-        fixed_time: null,
-        piglin_safe: false,
-        bed_works: true,
-        respawn_anchor_works: false,
-        has_raids: true,
-        min_y: minHeight,
-        height: heightRange,
-        logical_height: Math.min(heightRange, 384),
-        infiniburn: "#minecraft:infiniburn_overworld",
-        effects: "minecraft:overworld",
-        monster_spawn_light_level: {
-          type: "minecraft:uniform",
-          value: {
-            min_inclusive: 0,
-            max_inclusive: 7
-          }
-        },
+        monster_spawn_light_level: 0,
         monster_spawn_block_light_limit: 0
       }, null, 2)
     };
@@ -143,11 +110,12 @@ function ProjectHeightDatapackGenerator() {
     // Add pack.mcmeta file
     zip.file('pack.mcmeta', content['pack.mcmeta']);
     
-    // Add the dimension file with proper folder structure
-    const dimensionPath = Object.keys(content).find(key => key.includes('dimension'));
-    if (dimensionPath) {
-      zip.file(dimensionPath, content[dimensionPath]);
-    }
+    // Add all dimension files with proper folder structure
+    Object.keys(content).forEach(filePath => {
+      if (filePath !== 'pack.mcmeta') {
+        zip.file(filePath, content[filePath]);
+      }
+    });
     
     // Add pack.png (either custom or default)
     if (packImage) {
@@ -165,13 +133,21 @@ function ProjectHeightDatapackGenerator() {
       zip.file('pack.png', defaultPng);
     }
     
-    // Generate and download the ZIP
-    const zipBlob = await zip.generateAsync({ type: 'blob' });
+    // Generate and download the ZIP with proper compression
+    const zipBlob = await zip.generateAsync({ 
+      type: 'blob',
+      compression: 'DEFLATE',
+      compressionOptions: {
+        level: 6
+      }
+    });
     const url = URL.createObjectURL(zipBlob);
     const link = document.createElement('a');
     link.href = url;
     link.download = filename.replace('.zip', '') + '.zip';
+    document.body.appendChild(link);
     link.click();
+    document.body.removeChild(link);
     URL.revokeObjectURL(url);
   };
 
