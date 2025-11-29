@@ -44,7 +44,7 @@ function ProjectHeightDatapackGenerator() {
       const datapackContent = generateDatapackContent(version, lowerLimit, heightRange, description, datapackName);
       
       // Create and trigger download
-      downloadDatapack(datapackContent, `${datapackName}-mc${version}.zip`, packImage);
+      downloadDatapack(datapackContent, `${datapackName}-mc${version}`, packImage);
       
       setGeneratedDatapack(`Successfully generated datapack for Minecraft ${version} with height limits ${lowerLimit} to ${upperLimit}!`);
     } catch (error) {
@@ -55,8 +55,9 @@ function ProjectHeightDatapackGenerator() {
   };
 
   const generateDatapackContent = (version: string, minHeight: number, heightRange: number, description: string, name: string) => {
-    // This would typically read from the template files and replace placeholders
-    // For now, we'll create a basic structure with the actual placeholders you'll use
+    // Create proper datapack structure
+    const maxHeight = minHeight + heightRange;
+    
     return {
       'pack.mcmeta': JSON.stringify({
         pack: {
@@ -64,58 +65,112 @@ function ProjectHeightDatapackGenerator() {
           description: description
         }
       }, null, 2),
-      [`data/${name}/dimension/overworld.json`]: JSON.stringify({
-        type: 'minecraft:overworld',
-        generator: {
-          type: 'minecraft:noise',
-          biome_source: {
-            type: 'minecraft:multi_noise',
-            preset: 'minecraft:overworld'
-          },
-          settings: {
-            name: 'minecraft:overworld',
-            min_y: minHeight,
-            height: heightRange
+      [`data/${name}/dimension_type/overworld.json`]: JSON.stringify({
+        ultrawarm: false,
+        natural: true,
+        coordinate_scale: 1.0,
+        has_skylight: true,
+        has_ceiling: false,
+        ambient_light: 0.0,
+        fixed_time: null,
+        piglin_safe: false,
+        bed_works: true,
+        respawn_anchor_works: false,
+        has_raids: true,
+        min_y: minHeight,
+        height: heightRange,
+        logical_height: Math.min(heightRange, 384),
+        infiniburn: "#minecraft:infiniburn_overworld",
+        effects: "minecraft:overworld",
+        monster_spawn_light_level: {
+          type: "minecraft:uniform",
+          value: {
+            min_inclusive: 0,
+            max_inclusive: 7
           }
-        }
+        },
+        monster_spawn_block_light_limit: 0
+      }, null, 2),
+      [`data/minecraft/dimension_type/overworld.json`]: JSON.stringify({
+        ultrawarm: false,
+        natural: true,
+        coordinate_scale: 1.0,
+        has_skylight: true,
+        has_ceiling: false,
+        ambient_light: 0.0,
+        fixed_time: null,
+        piglin_safe: false,
+        bed_works: true,
+        respawn_anchor_works: false,
+        has_raids: true,
+        min_y: minHeight,
+        height: heightRange,
+        logical_height: Math.min(heightRange, 384),
+        infiniburn: "#minecraft:infiniburn_overworld",
+        effects: "minecraft:overworld",
+        monster_spawn_light_level: {
+          type: "minecraft:uniform",
+          value: {
+            min_inclusive: 0,
+            max_inclusive: 7
+          }
+        },
+        monster_spawn_block_light_limit: 0
       }, null, 2)
     };
   };
 
   const getPackFormat = (version: string): number => {
-    // Map Minecraft versions to pack formats
+    // Map Minecraft versions to pack formats (accurate as of 2025)
     const versionMap: { [key: string]: number } = {
       '1.17.0': 7, '1.17.1': 7,
       '1.18.0': 8, '1.18.1': 8, '1.18.2': 9,
-      '1.19.0': 9, '1.19.1': 9, '1.19.2': 9, '1.19.3': 12, '1.19.4': 12,
+      '1.19.0': 10, '1.19.1': 10, '1.19.2': 10, '1.19.3': 12, '1.19.4': 12,
       '1.20.0': 15, '1.20.1': 15, '1.20.2': 18, '1.20.3': 26, '1.20.4': 26, '1.20.5': 41, '1.20.6': 48,
-      '1.21.0': 48, '1.21.1': 48
+      '1.21.0': 48, '1.21.1': 48, '1.21.2': 57, '1.21.3': 57, '1.21.4': 61, '1.21.5': 61, 
+      '1.21.6': 61, '1.21.7': 61, '1.21.8': 61, '1.21.9': 61, '1.21.10': 61
     };
     
-    // For newer versions not in the map, use the latest format
-    return versionMap[version] || 48;
+    // For versions not in the map, use the latest format
+    return versionMap[version] || 61;
   };
 
-  const downloadDatapack = (content: any, filename: string, packImage?: File) => {
-    // In a real implementation, this would create a proper ZIP file
-    // For now, we'll create a JSON representation with image info
-    const datapackData = {
-      ...content,
-      _metadata: {
-        note: "This is a preview. Real implementation would create a proper ZIP file.",
-        customImage: packImage ? {
-          name: packImage.name,
-          size: packImage.size,
-          type: packImage.type
-        } : "Using default pack.png from template"
-      }
-    };
+  const downloadDatapack = async (content: any, filename: string, packImage?: File) => {
+    // Create a proper ZIP file structure
+    const JSZip = (await import('jszip')).default;
+    const zip = new JSZip();
     
-    const blob = new Blob([JSON.stringify(datapackData, null, 2)], { type: 'application/json' });
-    const url = URL.createObjectURL(blob);
+    // Add pack.mcmeta file
+    zip.file('pack.mcmeta', content['pack.mcmeta']);
+    
+    // Add the dimension file with proper folder structure
+    const dimensionPath = Object.keys(content).find(key => key.includes('dimension'));
+    if (dimensionPath) {
+      zip.file(dimensionPath, content[dimensionPath]);
+    }
+    
+    // Add pack.png (either custom or default)
+    if (packImage) {
+      zip.file('pack.png', packImage);
+    } else {
+      // Create a simple default pack.png (1x1 blue pixel as PNG)
+      const defaultPng = new Uint8Array([
+        0x89, 0x50, 0x4E, 0x47, 0x0D, 0x0A, 0x1A, 0x0A, 0x00, 0x00, 0x00, 0x0D,
+        0x49, 0x48, 0x44, 0x52, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00, 0x01,
+        0x08, 0x02, 0x00, 0x00, 0x00, 0x90, 0x77, 0x53, 0xDE, 0x00, 0x00, 0x00,
+        0x0C, 0x49, 0x44, 0x41, 0x54, 0x08, 0xD7, 0x63, 0xF8, 0x0F, 0x00, 0x00,
+        0x01, 0x00, 0x01, 0x6B, 0xD6, 0x8E, 0x1C, 0x00, 0x00, 0x00, 0x00, 0x49,
+        0x45, 0x4E, 0x44, 0xAE, 0x42, 0x60, 0x82
+      ]);
+      zip.file('pack.png', defaultPng);
+    }
+    
+    // Generate and download the ZIP
+    const zipBlob = await zip.generateAsync({ type: 'blob' });
+    const url = URL.createObjectURL(zipBlob);
     const link = document.createElement('a');
     link.href = url;
-    link.download = filename;
+    link.download = filename.replace('.zip', '') + '.zip';
     link.click();
     URL.revokeObjectURL(url);
   };
