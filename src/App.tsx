@@ -106,18 +106,18 @@ function Home() {
           <div className="container">
             <h3>Quick Links</h3>
             <div className="features-grid">
-              <div className="feature-card">
-                <h4>Company Resources</h4>
-                <p>Access internal documents, policies, and employee resources</p>
-              </div>
-              <div className="feature-card">
-                <h4>Project Tools</h4>
-                <p>Quick access to project management and collaboration tools</p>
-              </div>
-              <div className="feature-card">
-                <h4>Support</h4>
-                <p>IT support, HR assistance, and company directory</p>
-              </div>
+              <Link to="/about" className="feature-card clickable-card">
+                <h4>About</h4>
+                <p>Learn more about Soncresity Industries, our mission, and our team</p>
+              </Link>
+              <Link to="/projects" className="feature-card clickable-card">
+                <h4>Projects</h4>
+                <p>Explore our portfolio of innovative software solutions and tools</p>
+              </Link>
+              <Link to="/contact" className="feature-card clickable-card">
+                <h4>Contact</h4>
+                <p>Get in touch with us for support, partnerships, or inquiries</p>
+              </Link>
             </div>
           </div>
         </section>
