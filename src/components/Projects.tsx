@@ -88,7 +88,7 @@ const projectsData = [
     type: 'Modpacks',
     logo: '/assets/images/projects/si_crownfall.png',
     route: '/projects/crownfall',
-    tags: ['WIP', 'Native']
+    tags: ['Available', 'NeoForge']
   },
   {
     id: 'death-bolt',
@@ -104,7 +104,7 @@ const projectsData = [
     type: 'Tools',
     logo: '/assets/images/projects/height_datapack_generator.png',
     route: '/projects/height-datapack-generator',
-    tags: ['WIP', 'Native']
+    tags: ['Available', 'Native']
   },
   {
     id: 'item-remover',
@@ -120,7 +120,7 @@ const projectsData = [
     type: 'Mods',
     logo: '/assets/images/projects/si_lifesteal.png',
     route: '/projects/lifesteal',
-    tags: ['WIP', 'Native']
+    tags: ['Available', 'Fabric', 'NeoForge']
   },
   {
     id: 'refined-obsidian',
@@ -136,7 +136,7 @@ const projectsData = [
     type: 'Modpacks',
     logo: '/assets/images/projects/soncresity_aftermath.png',
     route: '/projects/soncresity-aftermath',
-    tags: ['WIP', 'Native']
+    tags: ['Available', 'NeoForge']
   },
   {
     id: 'soncresity-fractured-horizons',
@@ -144,7 +144,7 @@ const projectsData = [
     type: 'Games',
     logo: '/assets/images/projects/soncresity_fractured_horizons.png',
     route: '/projects/soncresity-fractured-horizons',
-    tags: ['WIP', 'Native']
+    tags: ['Available', 'Native']
   },
   {
     id: 'spectre',
@@ -160,7 +160,7 @@ const projectsData = [
     type: 'Mods',
     logo: '/assets/images/projects/si_scriptified.png',
     route: '/projects/scriptified',
-    tags: ['WIP', 'NeoForge']
+    tags: ['Available', 'NeoForge']
   },
 ];
 

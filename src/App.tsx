@@ -13,6 +13,11 @@ import ProjectRefinedObsidian from './components/projects/ProjectRefinedObsidian
 import ProjectItemRemover from './components/projects/ProjectItemRemover'
 import ProjectSpectre from './components/projects/ProjectSpectre';
 import ProjectScriptified from './components/projects/ProjectScriptified';
+import ProjectLifesteal from './components/projects/ProjectLifesteal';
+import ProjectCrownfall from './components/projects/ProjectCrownfall';
+import ProjectSoncresityAftermath from './components/projects/ProjectSoncresityAftermath';
+import ProjectSoncresityFracturedHorizons from './components/projects/ProjectSoncresityFracturedHorizons';
+import ProjectHeightDatapackGenerator from './components/projects/ProjectHeightDatapackGenerator';
 import './App.css'
 
 function Home() {
@@ -134,6 +139,11 @@ function App() {
       <Route path="/projects/item-remover" element={<ProjectItemRemover />} />
       <Route path="/projects/spectre" element={<ProjectSpectre />} />
       <Route path="/projects/scriptified" element={<ProjectScriptified />} />
+      <Route path="/projects/lifesteal" element={<ProjectLifesteal />} />
+      <Route path="/projects/crownfall" element={<ProjectCrownfall />} />
+      <Route path="/projects/soncresity-aftermath" element={<ProjectSoncresityAftermath />} />
+      <Route path="/projects/soncresity-fractured-horizons" element={<ProjectSoncresityFracturedHorizons />} />
+      <Route path="/projects/height-datapack-generator" element={<ProjectHeightDatapackGenerator />} />
       <Route path="/contact" element={<Contact />} />
     </Routes>
   )
