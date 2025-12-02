@@ -2060,3 +2060,98 @@ body {
     text-align: center;
   }
 }
+
+/* Tools Page Styles */
+.tools-page {
+  padding: 2rem 0;
+}
+
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.tool-card {
+  background: rgba(78, 78, 78, 0.196);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.tool-card.coming-soon {
+  opacity: 0.7;
+  text-align: center;
+}
+
+.tool-header h2 {
+  color: #fff;
+  margin-bottom: 0.5rem;
+  font-size: 1.8rem;
+}
+
+.tool-header p {
+  color: #e0e0e0;
+  margin-bottom: 1.5rem;
+}
+
+.tool-content {
+  margin-top: 1rem;
+}
+
+.generating-status {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-top: 3px solid #2F97DD;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 1rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.generating-status p {
+  color: #e0e0e0;
+  font-size: 1.1rem;
+}
+
+.generation-result {
+  background: rgba(47, 151, 221, 0.1);
+  border: 1px solid rgba(47, 151, 221, 0.3);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.generation-result h4 {
+  color: #2F97DD;
+  margin-bottom: 0.5rem;
+}
+
+.generation-result p {
+  color: #e0e0e0;
+  margin-bottom: 0.5rem;
+}
+
+/* Media Queries for Tools Page */
+@media (max-width: 768px) {
+  .tools-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .tool-card {
+    padding: 1.5rem;
+  }
+}

@@ -99,14 +99,6 @@ const projectsData = [
     tags: ['Native', 'Available']
   },
   {
-    id: 'height-datapack-generator',
-    name: 'Height Datapack Generator',
-    type: 'Tools',
-    logo: '/assets/images/projects/height_datapack_generator.png',
-    route: '/projects/height-datapack-generator',
-    tags: ['Available', 'Native']
-  },
-  {
     id: 'item-remover',
     name: 'SI: Item Remover',
     type: 'Mods',

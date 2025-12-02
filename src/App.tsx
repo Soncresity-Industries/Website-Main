@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Routes, Route, Link } from 'react-router-dom'
 import About from './components/About'
 import Projects from './components/Projects'
+import Tools from './components/Tools'
 import Contact from './components/Contact'
 import ProjectAlpha from './components/ProjectAlpha'
 import ProjectBeta from './components/ProjectBeta'
@@ -17,7 +18,6 @@ import ProjectLifesteal from './components/projects/ProjectLifesteal';
 import ProjectCrownfall from './components/projects/ProjectCrownfall';
 import ProjectSoncresityAftermath from './components/projects/ProjectSoncresityAftermath';
 import ProjectSoncresityFracturedHorizons from './components/projects/ProjectSoncresityFracturedHorizons';
-import ProjectHeightDatapackGenerator from './components/projects/ProjectHeightDatapackGenerator';
 import ElectricBorder from './components/ElectricBorder';
 import './App.css'
 
@@ -57,6 +57,7 @@ function Home() {
             <Link to="/">Home</Link>
             <Link to="/about">About</Link>
             <Link to="/projects">Projects</Link>
+            <Link to="/tools">Tools</Link>
             <Link to="/contact">Contact</Link>
           </nav>
         </div>
@@ -112,11 +113,11 @@ function Home() {
               </Link>
               <Link to="/projects" className="feature-card clickable-card">
                 <h4>Projects</h4>
-                <p>Explore our portfolio of innovative software solutions and tools</p>
+                <p>Explore our portfolio of innovative software solutions and applications</p>
               </Link>
-              <Link to="/contact" className="feature-card clickable-card">
-                <h4>Contact</h4>
-                <p>Get in touch with us for support, partnerships, or inquiries</p>
+              <Link to="/tools" className="feature-card clickable-card">
+                <h4>Tools</h4>
+                <p>Access our collection of free utilities and generators</p>
               </Link>
             </div>
           </div>
@@ -143,7 +144,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<div className="page-overlay"><About /></div>} />
         <Route path="/projects" element={<div className="page-overlay"><Projects /></div>} />
-        <Route path="/projects/alpha" element={<div className="page-overlay"><ProjectAlpha /></div>} />
+        <Route path="/tools" element={<div className="page-overlay"><Tools /></div>} />
+        <Route path="/contact" element={<div className="page-overlay"><Contact /></div>} />
         <Route path="/projects/beta" element={<div className="page-overlay"><ProjectBeta /></div>} />
         <Route path="/projects/suite" element={<div className="page-overlay"><ProjectSuite /></div>} />
         <Route path="/projects/gamma" element={<div className="page-overlay"><ProjectGamma /></div>} />
@@ -157,7 +159,6 @@ function App() {
         <Route path="/projects/crownfall" element={<div className="page-overlay"><ProjectCrownfall /></div>} />
         <Route path="/projects/soncresity-aftermath" element={<div className="page-overlay"><ProjectSoncresityAftermath /></div>} />
         <Route path="/projects/soncresity-fractured-horizons" element={<div className="page-overlay"><ProjectSoncresityFracturedHorizons /></div>} />
-        <Route path="/projects/height-datapack-generator" element={<div className="page-overlay"><ProjectHeightDatapackGenerator /></div>} />
         <Route path="/contact" element={<div className="page-overlay"><Contact /></div>} />
       </Routes>
     </>
