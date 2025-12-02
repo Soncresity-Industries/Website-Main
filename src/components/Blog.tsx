@@ -16,6 +16,92 @@ interface BlogPost {
 // Sample blog posts data
 const blogPosts: BlogPost[] = [
   {
+    id: 'si-aftermath-weekly-1',
+    title: 'SI: Aftermath Weekly Update #1 - Development Kickoff',
+    excerpt: 'Welcome to our first weekly update for SI: Aftermath! We\'re excited to share the beginning of our journey creating the ultimate realistic hardcore survival experience.',
+    content: `
+# SI: Aftermath Weekly Update #1 - Development Kickoff
+
+Welcome to the first of our weekly development updates for **SI: Aftermath**, our upcoming realistic hardcore survival modpack for Minecraft!
+
+## What is SI: Aftermath?
+
+SI: Aftermath is an ambitious modpack designed to push the boundaries of survival gameplay in Minecraft. We're creating an immersive, hardcore experience that emphasizes:
+
+- **Realistic Survival Mechanics**: Advanced hunger, thirst, temperature, and health systems
+- **Challenging Environment**: Hostile world conditions that test your survival skills
+- **Progressive Technology**: Start from primitive tools and work your way up through complex technological ages
+- **Community Focus**: Designed for both single-player challenges and multiplayer cooperation
+
+## This Week's Progress
+
+### 🔧 Core Framework Setup
+- Established the base modpack structure using Minecraft 1.20.1
+- Selected and tested core survival mods for compatibility
+- Set up development environment and testing protocols
+
+### 🌡️ Environmental Systems
+- Integrated **Tough As Nails** for temperature and thirst mechanics
+- Configured **Serene Seasons** for dynamic weather and seasonal changes
+- Tested **Dynamic Surroundings** for enhanced atmospheric effects
+
+### 🍖 Survival Overhaul
+- Implemented **Spice of Life: Carrot Edition** for nutrition diversity
+- Added **Realistic Torches** for challenging lighting mechanics
+- Configured **First Aid** for localized damage and healing
+
+## Challenges This Week
+
+The biggest challenge has been balancing realism with playability. We want the experience to be challenging and immersive without becoming frustrating. Finding the sweet spot for:
+- Thirst decay rates
+- Temperature tolerance ranges
+- Food spoilage timers
+- Healing mechanics
+
+## Next Week's Goals
+
+### 🏗️ Technology Progression
+- Integrate **Create** mod for mechanical engineering
+- Set up **Immersive Engineering** for industrial progression
+- Configure **Tinkers' Construct** for advanced tool crafting
+
+### 🏠 Base Building
+- Add **Macaw's** series for enhanced building blocks
+- Implement **Supplementaries** for decorative and functional items
+- Test **Security Craft** for base protection systems
+
+### 🧪 Testing Phase
+- Begin internal alpha testing
+- Document gameplay progression paths
+- Fine-tune difficulty curves
+
+## Community Involvement
+
+We want **you** to be part of this journey! Here's how you can get involved:
+
+- **Follow our weekly updates** to stay informed about development progress
+- **Share your ideas** for features you'd like to see in a hardcore survival pack
+- **Join our testing program** when we release alpha builds
+- **Spread the word** to other survival enthusiasts
+
+## Looking Ahead
+
+SI: Aftermath represents our vision of what hardcore Minecraft survival should be. We're not just throwing difficult mods together – we're carefully crafting a cohesive experience that tells a story of human resilience and technological progress in a harsh world.
+
+Expect these weekly updates every Monday as we share our progress, challenges, and exciting discoveries. Your feedback and support drive us to create something truly special.
+
+**What features are you most excited about in a realistic survival modpack? Let us know in the comments!**
+
+---
+
+*Follow our development journey and be the first to know when SI: Aftermath becomes available. The wasteland awaits...*
+    `,
+    author: 'SI: Aftermath Dev Team',
+    date: '2025-12-02',
+    tags: ['weekly-update', 'si-aftermath', 'modpack', 'minecraft', 'survival'],
+    featured: true
+  },
+  {
     id: 'welcome-to-our-blog',
     title: 'Welcome to the Soncresity Industries Blog',
     excerpt: 'We\'re excited to share our journey, insights, and updates with the community through our new blog platform.',
