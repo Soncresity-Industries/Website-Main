@@ -1,8 +1,9 @@
 import { useState } from 'react'
-import { Routes, Route, Link } from 'react-router-dom'
+import { Routes, Route, Link, useParams } from 'react-router-dom'
 import About from './components/About'
 import Projects from './components/Projects'
 import Tools from './components/Tools'
+import Blog, { BlogDetail } from './components/Blog'
 import Contact from './components/Contact'
 import ProjectAlpha from './components/ProjectAlpha'
 import ProjectBeta from './components/ProjectBeta'
@@ -58,6 +59,7 @@ function Home() {
             <Link to="/about">About</Link>
             <Link to="/projects">Projects</Link>
             <Link to="/tools">Tools</Link>
+            <Link to="/blog">Blog</Link>
             <Link to="/contact">Contact</Link>
           </nav>
         </div>
@@ -119,6 +121,10 @@ function Home() {
                 <h4>Tools</h4>
                 <p>Access our collection of free utilities and generators</p>
               </Link>
+              <Link to="/blog" className="feature-card clickable-card">
+                <h4>Blog</h4>
+                <p>Read our latest insights, updates, and development stories</p>
+              </Link>
             </div>
           </div>
         </section>
@@ -133,6 +139,11 @@ function Home() {
   )
 }
 
+function BlogDetailWrapper() {
+  const { postId } = useParams<{ postId: string }>();
+  return <BlogDetail postId={postId || ''} />;
+}
+
 function App() {
   return (
     <>
@@ -145,6 +156,8 @@ function App() {
         <Route path="/about" element={<div className="page-overlay"><About /></div>} />
         <Route path="/projects" element={<div className="page-overlay"><Projects /></div>} />
         <Route path="/tools" element={<div className="page-overlay"><Tools /></div>} />
+        <Route path="/blog" element={<div className="page-overlay"><Blog /></div>} />
+        <Route path="/blog/:postId" element={<div className="page-overlay"><BlogDetailWrapper /></div>} />
         <Route path="/contact" element={<div className="page-overlay"><Contact /></div>} />
         <Route path="/projects/beta" element={<div className="page-overlay"><ProjectBeta /></div>} />
         <Route path="/projects/suite" element={<div className="page-overlay"><ProjectSuite /></div>} />
