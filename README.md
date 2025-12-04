@@ -1,104 +1,36 @@
-# Soncresity Industries Website
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-A modern, responsive website built with React, TypeScript, and Vite for Soncresity Industries.
+## Getting Started
 
-## 🚀 Features
+First, run the development server:
 
-- Modern React with TypeScript
-- Fast development with Vite
-- Responsive design for all devices
-- Professional corporate layout
-- Easy to customize and extend
-
-## 📁 Project Structure
-
-```
-├── public/
-│   └── assets/
-│       └── images/
-│           └── logo.png          # Place your company logo here
-├── src/
-│   ├── components/               # Reusable React components
-│   ├── assets/                   # Static assets
-│   ├── App.tsx                   # Main application component
-│   ├── App.css                   # Global styles
-│   └── main.tsx                  # Application entry point
-├── package.json                  # Dependencies and scripts
-├── tsconfig.json                # TypeScript configuration
-└── vite.config.ts               # Vite configuration
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-## 🎨 Logo Placement
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-**Important:** Place your company logo file as `logo.png` in the following directory:
-```
-public/assets/images/logo.png
-```
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-The logo should ideally be:
-- PNG format with transparent background
-- Recommended size: 200x200px or similar square aspect ratio
-- High resolution for crisp display on all devices
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## 🛠️ Development
+## Learn More
 
-### Prerequisites
-- Node.js (version 16 or higher)
-- npm or yarn
+To learn more about Next.js, take a look at the following resources:
 
-### Getting Started
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-1. Install dependencies:
-   ```bash
-   npm install
-   ```
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-2. Start the development server:
-   ```bash
-   npm run dev
-   ```
+## Deploy on Vercel
 
-3. Open your browser and navigate to `http://localhost:5173`
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-### Available Scripts
-
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run preview` - Preview production build
-- `npm run lint` - Run ESLint
-
-## 🎨 Customization
-
-### Updating Content
-- Edit `src/App.tsx` to modify the main content
-- Update `src/App.css` to change styles and colors
-- Replace the logo at `public/assets/images/logo.png`
-
-### Adding New Sections
-The website is structured with semantic sections:
-- Header with navigation
-- Hero section with call-to-action
-- Features/Services section
-- Footer
-
-You can easily add new sections by modifying the `App.tsx` file.
-
-### Styling
-The project uses modern CSS with:
-- Flexbox and Grid layouts
-- CSS custom properties (variables)
-- Responsive design with media queries
-- Smooth animations and transitions
-
-## 🚀 Deployment
-
-1. Build the project:
-   ```bash
-   npm run build
-   ```
-
-2. The built files will be in the `dist/` directory, ready for deployment to any static hosting service.
-
-## 📄 License
-
-© 2025 Soncresity Industries. All rights reserved.
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.

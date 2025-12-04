@@ -1,0 +1,34 @@
+import type { Metadata } from "next";
+import "./globals.css";
+
+export const metadata: Metadata = {
+  title: {
+    template: '%s - Soncresity Industries',
+    default: 'Soncresity Industries - Innovative Software Solutions',
+  },
+  description: 'Discover innovative software solutions, gaming projects, and development tools from Soncresity Industries.',
+  keywords: ['software development', 'gaming', 'minecraft', 'tools', 'modpacks', 'soncresity industries'],
+  authors: [{ name: 'Soncresity Industries' }],
+  openGraph: {
+    siteName: 'Soncresity Industries',
+    locale: 'en_US',
+    type: 'website',
+  },
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="en">
+      <body>
+        <video autoPlay muted loop className="background-video">
+          <source src="/assets/videos/bg.mp4" type="video/mp4" />
+        </video>
+        {children}
+      </body>
+    </html>
+  );
+}

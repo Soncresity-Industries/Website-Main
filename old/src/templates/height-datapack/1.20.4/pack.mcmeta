@@ -1,0 +1,10 @@
+{
+	"pack": {
+    "supported_formats": [
+      26,
+      26
+    ],
+		"pack_format": 26,
+		"description": "{{PACK_DESCRIPTION}}"
+	}
+}
