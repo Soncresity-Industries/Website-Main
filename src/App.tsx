@@ -155,9 +155,6 @@ function App() {
         <Route path="/blog" element={<div className="page-overlay"><Blog /></div>} />
         <Route path="/blog/:postId" element={<div className="page-overlay"><BlogDetailWrapper /></div>} />
         <Route path="/contact" element={<div className="page-overlay"><Contact /></div>} />
-        <Route path="/projects/beta" element={<div className="page-overlay"><ProjectBeta /></div>} />
-        <Route path="/projects/suite" element={<div className="page-overlay"><ProjectSuite /></div>} />
-        <Route path="/projects/gamma" element={<div className="page-overlay"><ProjectGamma /></div>} />
         <Route path="/projects/credits" element={<div className="page-overlay"><ProjectCredits /></div>} />
         <Route path="/projects/death-bolt" element={<div className="page-overlay"><ProjectDeathBolt /></div>} />
         <Route path="/projects/refined-obsidian" element={<div className="page-overlay"><ProjectRefinedObsidian /></div>} />
