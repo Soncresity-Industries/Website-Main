@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 interface RotatingTextProps {
   texts: string[];
@@ -32,15 +33,10 @@ export default function RotatingText({
   rotationInterval = 2000,
 }: RotatingTextProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isAnimating, setIsAnimating] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setIsAnimating(true);
-      setTimeout(() => {
-        setCurrentIndex((prev) => (prev + 1) % texts.length);
-        setIsAnimating(false);
-      }, 300);
+      setCurrentIndex((prev) => (prev + 1) % texts.length);
     }, rotationInterval);
 
     return () => clearInterval(interval);
@@ -50,27 +46,41 @@ export default function RotatingText({
   const letters = currentText.split('');
 
   return (
-    <div className={mainClassName} style={{ display: 'inline-block' }}>
-      <div className={splitLevelClassName}>
-        {letters.map((letter, index) => {
-          const delay = staggerFrom === 'last' 
-            ? (letters.length - 1 - index) * staggerDuration 
-            : index * staggerDuration;
+    <div className={mainClassName} style={{ position: 'relative', display: 'inline-block' }}>
+      <div className={splitLevelClassName} style={{ overflow: 'hidden', position: 'relative' }}>
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={currentIndex}
+            style={{ display: 'flex' }}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+          >
+            {letters.map((letter, index) => {
+              const delay = staggerFrom === 'last' 
+                ? (letters.length - 1 - index) * staggerDuration 
+                : index * staggerDuration;
 
-          return (
-            <span
-              key={`${currentIndex}-${index}`}
-              style={{
-                display: 'inline-block',
-                transform: isAnimating ? 'translateY(-120%)' : 'translateY(0)',
-                transition: `transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) ${delay}s`,
-                opacity: isAnimating ? 0 : 1,
-              }}
-            >
-              {letter === ' ' ? '\u00A0' : letter}
-            </span>
-          );
-        })}
+              return (
+                <motion.span
+                  key={index}
+                  style={{ display: 'inline-block' }}
+                  variants={{
+                    hidden: { y: initial.y },
+                    visible: { y: animate.y },
+                    exit: { y: exit.y }
+                  }}
+                  transition={{
+                    ...transition,
+                    delay: delay
+                  }}
+                >
+                  {letter === ' ' ? '\u00A0' : letter}
+                </motion.span>
+              );
+            })}
+          </motion.div>
+        </AnimatePresence>
       </div>
     </div>
   );

@@ -7,8 +7,15 @@ export default function Home() {
       {/* Hero Section */}
       <section className="hero">
         <div className="container">
-          <h2 style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexWrap: 'wrap', gap: '0.5rem' }}>
-            Creating{' '}
+          <h2 style={{ 
+            display: 'flex', 
+            flexDirection: 'column', 
+            alignItems: 'center', 
+            justifyContent: 'center', 
+            gap: '1rem',
+            textAlign: 'center'
+          }}>
+            <span>Creating</span>
             <RotatingText
               texts={['extraordinary', 'individual', 'soncresity']}
               mainClassName="px-2 sm:px-2 md:px-3 bg-cyan-300 text-black overflow-hidden py-0.5 sm:py-1 md:py-2 justify-center rounded-lg"
@@ -21,7 +28,7 @@ export default function Home() {
               transition={{ type: "spring", damping: 30, stiffness: 400 }}
               rotationInterval={2000}
             />
-            {' '}experiences
+            <span>experiences</span>
           </h2>
         </div>
       </section>
