@@ -1141,3 +1141,55 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
+/* Hero Layout Responsive Styles */
+.hero-layout {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 4rem !important;
+  min-height: 60vh !important;
+  flex-direction: row !important;
+}
+
+.hero-text {
+  flex: 1 !important;
+}
+
+.hero-carousel {
+  flex: 1 !important;
+  display: flex !important;
+  justify-content: center !important;
+}
+
+/* Mobile responsiveness for hero layout */
+@media (max-width: 968px) {
+  .hero-layout {
+    flex-direction: column !important;
+    gap: 2rem !important;
+    text-align: center !important;
+  }
+  
+  .hero-text {
+    order: 1;
+  }
+  
+  .hero-carousel {
+    order: 2;
+    margin-top: 2rem;
+  }
+  
+  .hero-text h2 {
+    align-items: center !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-layout {
+    gap: 1.5rem !important;
+  }
+  
+  .hero-carousel {
+    margin-top: 1rem;
+  }
+}
