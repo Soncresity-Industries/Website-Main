@@ -268,7 +268,6 @@ function Blog() {
     : blogPosts.filter(post => post.tags.includes(selectedTag));
 
   const featuredPosts = blogPosts.filter(post => post.featured);
-  const recentPosts = blogPosts.filter(post => !post.featured).slice(0, 6);
 
   return (
     <div className="blog-page">
