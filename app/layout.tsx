@@ -16,9 +16,31 @@ export const metadata: Metadata = {
     locale: 'en_US',
     type: 'website',
   },
-  icons: {
-    icon: '/logo.png',
-    apple: '/logo.png',
+  manifest: '/site.webmanifest',
+  icons: [
+    {
+      rel: 'icon',
+      type: 'image/png',
+      url: '/favicon-96x96.png',
+      sizes: '96x96',
+    },
+    {
+      rel: 'icon',
+      type: 'image/svg+xml',
+      url: '/favicon.svg',
+    },
+    {
+      rel: 'shortcut icon',
+      url: '/favicon.ico',
+    },
+    {
+      rel: 'apple-touch-icon',
+      sizes: '180x180',
+      url: '/apple-touch-icon.png',
+    },
+  ],
+  other: {
+    'apple-mobile-web-app-title': 'Soncresity Industries',
   },
 };
 
