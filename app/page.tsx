@@ -10,10 +10,10 @@ export default function Home() {
           <h2 style={{ 
             display: 'flex', 
             flexDirection: 'column', 
-            alignItems: 'center', 
-            justifyContent: 'center', 
+            alignItems: 'flex-start', 
+            justifyContent: 'flex-start', 
             gap: '1rem',
-            textAlign: 'center'
+            textAlign: 'left'
           }}>
             <span>Creating</span>
             <RotatingText
