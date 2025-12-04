@@ -16,7 +16,7 @@ export default async function Home() {
             alignItems: 'center', 
             justifyContent: 'space-between',
             gap: '4rem',
-            minHeight: '60vh',
+            minHeight: 'auto',
             flexDirection: 'row'
           }}
           className="hero-layout">

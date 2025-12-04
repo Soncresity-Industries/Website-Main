@@ -1148,7 +1148,7 @@ body {
   align-items: center !important;
   justify-content: space-between !important;
   gap: 4rem !important;
-  min-height: 60vh !important;
+  min-height: auto !important;
   flex-direction: row !important;
 }
 
