@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 export const metadata: Metadata = {
   title: {
@@ -25,9 +27,16 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <video autoPlay muted loop className="background-video">
-          <source src="/assets/videos/bg.mp4" type="video/mp4" />
+          <source src="/bg.mp4" type="video/mp4" />
         </video>
-        {children}
+        
+        <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', width: '100%', position: 'relative' }}>
+          <Header />
+          <main className="main">
+            {children}
+          </main>
+          <Footer />
+        </div>
       </body>
     </html>
   );
