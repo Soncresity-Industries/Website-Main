@@ -1179,9 +1179,20 @@ body {
 }
 
 .social-icon {
-  font-size: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-bottom: 1rem;
-  display: block;
+  height: 60px;
+}
+
+.social-icon-image {
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.social-link-card:hover .social-icon-image {
+  transform: scale(1.1);
 }
 
 .social-link-card h4 {
