@@ -99,19 +99,24 @@ const projects = [
 export default function Projects() {
   const [activeFilters, setActiveFilters] = useState<string[]>([]);
   
-  const allTags = [...new Set(projects.flatMap(project => project.tags))];
+  const projectTypes = ['Game', 'Modpack', 'Mod', 'Resourcepack', 'Shaderpack', 'Datapack', 'Map'];
+  const statusTags = ['available', 'wip', 'discontinued'];
+  const allFilters = [...projectTypes, ...statusTags];
   
   const filteredProjects = activeFilters.length === 0 
     ? projects 
     : projects.filter(project => 
-        activeFilters.some(filter => project.tags.includes(filter))
+        activeFilters.some(filter => 
+          project.type.toLowerCase().includes(filter.toLowerCase()) || 
+          project.status === filter
+        )
       );
 
-  const toggleFilter = (tag: string) => {
+  const toggleFilter = (filter: string) => {
     setActiveFilters(prev => 
-      prev.includes(tag) 
-        ? prev.filter(f => f !== tag)
-        : [...prev, tag]
+      prev.includes(filter) 
+        ? prev.filter(f => f !== filter)
+        : [...prev, filter]
     );
   };
 
@@ -129,15 +134,28 @@ export default function Projects() {
           
           {/* Project Filter */}
           <div className="projects-filter">
-            <h3>Filter by Technology</h3>
+            <h3>Filter by Type</h3>
             <div className="filter-buttons">
-              {allTags.map(tag => (
+              {projectTypes.map(type => (
+                <button
+                  key={type}
+                  className={`filter-btn ${activeFilters.includes(type) ? 'active' : ''}`}
+                  onClick={() => toggleFilter(type)}
+                >
+                  {type}
+                </button>
+              ))}
+            </div>
+            
+            <h3 style={{ marginTop: '2rem' }}>Filter by Status</h3>
+            <div className="filter-buttons">
+              {statusTags.map(tag => (
                 <button
                   key={tag}
                   className={`filter-btn ${activeFilters.includes(tag) ? 'active' : ''}`}
                   onClick={() => toggleFilter(tag)}
                 >
-                  {tag}
+                  {tag.charAt(0).toUpperCase() + tag.slice(1)}
                 </button>
               ))}
             </div>
