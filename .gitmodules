@@ -1,0 +1,4 @@
+[submodule "public/downloads/ap_schat_ios"]
+	path = public/downloads/ap_schat_ios
+	url = https://github.com/Soncresity-Industries/SChat-Releases
+	branch = ios
