@@ -133,6 +133,7 @@ body {
   margin-bottom: 1rem;
   font-weight: 700;
   line-height: 1.2;
+  font-family: 'SerephixBold', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
 }
 
 .hero p {

@@ -33,7 +33,7 @@ export default async function Home() {
                 <span>Creating</span>
                 <RotatingText
                   texts={['extraordinary', 'individual', 'soncresity']}
-                  mainClassName="px-2 sm:px-2 md:px-3 bg-cyan-300 text-black overflow-hidden py-0.5 sm:py-1 md:py-2 justify-center rounded-lg"
+                  mainClassName="px-2 sm:px-2 md:px-3 bg-[#026DCA] text-white overflow-hidden py-0.5 sm:py-1 md:py-2 justify-center rounded-lg"
                   staggerFrom="last"
                   initial={{ y: "100%" }}
                   animate={{ y: 0 }}
