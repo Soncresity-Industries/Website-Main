@@ -1,3 +1,5 @@
+import SocialLinks from '../../components/SocialLinks';
+
 export default function About() {
   return (
     <div className="page-overlay">
@@ -54,6 +56,9 @@ export default function About() {
                 </p>
               </div>
             </div>
+
+            {/* Social Links Section */}
+            <SocialLinks />
           </div>
         </div>
       </section>
