@@ -8,10 +8,10 @@ export default function About() {
           <div className="about-content">
             <h3>About Soncresity Industries</h3>
             <p>
-              Soncresity Industries is a leading technology company dedicated to developing 
-              innovative software solutions that push the boundaries of what's possible. 
-              Founded with a vision to create technology that makes a meaningful impact, 
-              we specialize in custom software development, gaming modifications, and 
+              Soncresity Industries is a leading technology company dedicated to developing
+              innovative software solutions that push the boundaries of what's possible.
+              Founded with a vision to create technology that makes a meaningful impact,
+              we specialize in custom software development, gaming modifications, and
               cutting-edge digital tools.
             </p>
             
@@ -53,6 +53,15 @@ export default function About() {
                 <p>
                   We design with the user in mind, creating intuitive interfaces and 
                   seamless interactions that enhance productivity and satisfaction.
+                </p>
+              </div>
+
+              <div className="value-card">
+                <h4>Fun & Engagement</h4>
+                <p>
+                  We believe gaming should be enjoyable and engaging. Our mods, modpacks, 
+                  and games are designed to create memorable experiences that bring 
+                  joy and excitement to players worldwide.
                 </p>
               </div>
             </div>
