@@ -137,6 +137,13 @@ body {
   position: relative;
 }
 
+.hero-centered {
+  min-height: calc(100vh - 140px); /* Subtract header and footer height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .search-hero {
   padding: 6rem 0;
   background: transparent;
