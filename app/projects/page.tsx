@@ -101,6 +101,7 @@ export default function Projects() {
   
   const projectTypes = ['Game', 'Modpack', 'Mod', 'Resourcepack', 'Shaderpack', 'Datapack', 'Map'];
   const statusTags = ['available', 'wip', 'discontinued'];
+  const statusLabels = { available: 'Available', wip: 'Work In Progress', discontinued: 'Discontinued' };
   const allFilters = [...projectTypes, ...statusTags];
   
   const filteredProjects = activeFilters.length === 0 
@@ -155,7 +156,7 @@ export default function Projects() {
                   className={`filter-btn ${activeFilters.includes(tag) ? 'active' : ''}`}
                   onClick={() => toggleFilter(tag)}
                 >
-                  {tag.charAt(0).toUpperCase() + tag.slice(1)}
+                  {statusLabels[tag as keyof typeof statusLabels]}
                 </button>
               ))}
             </div>
@@ -166,7 +167,7 @@ export default function Projects() {
                 <span className="filter-label">Active Filters:</span>
                 {activeFilters.map(filter => (
                   <div key={filter} className="active-tag">
-                    {filter}
+                    {statusLabels[filter as keyof typeof statusLabels] || filter}
                     <button 
                       className="remove-tag"
                       onClick={() => toggleFilter(filter)}
@@ -224,7 +225,7 @@ export default function Projects() {
                   <div className="project-overlay">
                     <div className="overlay-badges">
                       <span className={`project-status-badge ${project.status}-badge`}>
-                        {project.status}
+                        {statusLabels[project.status as keyof typeof statusLabels] || project.status}
                       </span>
                     </div>
                     <h3>{project.name}</h3>
