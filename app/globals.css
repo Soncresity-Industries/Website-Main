@@ -44,7 +44,7 @@ body {
 
 /* Header Styles */
 .header {
-  background-color: rgba(26, 26, 26, 0.9);
+  background: rgba(78, 78, 78, 0.196);
   backdrop-filter: blur(10px);
   color: white;
   padding: 1rem 0;
