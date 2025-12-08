@@ -1,0 +1,1 @@
+This directory contains all releases of [SI: Enhanced SUrvival Resources](https://github.com/Soncresity-Industries/MC-SIESR).
