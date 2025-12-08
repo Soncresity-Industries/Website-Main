@@ -20,7 +20,7 @@ const blogPosts: BlogPost[] = [
     excerpt: "This week we've been working on completely redesigning the combat mechanics for a more engaging and strategic gameplay experience.",
     date: "2025-12-08",
     tags: ["SI Aftermath", "Game Development", "Combat", "Weekly Update"],
-    image: "/blogs/si_aftermath_weekly_4.png",
+    image: "/blogs/si_aftermath_weekly_4.jpg",
     youtubeUrl: "https://youtu.be/Z3vgH5ml1AM"
   },
   {
@@ -29,7 +29,7 @@ const blogPosts: BlogPost[] = [
     excerpt: "Exploring the post-apocalyptic landscapes and the intricate world-building process that brings our vision to life.",
     date: "2025-12-01",
     tags: ["SI Aftermath", "Game Development", "Environment", "Weekly Update"],
-    image: "/blogs/si_aftermath_weekly_3.png",
+    image: "/blogs/si_aftermath_weekly_3.jpg",
     youtubeUrl: "https://youtu.be/Z3vgH5ml1AM"
   },
   {
@@ -38,7 +38,7 @@ const blogPosts: BlogPost[] = [
     excerpt: "Deep dive into character progression systems and the narrative elements that drive our immersive storytelling.",
     date: "2025-11-24",
     tags: ["SI Aftermath", "Game Development", "Story", "Weekly Update"],
-    image: "/blogs/si_aftermath_weekly_2.png",
+    image: "/blogs/si_aftermath_weekly_2.jpg",
     youtubeUrl: "https://youtu.be/Z3vgH5ml1AM"
   },
   {
@@ -47,7 +47,7 @@ const blogPosts: BlogPost[] = [
     excerpt: "Welcome to our development journey! Get the first look at SI Aftermath and what we're building for the gaming community.",
     date: "2025-11-17",
     tags: ["SI Aftermath", "Game Development", "Announcement", "Weekly Update"],
-    image: "/blogs/si_aftermath_weekly_1.png",
+    image: "/blogs/si_aftermath_weekly_1.jpg",
     youtubeUrl: "https://youtu.be/Z3vgH5ml1AM"
   }
 ];
