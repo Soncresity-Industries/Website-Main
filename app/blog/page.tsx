@@ -1,45 +1,54 @@
 'use client';
 
 import { useState } from 'react';
-import Link from 'next/link';
+import Image from 'next/image';
 
 interface BlogPost {
   id: number;
   title: string;
   excerpt: string;
-  author: string;
   date: string;
   tags: string[];
-  featured: boolean;
+  image: string;
+  youtubeUrl: string;
 }
 
 const blogPosts: BlogPost[] = [
   {
     id: 1,
-    title: "Getting Started with Minecraft Datapack Development",
-    excerpt: "Learn the fundamentals of creating custom Minecraft datapacks, from basic commands to advanced mechanics.",
-    author: "Soncresity Team",
-    date: "2024-01-15",
-    tags: ["Minecraft", "Development", "Tutorial"],
-    featured: true
+    title: "SI Aftermath Weekly Update #4 - Combat System Overhaul",
+    excerpt: "This week we've been working on completely redesigning the combat mechanics for a more engaging and strategic gameplay experience.",
+    date: "2024-12-08",
+    tags: ["SI Aftermath", "Game Development", "Combat", "Weekly Update"],
+    image: "/blogs/si_aftermath_weekly_4.png",
+    youtubeUrl: "https://youtu.be/Z3vgH5ml1AM"
   },
   {
     id: 2,
-    title: "The Future of Web Development: React and Next.js",
-    excerpt: "Exploring the latest trends in web development and how React and Next.js are shaping the future of the web.",
-    author: "Soncresity Team", 
-    date: "2024-01-10",
-    tags: ["Web Development", "React", "Next.js"],
-    featured: false
+    title: "SI Aftermath Weekly Update #3 - Environment & World Building",
+    excerpt: "Exploring the post-apocalyptic landscapes and the intricate world-building process that brings our vision to life.",
+    date: "2024-12-01",
+    tags: ["SI Aftermath", "Game Development", "Environment", "Weekly Update"],
+    image: "/blogs/si_aftermath_weekly_3.png",
+    youtubeUrl: "https://youtu.be/Z3vgH5ml1AM"
   },
   {
     id: 3,
-    title: "Building Efficient Development Tools",
-    excerpt: "Best practices for creating development tools that enhance productivity and streamline workflows.",
-    author: "Soncresity Team",
-    date: "2024-01-05", 
-    tags: ["Tools", "Development", "Productivity"],
-    featured: false
+    title: "SI Aftermath Weekly Update #2 - Character Development & Story",
+    excerpt: "Deep dive into character progression systems and the narrative elements that drive our immersive storytelling.",
+    date: "2024-11-24",
+    tags: ["SI Aftermath", "Game Development", "Story", "Weekly Update"],
+    image: "/blogs/si_aftermath_weekly_2.png",
+    youtubeUrl: "https://youtu.be/Z3vgH5ml1AM"
+  },
+  {
+    id: 4,
+    title: "SI Aftermath Weekly Update #1 - Project Announcement",
+    excerpt: "Welcome to our development journey! Get the first look at SI Aftermath and what we're building for the gaming community.",
+    date: "2024-11-17",
+    tags: ["SI Aftermath", "Game Development", "Announcement", "Weekly Update"],
+    image: "/blogs/si_aftermath_weekly_1.png",
+    youtubeUrl: "https://youtu.be/Z3vgH5ml1AM"
   }
 ];
 
@@ -51,50 +60,35 @@ export default function Blog() {
   const filteredPosts = activeTag 
     ? blogPosts.filter(post => post.tags.includes(activeTag))
     : blogPosts;
-    
-  const featuredPosts = blogPosts.filter(post => post.featured);
+
+  const formatDate = (dateString: string) => {
+    const date = new Date(dateString);
+    return date.toLocaleDateString('en-US', { 
+      year: 'numeric', 
+      month: 'long', 
+      day: 'numeric' 
+    });
+  };
+
+  const formatTime = (dateString: string) => {
+    const date = new Date(dateString);
+    return date.toLocaleTimeString('en-US', {
+      hour: '2-digit',
+      minute: '2-digit'
+    });
+  };
 
   return (
     <div className="page-overlay">
-      <section className="blog-page">
+      <section className="content-section">
         <div className="container">
           <h2 style={{ textAlign: 'center', color: '#fff', fontSize: 'clamp(2rem, 4vw, 2.5rem)', marginBottom: '3rem' }}>
-            Our Blog
+            Development Blog
           </h2>
           
-          {/* Featured Posts */}
-          {featuredPosts.length > 0 && (
-            <div className="featured-posts">
-              <h2>Featured Posts</h2>
-              <div className="featured-posts-grid">
-                {featuredPosts.map(post => (
-                  <article key={post.id} className="blog-post-card">
-                    <div className="featured-badge">Featured</div>
-                    <Link href={`/blog/${post.id}`} className="blog-post-title">
-                      {post.title}
-                    </Link>
-                    <div className="blog-post-meta">
-                      <span className="blog-post-author">By {post.author}</span>
-                      <span className="blog-post-date">{new Date(post.date).toLocaleDateString()}</span>
-                    </div>
-                    <p className="blog-post-excerpt">{post.excerpt}</p>
-                    <div className="blog-post-tags">
-                      {post.tags.map(tag => (
-                        <span key={tag} className="blog-tag">{tag}</span>
-                      ))}
-                    </div>
-                    <Link href={`/blog/${post.id}`} className="read-more-btn">
-                      Read More
-                    </Link>
-                  </article>
-                ))}
-              </div>
-            </div>
-          )}
-
           {/* Blog Filters */}
           <div className="blog-filters">
-            <h3>Filter by Topic</h3>
+            <h3>Filter by Tag</h3>
             <div className="tag-filters">
               <button
                 className={`tag-filter ${activeTag === null ? 'active' : ''}`}
@@ -114,39 +108,52 @@ export default function Blog() {
             </div>
           </div>
 
-          {/* All Posts */}
-          <div className="all-posts">
-            <h2>
-              {activeTag ? `Posts tagged with "${activeTag}"` : 'All Posts'}
-            </h2>
-            
+          {/* Blog Posts */}
+          <div className="blog-posts-list">
             {filteredPosts.length > 0 ? (
-              <div className="blog-posts-grid">
-                {filteredPosts.map(post => (
-                  <article key={post.id} className="blog-post-card">
-                    {post.featured && <div className="featured-badge">Featured</div>}
-                    <Link href={`/blog/${post.id}`} className="blog-post-title">
-                      {post.title}
-                    </Link>
-                    <div className="blog-post-meta">
-                      <span className="blog-post-author">By {post.author}</span>
-                      <span className="blog-post-date">{new Date(post.date).toLocaleDateString()}</span>
+              filteredPosts.map(post => (
+                <article key={post.id} className="blog-post-item">
+                  <div className="blog-post-image">
+                    <Image
+                      src={post.image}
+                      alt={post.title}
+                      width={400}
+                      height={200}
+                      className="blog-image"
+                    />
+                  </div>
+                  
+                  <div className="blog-post-content">
+                    <div className="blog-post-header">
+                      <h3 className="blog-post-title">{post.title}</h3>
+                      <div className="blog-post-meta">
+                        <span className="blog-post-date">{formatDate(post.date)}</span>
+                        <span className="blog-post-time">{formatTime(post.date)}</span>
+                      </div>
                     </div>
+                    
                     <p className="blog-post-excerpt">{post.excerpt}</p>
+                    
                     <div className="blog-post-tags">
                       {post.tags.map(tag => (
                         <span key={tag} className="blog-tag">{tag}</span>
                       ))}
                     </div>
-                    <Link href={`/blog/${post.id}`} className="read-more-btn">
-                      Read More
-                    </Link>
-                  </article>
-                ))}
-              </div>
+                    
+                    <a 
+                      href={post.youtubeUrl} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="blog-watch-btn"
+                    >
+                      Watch on YouTube →
+                    </a>
+                  </div>
+                </article>
+              ))
             ) : (
               <div className="no-posts">
-                <p>No posts found for the selected topic.</p>
+                <p>No posts found for the selected tag.</p>
               </div>
             )}
           </div>
