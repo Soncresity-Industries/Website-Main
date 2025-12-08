@@ -6,30 +6,93 @@ import Link from 'next/link';
 const projects = [
   {
     id: 1,
-    name: "Height Datapack Generator",
-    type: "Tool",
-    description: "A powerful tool for generating Minecraft datapacks that modify player height mechanics.",
+    name: "SI Refined Obsidian",
+    type: "Minecraft Mod",
+    description: "Enhanced obsidian mechanics and features for Minecraft gameplay.",
     status: "available",
-    tags: ["Minecraft", "Datapack", "Web Tool"],
-    logo: "/projects/height-generator-logo.png"
+    tags: ["Minecraft", "Mod", "Enhancement"],
+    logo: "/projects/si_refined_obsidian.png"
   },
   {
     id: 2,
-    name: "ElectricBorder Component",
-    type: "Library",
-    description: "A React component library for creating animated electric border effects.",
-    status: "native",
-    tags: ["React", "Component", "Animation"],
-    logo: "/projects/electric-border-logo.png"
+    name: "SI Death Bolt",
+    type: "Minecraft Mod", 
+    description: "A powerful lightning-based combat mod for Minecraft.",
+    status: "available",
+    tags: ["Minecraft", "Mod", "Combat"],
+    logo: "/projects/si_death_bolt.png"
   },
   {
     id: 3,
-    name: "Modpack Collection",
-    type: "Gaming",
-    description: "Curated collection of Minecraft modpacks with enhanced gameplay experiences.",
-    status: "partnered",
-    tags: ["Minecraft", "Modpack", "Gaming"],
-    logo: "/projects/modpack-logo.png"
+    name: "SI Lifesteal",
+    type: "Minecraft Mod",
+    description: "Life-stealing mechanics and abilities for enhanced survival gameplay.",
+    status: "available", 
+    tags: ["Minecraft", "Mod", "Survival"],
+    logo: "/projects/si_lifesteal.png"
+  },
+  {
+    id: 4,
+    name: "SI Item Remover",
+    type: "Minecraft Mod",
+    description: "Utility mod for efficient item management and removal systems.",
+    status: "available",
+    tags: ["Minecraft", "Mod", "Utility"],
+    logo: "/projects/si_item_remover.png"
+  },
+  {
+    id: 5,
+    name: "SI Spectre",
+    type: "Minecraft Mod", 
+    description: "Spectral abilities and ghost-like mechanics for Minecraft.",
+    status: "available",
+    tags: ["Minecraft", "Mod", "Supernatural"],
+    logo: "/projects/si_spectre.png"
+  },
+  {
+    id: 6,
+    name: "SI Scriptified",
+    type: "Minecraft Mod",
+    description: "Advanced scripting capabilities for Minecraft modding.",
+    status: "available",
+    tags: ["Minecraft", "Mod", "Scripting"],
+    logo: "/projects/si_scriptified.png"
+  },
+  {
+    id: 7,
+    name: "SI Crownfall",
+    type: "Minecraft Mod",
+    description: "Epic fantasy adventure mod with crown-themed gameplay elements.",
+    status: "available",
+    tags: ["Minecraft", "Mod", "Adventure"],
+    logo: "/projects/si_crownfall.png"
+  },
+  {
+    id: 8,
+    name: "SI Credits",
+    type: "Minecraft Mod",
+    description: "Credit system and acknowledgment features for Minecraft servers.",
+    status: "available",
+    tags: ["Minecraft", "Mod", "Server"],
+    logo: "/projects/si_credits.png"
+  },
+  {
+    id: 9,
+    name: "Soncresity Aftermath",
+    type: "Game Project",
+    description: "Post-apocalyptic survival game with immersive storytelling.",
+    status: "wip",
+    tags: ["Game", "Survival", "Story"],
+    logo: "/projects/soncresity_aftermath.png"
+  },
+  {
+    id: 10,
+    name: "Soncresity Fractured Horizons",
+    type: "Game Project", 
+    description: "Sci-fi exploration game set in fractured dimensional worlds.",
+    status: "wip",
+    tags: ["Game", "Sci-Fi", "Exploration"],
+    logo: "/projects/soncresity_fractured_horizons.png"
   }
 ];
 
