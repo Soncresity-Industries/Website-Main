@@ -1,0 +1,1 @@
+This directory contains all releases of [SI: Key Sync](https://github.com/Soncresity-Industries/MC-SIKS).
