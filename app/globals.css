@@ -1,3 +1,8 @@
+/* Rotating Text Blue Background */
+.rotating-text-blue {
+  background-color: #026DCA !important;
+}
+
 /* Font Declarations */
 @font-face {
   font-family: 'SerephixBold';
