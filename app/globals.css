@@ -1156,6 +1156,12 @@ body {
   font-size: 2rem;
 }
 
+.social-intro {
+  color: #e0e0e0;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
 .social-links-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));

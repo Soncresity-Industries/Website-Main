@@ -74,7 +74,7 @@ export default function SocialLinks() {
   return (
     <div className="social-links-section">
       <h3>Connect With Us</h3>
-      <p style={{ color: '#e0e0e0', marginBottom: '2rem', textAlign: 'center' }}>
+      <p className="social-intro">
         Follow us on social media to stay updated with our latest projects and announcements
       </p>
       
