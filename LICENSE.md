@@ -1,0 +1,1 @@
+Soncresity Standard License (SSL) applies.
