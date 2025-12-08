@@ -1,1 +1,0 @@
-This directory contains all releases of [SChat](https://github.com/Soncresity-Industries/MC-SILS).
