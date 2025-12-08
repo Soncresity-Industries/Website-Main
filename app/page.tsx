@@ -46,6 +46,9 @@ export default async function Home() {
                   />
                   <span>experiences</span>
                 </h2>
+                <p className="hero-subtitle">
+                  Creators of immersive worlds, game mechanics, and stories tailored for Minecraft players and server communities worldwide
+                </p>
               </div>
             </div>
             
