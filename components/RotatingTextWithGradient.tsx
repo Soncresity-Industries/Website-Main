@@ -14,7 +14,7 @@ interface RotatingTextProps {
   staggerDuration?: number;
   splitLevelClassName?: string;
   transition?: {
-    type: string;
+    type: "spring" | "tween" | "keyframes" | "inertia";
     damping: number;
     stiffness: number;
   };
@@ -34,7 +34,7 @@ export default function RotatingTextWithGradient({
   exit = { y: '-120%' },
   staggerDuration = 0.025,
   splitLevelClassName = '',
-  transition = { type: 'spring', damping: 30, stiffness: 400 },
+  transition = { type: 'spring' as const, damping: 30, stiffness: 400 },
   rotationInterval = 2000,
   useGradient = false,
   gradientColors = ["#40ffaa", "#4079ff", "#40ffaa", "#4079ff", "#40ffaa"],
