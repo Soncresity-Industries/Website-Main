@@ -1,6 +1,6 @@
-/* Hero Text Container */
+﻿/* Hero Text Container */
 .hero-text-container {
-  background: rgba(78, 78, 78, 0.196);
+  background: rgba(46, 46, 46, 0.196);
   backdrop-filter: blur(10px);
   padding: 3rem 2rem;
   border-radius: 12px;
@@ -89,7 +89,7 @@ body {
 
 /* Header Styles */
 .header {
-  background: rgba(78, 78, 78, 0.196);
+  background: rgba(46, 46, 46, 0.196);
   backdrop-filter: blur(10px);
   color: white;
   padding: 1rem 0;
@@ -205,7 +205,7 @@ body {
   border: none;
   border-radius: 50px;
   outline: none;
-  background-color: rgba(78, 78, 78, 0.5);
+  background-color: rgba(46, 46, 46, 0.5);
   backdrop-filter: blur(5px);
   color: white;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
@@ -214,7 +214,7 @@ body {
 
 .search-input:focus {
   box-shadow: 0 6px 30px rgba(0, 0, 0, 0.2);
-  background-color: rgba(78, 78, 78, 0.6);
+  background-color: rgba(46, 46, 46, 0.6);
 }
 
 .search-input::placeholder {
@@ -245,18 +245,18 @@ body {
 }
 
 .site-search {
-  background-color: rgba(78, 78, 78, 0.5);
+  background-color: rgba(46, 46, 46, 0.5);
   color: white;
-  border: 2px solid rgba(78, 78, 78, 0.5);
+  border: 2px solid rgba(46, 46, 46, 0.5);
   backdrop-filter: blur(5px);
 }
 
 .site-search:hover:not(:disabled) {
-  background-color: rgba(78, 78, 78, 0.7);
+  background-color: rgba(46, 46, 46, 0.7);
   color: #ffffff;
-  border-color: rgba(78, 78, 78, 0.7);
+  border-color: rgba(46, 46, 46, 0.7);
   transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(78, 78, 78, 0.3);
+  box-shadow: 0 4px 15px rgba(46, 46, 46, 0.3);
 }
 
 .google-search {
@@ -292,7 +292,7 @@ body {
 /* Features Section */
 .features {
   padding: 4rem 0;
-  background-color: rgba(78, 78, 78, 0.196);
+  background-color: rgba(46, 46, 46, 0.196);
   backdrop-filter: blur(10px);
 }
 
@@ -311,7 +311,7 @@ body {
 }
 
 .feature-card {
-  background: rgba(78, 78, 78, 0.196);
+  background: rgba(46, 46, 46, 0.196);
   backdrop-filter: blur(10px);
   padding: 2rem;
   border-radius: 12px;
@@ -367,7 +367,7 @@ body {
 }
 
 .content-section .container {
-  background: rgba(78, 78, 78, 0.196);
+  background: rgba(46, 46, 46, 0.196);
   backdrop-filter: blur(5px);
   border-radius: 12px;
   padding: 3rem 2rem;
@@ -398,7 +398,7 @@ body {
 }
 
 .value-card {
-  background: rgba(78, 78, 78, 0.196);
+  background: rgba(46, 46, 46, 0.196);
   backdrop-filter: blur(10px);
   padding: 1.5rem;
   border-radius: 8px;
@@ -441,11 +441,11 @@ body {
   justify-content: center;
   flex-wrap: wrap;
   margin-bottom: 1rem;
-  background: rgba(78, 78, 78, 0.6);
+  background: rgba(46, 46, 46, 0.6);
   border-radius: 25px;
   padding: 0.3rem;
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(78, 78, 78, 0.3);
+  border: 1px solid rgba(46, 46, 46, 0.3);
 }
 
 .filter-btn {
@@ -610,7 +610,7 @@ body {
 }
 
 .project-card {
-  background: rgba(78, 78, 78, 0.196);
+  background: rgba(46, 46, 46, 0.196);
   backdrop-filter: blur(10px);
   padding: 2rem;
   border-radius: 12px;
@@ -759,7 +759,7 @@ body {
   right: -0.5rem;
   width: 20px;
   height: 20px;
-  background: rgba(78, 78, 78, 0.9);
+  background: rgba(46, 46, 46, 0.9);
   color: #fff;
   border-radius: 50%;
   display: flex;
@@ -940,7 +940,7 @@ body {
 
 /* Contact Form */
 .contact-form {
-  background: rgba(78, 78, 78, 0.196);
+  background: rgba(46, 46, 46, 0.196);
   backdrop-filter: blur(10px);
   padding: 2rem;
   border-radius: 12px;
@@ -993,7 +993,7 @@ body {
 
 /* Height Datapack Generator Styles */
 .height-generator {
-  background: rgba(78, 78, 78, 0.196);
+  background: rgba(46, 46, 46, 0.196);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(222, 226, 230, 0.3);
   border-radius: 12px;
@@ -1089,7 +1089,7 @@ body {
 }
 
 .tool-card {
-  background: rgba(78, 78, 78, 0.196);
+  background: rgba(46, 46, 46, 0.196);
   backdrop-filter: blur(10px);
   border-radius: 12px;
   padding: 2rem;
@@ -1136,9 +1136,9 @@ body {
 }
 
 .tag-filter {
-  background: rgba(78, 78, 78, 0.5);
+  background: rgba(46, 46, 46, 0.5);
   color: #fff;
-  border: 2px solid rgba(78, 78, 78, 0.5);
+  border: 2px solid rgba(46, 46, 46, 0.5);
   padding: 0.5rem 1rem;
   border-radius: 25px;
   cursor: pointer;
@@ -1166,7 +1166,7 @@ body {
 }
 
 .blog-post-item {
-  background: rgba(78, 78, 78, 0.196);
+  background: rgba(46, 46, 46, 0.196);
   backdrop-filter: blur(10px);
   border-radius: 12px;
   padding: 2rem;
@@ -1203,9 +1203,9 @@ body {
 .blog-share-btn,
 .blog-discord-btn {
   flex: 1;
-  background: rgba(78, 78, 78, 0.6);
+  background: rgba(46, 46, 46, 0.6);
   color: white;
-  border: 1px solid rgba(78, 78, 78, 0.3);
+  border: 1px solid rgba(46, 46, 46, 0.3);
   border-radius: 6px;
   padding: 8px 12px;
   font-size: 0.85rem;
@@ -1515,7 +1515,7 @@ body {
 }
 
 .social-link-card {
-  background: rgba(78, 78, 78, 0.196);
+  background: rgba(46, 46, 46, 0.196);
   backdrop-filter: blur(10px);
   padding: 2rem;
   border-radius: 12px;
