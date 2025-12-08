@@ -13,7 +13,7 @@ interface RotatingTextProps {
   staggerDuration?: number;
   splitLevelClassName?: string;
   transition?: {
-    type: string;
+    type: "spring" | "tween" | "keyframes" | "inertia";
     damping: number;
     stiffness: number;
   };
@@ -29,7 +29,7 @@ export default function RotatingText({
   exit = { y: '-120%' },
   staggerDuration = 0.025,
   splitLevelClassName = '',
-  transition = { type: 'spring', damping: 30, stiffness: 400 },
+  transition = { type: 'spring' as const, damping: 30, stiffness: 400 },
   rotationInterval = 2000,
 }: RotatingTextProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
