@@ -569,6 +569,25 @@ body {
   margin-bottom: 1.5rem;
 }
 
+/* Project Tags */
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.project-tags .tag {
+  background: rgba(47, 151, 221, 0.2);
+  color: #2F97DD;
+  padding: 0.25rem 0.75rem;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  border: 1px solid rgba(47, 151, 221, 0.3);
+}
+
 /* Project Overview Cards */
 .project-overview {
   position: relative;
