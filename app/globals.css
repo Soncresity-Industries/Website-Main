@@ -453,13 +453,25 @@ body {
   color: #fff;
   border: none;
   padding: 0.5rem 1rem;
-  border-radius: 21px;
+  border-radius: 0;
   cursor: pointer;
   font-weight: 500;
   transition: all 0.3s ease;
   font-size: 0.9rem;
   position: relative;
   z-index: 1;
+}
+
+.filter-btn:first-child {
+  border-radius: 21px 0 0 21px;
+}
+
+.filter-btn:last-child {
+  border-radius: 0 21px 21px 0;
+}
+
+.filter-btn:only-child {
+  border-radius: 21px;
 }
 
 .filter-btn:hover {
@@ -471,6 +483,18 @@ body {
   background: linear-gradient(135deg, #2F97DD 0%, #026DCA 100%);
   color: white;
   box-shadow: 0 2px 8px rgba(47, 151, 221, 0.3);
+}
+
+.filter-btn.active:first-child {
+  border-radius: 21px 0 0 21px;
+}
+
+.filter-btn.active:last-child {
+  border-radius: 0 21px 21px 0;
+}
+
+.filter-btn.active:only-child {
+  border-radius: 21px;
 }
 
 /* Responsive Filter Buttons */
