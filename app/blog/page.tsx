@@ -54,12 +54,24 @@ const blogPosts: BlogPost[] = [
 
 export default function Blog() {
   const [activeTag, setActiveTag] = useState<string | null>(null);
+  const [copiedId, setCopiedId] = useState<number | null>(null);
   
   const allTags = [...new Set(blogPosts.flatMap(post => post.tags))];
   
   const filteredPosts = activeTag 
     ? blogPosts.filter(post => post.tags.includes(activeTag))
     : blogPosts;
+
+  const copyToClipboard = async (postId: number) => {
+    const url = `${window.location.origin}${window.location.pathname}#post-${postId}`;
+    try {
+      await navigator.clipboard.writeText(url);
+      setCopiedId(postId);
+      setTimeout(() => setCopiedId(null), 2000);
+    } catch (err) {
+      console.error('Failed to copy: ', err);
+    }
+  };
 
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
@@ -112,15 +124,49 @@ export default function Blog() {
           <div className="blog-posts-list">
             {filteredPosts.length > 0 ? (
               filteredPosts.map(post => (
-                <article key={post.id} className="blog-post-item">
-                  <div className="blog-post-image">
-                    <Image
-                      src={post.image}
-                      alt={post.title}
-                      width={400}
-                      height={200}
-                      className="blog-image"
-                    />
+                <article key={post.id} id={`post-${post.id}`} className="blog-post-item">
+                  <div className="blog-post-image-container">
+                    <div className="blog-post-image">
+                      <Image
+                        src={post.image}
+                        alt={post.title}
+                        width={400}
+                        height={200}
+                        className="blog-image"
+                      />
+                    </div>
+                    <div className="blog-post-buttons">
+                      <button 
+                        className="blog-share-btn"
+                        onClick={() => copyToClipboard(post.id)}
+                        title="Share this post"
+                      >
+                        <Image 
+                          src="/icons/share.png" 
+                          alt="Share" 
+                          width={16} 
+                          height={16} 
+                          className="button-icon"
+                        />
+                        {copiedId === post.id ? 'Copied!' : 'Share'}
+                      </button>
+                      <a 
+                        href="https://discord.gg/uqbQvAHHve"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="blog-discord-btn"
+                        title="Join our Discord"
+                      >
+                        <Image 
+                          src="/icons/discord.png" 
+                          alt="Discord" 
+                          width={16} 
+                          height={16} 
+                          className="button-icon"
+                        />
+                        Discord
+                      </a>
+                    </div>
                   </div>
                   
                   <div className="blog-post-content">
