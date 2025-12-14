@@ -1,1 +1,0 @@
-This directory contains all releases of [SI: Axite](https://github.com/Soncresity-Industries/MC-SIAI).

@@ -1,1 +1,0 @@
-This directory contains all releases of [SI: Death Bolt](https://github.com/Soncresity-Industries/MC-SIDB).

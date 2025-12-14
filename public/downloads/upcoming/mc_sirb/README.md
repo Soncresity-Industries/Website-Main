@@ -1,1 +1,0 @@
-This directory contains all releases of [SI: Ruinborn](https://github.com/Soncresity-Industries/MC-SIRB).

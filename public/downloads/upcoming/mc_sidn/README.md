@@ -1,1 +1,0 @@
-This directory contains all releases of [SI: Darkness](https://github.com/Soncresity-Industries/MC-SIDN).

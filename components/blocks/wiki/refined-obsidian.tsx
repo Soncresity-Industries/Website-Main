@@ -14,7 +14,7 @@ import {
   Pickaxe,
   Scissors,
 } from "lucide-react"
-// import Footer from "@/components/blocks/footer"
+import Footer from "@/components/blocks/footer"
 import {useTheme} from "next-themes"
 import {useEffect, useState} from "react"
 import {LINKS} from "@/components/blocks/links"
@@ -582,7 +582,7 @@ export default function ROWiki() {
         </div>
 
         {/* Footer */}
-        {/* <Footer/> */}
+        <Footer/>
       </div>
     </PageWrapper>
   )

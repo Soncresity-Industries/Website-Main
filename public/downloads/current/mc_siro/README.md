@@ -1,1 +1,0 @@
-This directory contains all releases of [SI: Refined Obsidian](https://github.com/Soncresity-Industries/MC-SIRO).

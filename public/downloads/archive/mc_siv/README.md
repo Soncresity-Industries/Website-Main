@@ -1,1 +1,0 @@
-This directory contains all releases of [SI: Videos](https://github.com/Soncresity-Industries/MC-SIV).

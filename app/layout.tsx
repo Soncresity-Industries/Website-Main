@@ -1,69 +1,56 @@
-import type { Metadata } from "next";
-import "./globals.css";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+import type React from "react"
+import type {Metadata} from "next"
+import {Inter} from "next/font/google"
+import "./global.css"
+import {ThemeProvider} from "@/components/theme-provider"
+import { Geist } from 'next/font/google'
+import localFont from 'next/font/local';
+
+const serephixBold = localFont({
+  src: './font/SerephixBold.ttf',
+  weight: '700',
+  style: 'normal',
+  variable: '--font-serephixbold',
+});
+
+const serephixRegular = localFont({
+  src: './font/SerephixRegular.ttf',
+  weight: '400',
+  style: 'normal',
+  variable: '--font-serephixregular',
+});
+
+const geist = Geist({
+  subsets: ['latin'],
+})
+const inter = Inter({subsets: ["latin"]})
 
 export const metadata: Metadata = {
-  title: {
-    template: '%s - Soncresity Industries',
-    default: 'Soncresity Industries - Innovative Software Solutions',
-  },
-  description: 'Discover innovative software solutions, gaming projects, and development tools from Soncresity Industries.',
-  keywords: ['software development', 'gaming', 'minecraft', 'tools', 'modpacks', 'soncresity industries'],
-  authors: [{ name: 'Soncresity Industries' }],
-  openGraph: {
-    siteName: 'Soncresity Industries',
-    locale: 'en_US',
-    type: 'website',
-  },
-  manifest: '/site.webmanifest',
-  icons: [
-    {
-      rel: 'icon',
-      type: 'image/png',
-      url: '/favicon-96x96.png',
-      sizes: '96x96',
-    },
-    {
-      rel: 'icon',
-      type: 'image/svg+xml',
-      url: '/favicon.svg',
-    },
-    {
-      rel: 'shortcut icon',
-      url: '/favicon.ico',
-    },
-    {
-      rel: 'apple-touch-icon',
-      sizes: '180x180',
-      url: '/apple-touch-icon.png',
-    },
-  ],
-  other: {
-    'apple-mobile-web-app-title': 'Soncresity Industries',
-  },
-};
+  title: "Soncresity Industries",
+  description: "The official Website of Soncresity Industries",
+}
 
 export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+                                     children,
+                                   }: {
+  children: React.ReactNode
+}) {
   return (
-    <html lang="en">
-      <body>
-        <video autoPlay muted loop className="background-video">
-          <source src="/bg.mp4" type="video/mp4" />
-        </video>
-        
-        <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', width: '100%', position: 'relative' }}>
-          <Header />
-          <main className="main">
-            {children}
-          </main>
-          <Footer />
-        </div>
-      </body>
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={`${serephixBold.variable} ${serephixRegular.variable}`}
+    >
+    <body className={inter.className}>
+    <ThemeProvider
+      attribute="class"
+      defaultTheme="light"
+      enableSystem={false}
+      disableTransitionOnChange
+    >
+      {children}
+    </ThemeProvider>
+    </body>
     </html>
-  );
+  )
 }

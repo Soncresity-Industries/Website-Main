@@ -1,1 +1,0 @@
-This directory contain random developer notes. Those notes arent meant for the end user but cn be viewed so don't put stuff into here that is confidential!

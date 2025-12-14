@@ -1,64 +1,58 @@
-import Link from 'next/link';
-import RotatingText from '../components/RotatingText';
-import ProjectCarousel from '../components/ProjectCarousel';
-import { getProjectImages } from '../lib/getProjectImages';
+import { Metadata } from 'next'
+import {SpeedInsights} from "@vercel/speed-insights/next"
+import {Analytics} from "@vercel/analytics/next"
+import {PageWrapper} from "@/components/page-wrapper"
+import Header from "@/components/blocks/header"
+import HomeBlock from "@/components/blocks/home"
+import Team from "@/components/blocks/team"
+import Footer from "@/components/blocks/footer"
+import Projects from "@/components/blocks/projects"
+import About from "@/components/blocks/about";
+import Socials from "@/components/blocks/socials";
+import Support from "@/components/blocks/support";
+import Partners from "@/components/blocks/partners";
+import {metadataImageHeight, metadataImageWidth} from "@/components/variables";
 
-export default async function Home() {
-  const projectImages = await getProjectImages();
+export const metadata: Metadata = {
+  title: "Soncresity Industries",
+  description: "The official Website of Soncresity Industries",
+  openGraph: {
+    title: "Soncresity Industries",
+    description: "The official Website of Soncresity Industries",
+    images: [
+      {
+        url: "https://soncresityindustries.vercel.app/assets/si-logo-transparent.png",
+        width: metadataImageWidth,
+        height: metadataImageHeight,
+      },
+    ],
+  },
+}
 
+export default function Home() {
   return (
-    <>
-      {/* Hero Section */}
-      <section className="hero hero-centered">
-        <div className="container">
-          <div style={{ 
-            display: 'flex', 
-            alignItems: 'center', 
-            justifyContent: 'space-between',
-            gap: '4rem',
-            minHeight: 'auto',
-            flexDirection: 'row'
-          }}
-          className="hero-layout">
-            {/* Left side - Text */}
-            <div style={{ flex: 1 }} className="hero-text">
-              <div className="hero-text-container">
-                <h2 style={{ 
-                  display: 'flex', 
-                  flexDirection: 'column', 
-                  alignItems: 'flex-start', 
-                  justifyContent: 'flex-start', 
-                  gap: '1rem',
-                  textAlign: 'left'
-                }}>
-                  <span>Creating</span>
-                  <RotatingText
-                    texts={['extraordinary', 'exceptional', 'advanced', 'modern', 'high quality', 'thrilling', 'enjoyable', 'unique', 'stunning', 'epic', 'vibrant', 'smooth', 'individual']}
-                    mainClassName="rotating-text-blue px-2 sm:px-2 md:px-3 overflow-hidden py-0.5 sm:py-1 md:py-2 justify-center rounded-lg"
-                    staggerFrom="last"
-                    initial={{ y: "100%" }}
-                    animate={{ y: 0 }}
-                    exit={{ y: "-120%" }}
-                    staggerDuration={0.025}
-                    splitLevelClassName="overflow-hidden pb-0.5 sm:pb-1 md:pb-1"
-                    transition={{ type: "spring", damping: 30, stiffness: 400 }}
-                    rotationInterval={2000}
-                  />
-                  <span>experiences</span>
-                </h2>
-                <p className="hero-subtitle">
-                  Creators of immersive worlds, game mechanics, and stories tailored for Minecraft players and server communities worldwide
-                </p>
-              </div>
-            </div>
-            
-            {/* Right side - Project Carousel */}
-            <div style={{ flex: 1, display: 'flex', justifyContent: 'center' }} className="hero-carousel">
-              <ProjectCarousel projectImages={projectImages} />
-            </div>
-          </div>
-        </div>
-      </section>
-    </>
-  );
+    <PageWrapper backgroundInterval={30000}>
+      <main className="min-h-screen relative">
+        <Header/>
+        <SpeedInsights/>
+        <Analytics/>
+
+        <HomeBlock/>
+
+        <About/>
+
+        <Projects py={0} viewall={true}/>
+
+        <Socials/>
+
+        <Team/>
+
+        <Support/>
+
+        <Partners/>
+
+        <Footer/>
+      </main>
+    </PageWrapper>
+  )
 }

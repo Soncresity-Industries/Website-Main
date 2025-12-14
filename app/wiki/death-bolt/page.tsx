@@ -35,8 +35,8 @@ export default function Death_Bolt_WikiPage() {
         breadcrumbs={[
           { title: "SI: Death Bolt", href: "/wiki/death-bolt" }
         ]}
-        prevPage={{ title: "Previous", href: "#" }}
-        nextPage={{ title: "Next", href: "#" }}
+        prevPage="#"
+        nextPage="#"
         editUrl="https://github.com/SkyKingPX/SI-Website/edit/master/app/wiki/death-bolt/page.tsx"
       />
     </WikiLayout>
