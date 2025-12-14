@@ -11,7 +11,8 @@ const projects = [
     description: "Enhanced obsidian mechanics and features for Minecraft gameplay.",
     status: "available",
     tags: ["Minecraft", "Mod", "Enhancement"],
-    logo: "/projects/si_refined_obsidian.png"
+    logo: "/projects/si_refined_obsidian.png",
+    wikiPath: "/wiki/refined-obsidian"
   },
   {
     id: 2,
@@ -20,7 +21,8 @@ const projects = [
     description: "A powerful lightning-based combat mod for Minecraft.",
     status: "available",
     tags: ["Minecraft", "Mod", "Combat"],
-    logo: "/projects/si_death_bolt.png"
+    logo: "/projects/si_death_bolt.png",
+    wikiPath: "/wiki/death-bolt"
   },
   {
     id: 3,
@@ -29,7 +31,8 @@ const projects = [
     description: "Life-stealing mechanics and abilities for enhanced survival gameplay.",
     status: "available", 
     tags: ["Minecraft", "Mod", "Survival"],
-    logo: "/projects/si_lifesteal.png"
+    logo: "/projects/si_lifesteal.png",
+    wikiPath: "/wiki/si-lifesteal"
   },
   {
     id: 4,
@@ -38,7 +41,8 @@ const projects = [
     description: "Utility mod for efficient item management and removal systems.",
     status: "available",
     tags: ["Minecraft", "Mod", "Utility"],
-    logo: "/projects/si_item_remover.png"
+    logo: "/projects/si_item_remover.png",
+    wikiPath: "/wiki/si-item-remover"
   },
   {
     id: 5,
@@ -47,7 +51,8 @@ const projects = [
     description: "Spectral abilities and ghost-like mechanics for Minecraft.",
     status: "available",
     tags: ["Minecraft", "Mod", "Supernatural"],
-    logo: "/projects/si_spectre.png"
+    logo: "/projects/si_spectre.png",
+    wikiPath: "/wiki/si-spectre"
   },
   {
     id: 6,
@@ -56,7 +61,8 @@ const projects = [
     description: "Advanced scripting capabilities for Minecraft modding.",
     status: "available",
     tags: ["Minecraft", "Mod", "Scripting"],
-    logo: "/projects/si_scriptified.png"
+    logo: "/projects/si_scriptified.png",
+    wikiPath: "/wiki/si-scriptified"
   },
   {
     id: 7,
@@ -65,7 +71,8 @@ const projects = [
     description: "Epic fantasy adventure mod with crown-themed gameplay elements.",
     status: "available",
     tags: ["Minecraft", "Mod", "Adventure"],
-    logo: "/projects/si_crownfall.png"
+    logo: "/projects/si_crownfall.png",
+    wikiPath: "/wiki/si-crownfall"
   },
   {
     id: 8,
@@ -74,7 +81,8 @@ const projects = [
     description: "Credit system and acknowledgment features for Minecraft servers.",
     status: "available",
     tags: ["Minecraft", "Mod", "Server"],
-    logo: "/projects/si_credits.png"
+    logo: "/projects/si_credits.png",
+    wikiPath: "/wiki/si-credits"
   },
   {
     id: 9,
@@ -83,7 +91,8 @@ const projects = [
     description: "Post-apocalyptic survival game with immersive storytelling.",
     status: "wip",
     tags: ["Game", "Survival", "Story"],
-    logo: "/projects/soncresity_aftermath.png"
+    logo: "/projects/soncresity_aftermath.png",
+    wikiPath: "/projects/soncresity-aftermath"
   },
   {
     id: 10,
@@ -92,7 +101,8 @@ const projects = [
     description: "Sci-fi exploration game set in fractured dimensional worlds.",
     status: "wip",
     tags: ["Game", "Sci-Fi", "Exploration"],
-    logo: "/projects/soncresity_fractured_horizons.png"
+    logo: "/projects/soncresity_fractured_horizons.png",
+    wikiPath: "/projects/soncresity-fractured-horizons"
   }
 ];
 
@@ -230,7 +240,7 @@ export default function Projects() {
                     </div>
                     <h3>{project.name}</h3>
                     <p className="project-type">{project.type} Project</p>
-                    <Link href={`/projects/${project.id}`} className="wiki-btn">
+                    <Link href={project.wikiPath || '#'} className="wiki-btn">
                       View Details
                     </Link>
                   </div>
