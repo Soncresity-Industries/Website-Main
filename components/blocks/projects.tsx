@@ -6,8 +6,8 @@ import {ArrowRight} from "lucide-react"
 import {Button} from "@/components/ui/button"
 import {Card, CardDescription, CardFooter, CardHeader, CardTitle} from "@/components/ui/card"
 import {Badge} from "@/components/ui/badge"
-import {Tabs, TabsList, TabsTrigger} from "@/components/ui/tabs"
-import {Select, SelectContent, SelectItem, SelectTrigger, SelectValue} from "@/components/ui/select"
+import {Popover, PopoverContent, PopoverTrigger} from "@/components/ui/popover"
+import {Checkbox} from "@/components/ui/checkbox"
 import {useIsMobile} from "@/hooks/use-mobile"
 import {projects} from "@/components/blocks/project-list"
 import ShinyText from "@/components/ShinyText";
@@ -23,8 +23,25 @@ interface ProjectsProps {
 
 export default function Projects({py, viewall}: ProjectsProps) {
   const isMobile = useIsMobile()
-  const [activeTab, setActiveTab] = useState("All")
-  const filteredProjects = activeTab === "All" ? projects : projects.filter((project) => project.category === activeTab)
+  const [selectedTags, setSelectedTags] = useState<string[]>([])
+  
+  // Extract all unique tags from projects
+  const allTags = Array.from(new Set(projects.flatMap(project => project.tags))).sort()
+  
+  // Filter projects based on selected tags
+  const filteredProjects = selectedTags.length === 0 
+    ? projects 
+    : projects.filter(project => 
+        selectedTags.every(tag => project.tags.includes(tag))
+      )
+      
+  const toggleTag = (tag: string) => {
+    setSelectedTags(prev => 
+      prev.includes(tag) 
+        ? prev.filter(t => t !== tag)
+        : [...prev, tag]
+    )
+  }
   const projectsRef = useRef<HTMLElement>(null)
   const projectsControls = useAnimation()
 
@@ -87,43 +104,68 @@ export default function Projects({py, viewall}: ProjectsProps) {
               </motion.p>
             </div>
 
-            <Tabs defaultValue="All" className="w-full" onValueChange={setActiveTab}>
-              <div className="flex justify-center mb-8 font-serephixNew">
-                {isMobile ? (
-                  <Select value={activeTab} onValueChange={setActiveTab}>
-                    <SelectTrigger className="w-full max-w-xs">
-                      <SelectValue placeholder="Select category"/>
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="All">All</SelectItem>
-                      <SelectItem value="Mod">Mods</SelectItem>
-                      <SelectItem value="Modpack">Modpacks</SelectItem>
-                      <SelectItem value="Plugin">Plugins</SelectItem>
-                      <SelectItem value="Datapack">Datapacks</SelectItem>
-                      <SelectItem value="Resourcepack">Resourcepacks</SelectItem>
-                      <SelectItem value="Tool">Tools</SelectItem>
-                      <SelectItem value="Other">Other</SelectItem>
-                    </SelectContent>
-                  </Select>
-                ) : (
-                  <TabsList className="grid w-full max-w-2l grid-cols-8 gap-2 p-1">
-                    <TabsTrigger value="All">All</TabsTrigger>
-                    <TabsTrigger value="Mod">Mods</TabsTrigger>
-                    <TabsTrigger value="Modpack">Modpacks</TabsTrigger>
-                    <TabsTrigger value="Plugin">Plugins</TabsTrigger>
-                    <TabsTrigger value="Datapack">Datapacks</TabsTrigger>
-                    <TabsTrigger value="Resourcepack">Resourcepacks</TabsTrigger>
-                    <TabsTrigger value="Tool">Tools</TabsTrigger>
-                    <TabsTrigger value="Other">Other</TabsTrigger>
-                  </TabsList>
-                )}
+            {/* Tag Filter */}
+            <div className="flex justify-center mb-8">
+              <div className="flex items-center gap-4">
+                <Popover>
+                  <PopoverTrigger asChild>
+                    <Button variant="outline" className="flex items-center gap-2">
+                      <img src="/icons/filter.png" alt="Filter" width={16} height={16} className="h-4 w-4" />
+                      Filter by Tags
+                      {selectedTags.length > 0 && (
+                        <Badge variant="secondary" className="ml-2">
+                          {selectedTags.length}
+                        </Badge>
+                      )}
+                    </Button>
+                  </PopoverTrigger>
+                  <PopoverContent className="w-64 p-4">
+                    <div className="space-y-3">
+                      <div className="flex items-center justify-between">
+                        <h4 className="font-semibold text-sm">Filter by Tags</h4>
+                        {selectedTags.length > 0 && (
+                          <Button 
+                            variant="ghost" 
+                            size="sm" 
+                            onClick={() => setSelectedTags([])}>
+                            Clear All
+                          </Button>
+                        )}
+                      </div>
+                      <div className="max-h-64 overflow-y-auto space-y-2">
+                        {allTags.map(tag => (
+                          <div key={tag} className="flex items-center space-x-2">
+                            <button
+                              onClick={() => toggleTag(tag)}
+                              className="flex-shrink-0"
+                            >
+                              <img 
+                                src={selectedTags.includes(tag) ? "/icons/checkbox_checked.png" : "/icons/checkbox_unchecked.png"}
+                                alt={selectedTags.includes(tag) ? "Checked" : "Unchecked"}
+                                width={16}
+                                height={16}
+                                className="h-4 w-4"
+                              />
+                            </button>
+                            <label 
+                              onClick={() => toggleTag(tag)}
+                              className="text-sm cursor-pointer flex-1"
+                            >
+                              {tag}
+                            </label>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </PopoverContent>
+                </Popover>
               </div>
-            </Tabs>
+            </div>
 
             {filteredProjects.length === 0 ? (
               <div className="text-center text-foreground/70 italic py-12">
-                <p>No Projects found in that category!</p>
-                <p>We will steadily increase our library of Mods, Modpacks and more, so stay tuned!</p>
+                <p>No Projects found with the selected tags!</p>
+                <p>Try adjusting your filter criteria or clearing all filters.</p>
               </div>
             ) : (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
