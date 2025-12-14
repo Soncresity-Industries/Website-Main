@@ -22,13 +22,13 @@ export default function Header() {
   }, [scrollYProgress])
 
   const navItems = [
-    {name: "Home", href: "/#home"},
-    {name: "About", href: "/#about"},
-    {name: "Projects", href: "/#projects"},
-    {name: "Socials", href: "/#socials"},
-    {name: "Team", href: "/#team"},
-    {name: "Support", href: "/#support"},
-    {name: "Partners", href: "/#partners"},
+    {name: "Home", href: "/"},
+    {name: "About", href: "/about"},
+    {name: "Projects", href: "/projects"},
+    {name: "Socials", href: "/socials"},
+    {name: "Team", href: "/team"},
+    {name: "Support", href: "/support"},
+    {name: "Partners", href: "/partners"},
   ]
 
   return (
@@ -39,7 +39,7 @@ export default function Header() {
       )}
     >
       <div className="container mx-auto flex items-center justify-between">
-        <a href="/#home" className="flex items-center gap-2">
+        <a href="/" className="flex items-center gap-2">
           <div className="relative flex-shrink-0 w-10 h-10 sm:w-8 sm:h-8">
             <img
               src="/logo.png"
