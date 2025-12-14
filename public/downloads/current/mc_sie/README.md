@@ -1,0 +1,1 @@
+This directory contains all releases of [SI: Essentials](https://github.com/Soncresity-Industries/MC-SIE).

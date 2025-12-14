@@ -1,0 +1,1 @@
+This directory contains all releases of [SI: Re Survival](https://github.com/Soncresity-Industries/MC-SIRS).

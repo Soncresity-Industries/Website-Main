@@ -1,0 +1,1 @@
+This directory contains all releases of the [SChat iOS port](https://github.com/Soncresity-Industries/SChat-Tweak).

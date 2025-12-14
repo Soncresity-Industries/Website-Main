@@ -1,0 +1,1 @@
+This directory contains all releases of [SI: Dynamic Trees Burnt Compat](https://github.com/Soncresity-Industries/MC-SI-DTBC).

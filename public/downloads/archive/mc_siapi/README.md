@@ -1,0 +1,1 @@
+This directory contains all releases of [SI: API](https://github.com/Soncresity-Industries/MC-SIAPI).
