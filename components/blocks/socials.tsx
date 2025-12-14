@@ -13,14 +13,6 @@ import ShinyText from "@/components/ShinyText";
 export default function Socials() {
   return (
     <motion.section id="socials" className={`py-10 md:py-22 relative overflow-hidden ${sectionTopSpacing}`}>
-      {/* Background Elements */}
-      <div className="absolute inset-0 -z-10">
-        <div
-          className="absolute top-1/3 left-1/4 w-64 h-64 bg-primary/70 rounded-full blur-3xl opacity-30 animate-pulse-slow"/>
-        <div
-          className="absolute bottom-1/4 right-1/3 w-72 h-72 bg-secondary/60 rounded-full blur-3xl opacity-25 animate-pulse-slow"/>
-      </div>
-
       <div className="container mx-auto px-4">
         <div className="content-backdrop rounded-2xl p-8 mx-4">
           <div className="text-center max-w-3xl mx-auto mb-16">
