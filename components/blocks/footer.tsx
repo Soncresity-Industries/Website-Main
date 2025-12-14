@@ -150,7 +150,7 @@ export default function Footer() {
             <div
               className="glass-card rounded-xl p-6 hover-scale">
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-12 h-12 bg-[#5865F2] rounded-full flex items-center justify-center">
+                <div className="w-12 h-12 rounded-full flex items-center justify-center">
                   <img src="/icons/discord.png" alt="Discord" width={24} height={24} className="h-6 w-6"/>
                 </div>
                 <div>
