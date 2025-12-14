@@ -164,11 +164,27 @@ body {
   transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease;
 }
 
-/* Content backdrop for better readability over background images */
+/* Content backdrop for better readability over background images - Updated to darker color */
 .content-backdrop {
   backdrop-filter: blur(8px);
-  background: rgba(78, 78, 78, 0.196);
-  border: 1px solid rgba(78, 78, 78, 0.392);
+  background: rgba(3, 5, 10, 0.5);
+  border: 1px solid rgba(3, 5, 10, 0.5);
+}
+
+/* Override default card backgrounds to be transparent */
+.bg-card,
+.bg-card\/80,
+.bg-card\/50,
+.bg-background,
+.bg-background\/80,
+.bg-background\/50 {
+  background: rgba(3, 5, 10, 0.5) !important;
+}
+
+/* Override hover states */
+.hover\:bg-card:hover,
+.hover\:bg-background:hover {
+  background: rgba(3, 5, 10, 0.7) !important;
 }
 
 /* Glassmorphism effect for cards over background images */
