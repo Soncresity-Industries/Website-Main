@@ -47,7 +47,7 @@ export default function Socials() {
               <Card className="hover-scale h-full border-border/50">
                 <CardHeader>
                   <div className="w-12 h-12 rounded-full bg-[#5865F2]/10 flex items-center justify-center mb-4">
-                    <MessageSquare className="h-6 w-6 text-[#5865F2]"/>
+                    <img src="/icons/discord.png" alt="Discord" className="h-6 w-6"/>
                   </div>
                   <CardTitle>Discord</CardTitle>
                   <CardDescription className="text-foreground/70">
