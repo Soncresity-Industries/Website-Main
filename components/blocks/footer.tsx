@@ -2,20 +2,15 @@
 
 import {motion} from "framer-motion"
 import {
-  Github,
-  Youtube,
   Mail,
   Heart,
   ExternalLink,
   Code,
   MessageSquare,
-  Twitch,
-  Instagram,
 } from "lucide-react"
 import {Button} from "@/components/ui/button"
 import {Separator} from "@/components/ui/separator"
 import {LINKS} from "@/components/blocks/links";
-import {Music2} from "lucide-react";
 import ShinyText from "@/components/ShinyText";
 
 export default function Footer() {
@@ -49,40 +44,28 @@ export default function Footer() {
             </p>
             <div className="flex gap-3">
               <Button size="icon" variant="ghost" className="rounded-full hover-glow" asChild>
-                <a href={`${LINKS.github_org}`} target="_blank" rel="noopener noreferrer"
-                   aria-label="GitHub">
-                  <Github size={20}/>
-                </a>
-              </Button>
-              <Button size="icon" variant="ghost" className="rounded-full hover-glow" asChild>
                 <a href={`${LINKS.youtube_channel}`} target="_blank" rel="noopener noreferrer" aria-label="YouTube">
-                  <Youtube size={20}/>
+                  <img src="/icons/youtube.png" alt="YouTube"
+                       width={20} height={20}
+                       className="h-5 w-5"/>
                 </a>
               </Button>
               <Button size="icon" variant="ghost" className="rounded-full hover-glow" asChild>
-                <a href={`${LINKS.tiktok}`} target="_blank" rel="noopener noreferrer" aria-label="YouTube">
-                  <Music2 size={20}/>
+                <a href={`${LINKS.instagram}`} target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                  <img src="/icons/instagram.png" alt="Instagram"
+                       width={20} height={20}
+                       className="h-5 w-5"/>
                 </a>
               </Button>
               <Button size="icon" variant="ghost" className="rounded-full hover-glow" asChild>
-                <a href={`${LINKS.twitch}`} target="_blank" rel="noopener noreferrer" aria-label="YouTube">
-                  <Twitch size={20}/>
-                </a>
-              </Button>
-              <Button size="icon" variant="ghost" className="rounded-full hover-glow" asChild>
-                <a href={`${LINKS.instagram}`} target="_blank" rel="noopener noreferrer" aria-label="YouTube">
-                  <Instagram size={20}/>
-                </a>
-              </Button>
-              <Button size="icon" variant="ghost" className="rounded-full hover-glow" asChild>
-                <a href={`${LINKS.curseforge_profile}`} target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                <a href={`${LINKS.curseforge_profile}`} target="_blank" rel="noopener noreferrer" aria-label="CurseForge">
                   <img src="/icons/curseforge.png" alt="CurseForge"
                        width={20} height={20}
-                       className=""/>
+                       className="h-5 w-5"/>
                 </a>
               </Button>
               <Button size="icon" variant="ghost" className="rounded-full hover-glow" asChild>
-                <a href={`${LINKS.modrinth_org}`} target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                <a href={`${LINKS.modrinth_org}`} target="_blank" rel="noopener noreferrer" aria-label="Modrinth">
                   <img src="/icons/modrinth.png" alt="Modrinth"
                        width={20} height={20}
                        className="h-5 w-5"/>
@@ -90,7 +73,9 @@ export default function Footer() {
               </Button>
               <Button size="icon" variant="ghost" className="rounded-full hover-glow" asChild>
                 <a href="mailto:SoncresityIndustries@outlook.com" aria-label="Email">
-                  <Mail size={20}/>
+                  <img src="/icons/mail.png" alt="Email"
+                       width={20} height={20}
+                       className="h-5 w-5"/>
                 </a>
               </Button>
             </div>
