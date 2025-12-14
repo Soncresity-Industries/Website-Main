@@ -28,7 +28,7 @@ export default function Home() {
             className="flex flex-col gap-6 p-8 rounded-2xl content-backdrop"
           >
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-serephixBold leading-tight">
-              Crafting <span className="text-primary rotating-text">
+              Crafting <span className="text-[#2F97DD] rotating-text">
                   <RotatingText
                     texts={['Exceptional', 'Advanced', 'Immersive', 'Modern', 'Creative', 'High-Quality', 'Thrilling', 'Enjoyable', 'Unique', 'Stunning', 'Epic', 'Vibrant', 'Smooth']}
                     mainClassName="bg-[#00000000] overflow-hidden py-1 justify-left rounded-lg"
@@ -41,7 +41,7 @@ export default function Home() {
                     transition={{type: "spring", damping: 50, stiffness: 400}}
                     rotationInterval={4000}
                   />
-                </span> Minecraft Experiences
+                </span> Experiences
             </h1>
 
             <p className="text-lg text-foreground/80 max-w-lg font-serephixRegular">
