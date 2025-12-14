@@ -101,14 +101,6 @@ export default function Team() {
           visible: {opacity: 1, y: 0, transition: {duration: 0.6}},
         }}
       >
-        {/* Background Elements */}
-        <div className="absolute inset-0 -z-10">
-          <div
-            className="absolute top-1/4 right-1/4 w-64 h-64 bg-secondary rounded-full opacity-25 animate-pulse-slow blur-3xl"/>
-          <div
-            className="absolute bottom-1/3 left-1/3 w-72 h-72 bg-primary rounded-full opacity-35 animate-pulse-slow blur-3xl"/>
-        </div>
-
         <div className="container mx-auto px-4">
           <div className="content-backdrop rounded-2xl p-8 mx-4">
             <div className="container mx-auto px-4">
