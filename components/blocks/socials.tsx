@@ -2,7 +2,7 @@
 
 import {motion} from "framer-motion";
 import {Card, CardDescription, CardFooter, CardHeader, CardTitle} from "@/components/ui/card";
-import {ArrowRight, Instagram, MessageSquare, Music2, Twitch, Youtube} from "lucide-react";
+import {ArrowRight, Instagram, Youtube} from "lucide-react";
 import {sectionTopSpacing, SI_DARK_HEX_STRING} from "@/components/variables";
 import {Button} from "@/components/ui/button";
 import {LINKS} from "@/components/blocks/links";
@@ -117,86 +117,6 @@ export default function Socials() {
               </Card>
             </motion.div>
 
-            {/* TikTok */}
-            <motion.div
-              initial={{opacity: 0, y: 20}}
-              whileInView={{opacity: 1, y: 0}}
-              viewport={{once: true}}
-              transition={{duration: 0.5, delay: 0.2}}
-            >
-              <Card className="hover-scale h-full border-border/50">
-                <CardHeader>
-                  <div className="w-12 h-12 rounded-full bg-[#000000]/10 flex items-center justify-center mb-4">
-                    <Music2 className="h-6 w-6"/>
-                  </div>
-                  <CardTitle>TikTok</CardTitle>
-                  <CardDescription className="text-foreground/70">
-                    Follow our latest short-form content
-                  </CardDescription>
-                </CardHeader>
-                <CardFooter>
-                  <ElectricBorder
-                    color={SI_DARK_HEX_STRING}
-                    speed={0.2}
-                    chaos={0.2}
-                    thickness={3}
-                    style={{borderRadius: 5}}
-                  >
-                    <Button asChild className="hover-glow">
-                      <a href={`${LINKS.tiktok}`} target="_blank" rel="noopener noreferrer">
-                        <ShinyText
-                          text="Follow"
-                          disabled={false}
-                          speed={2}
-                        />
-                        <ArrowRight size={16} className="ml-2"/>
-                      </a>
-                    </Button>
-                  </ElectricBorder>
-                </CardFooter>
-              </Card>
-            </motion.div>
-
-            {/* Twitch */}
-            <motion.div
-              initial={{opacity: 0, y: 20}}
-              whileInView={{opacity: 1, y: 0}}
-              viewport={{once: true}}
-              transition={{duration: 0.5, delay: 0.3}}
-            >
-              <Card className="hover-scale h-full border-border/50">
-                <CardHeader>
-                  <div className="w-12 h-12 rounded-full bg-[#9146FF]/10 flex items-center justify-center mb-4">
-                    <Twitch className="h-6 w-6 text-[#9146FF]"/>
-                  </div>
-                  <CardTitle>Twitch</CardTitle>
-                  <CardDescription className="text-foreground/70">
-                    Watch our live streams
-                  </CardDescription>
-                </CardHeader>
-                <CardFooter>
-                  <ElectricBorder
-                    color={SI_DARK_HEX_STRING}
-                    speed={0.2}
-                    chaos={0.2}
-                    thickness={3}
-                    style={{borderRadius: 5}}
-                  >
-                    <Button asChild className="hover-glow">
-                      <a href={`${LINKS.twitch}`} target="_blank" rel="noopener noreferrer">
-                        <ShinyText
-                          text="Follow"
-                          disabled={false}
-                          speed={2}
-                        />
-                        <ArrowRight size={16} className="ml-2"/>
-                      </a>
-                    </Button>
-                  </ElectricBorder>
-                </CardFooter>
-              </Card>
-            </motion.div>
-
             {/* Instagram */}
             <motion.div
               initial={{opacity: 0, y: 20}}
@@ -237,46 +157,6 @@ export default function Socials() {
               </Card>
             </motion.div>
 
-            {/* Github */}
-            <motion.div
-              initial={{opacity: 0, y: 20}}
-              whileInView={{opacity: 1, y: 0}}
-              viewport={{once: true}}
-              transition={{duration: 0.5, delay: 0.5}}
-            >
-              <Card className="hover-scale h-full border-border/50">
-                <CardHeader>
-                  <div className="w-12 h-12 rounded-full bg-[#181717]/10 flex items-center justify-center mb-4">
-                    <img src="/icons/github.png" alt="GitHub"
-                         className="invert-on-dark h-6 w-6"/>
-                  </div>
-                  <CardTitle>GitHub</CardTitle>
-                  <CardDescription className="text-foreground/70">
-                    Explore our open source projects
-                  </CardDescription>
-                </CardHeader>
-                <CardFooter>
-                  <ElectricBorder
-                    color={SI_DARK_HEX_STRING}
-                    speed={0.2}
-                    chaos={0.2}
-                    thickness={3}
-                    style={{borderRadius: 5}}
-                  >
-                    <Button asChild className="hover-glow">
-                      <a href={`${LINKS.github_org}`} target="_blank" rel="noopener noreferrer">
-                        <ShinyText
-                          text="Follow"
-                          disabled={false}
-                          speed={2}
-                        />
-                        <ArrowRight size={16} className="ml-2"/>
-                      </a>
-                    </Button>
-                  </ElectricBorder>
-                </CardFooter>
-              </Card>
-            </motion.div>
           </div>
           <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             {/* Modrinth */}
