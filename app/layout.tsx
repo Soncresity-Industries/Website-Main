@@ -12,11 +12,11 @@ const serephixBold = localFont({
   variable: '--font-serephixbold',
 });
 
-const serephixRegular = localFont({
+const serephixNew = localFont({
   src: './font/SerephixRegular.ttf',
   weight: '400',
   style: 'normal',
-  variable: '--font-serephixregular',
+  variable: '--font-serephixnew',
 });
 
 const geist = Geist({
@@ -38,7 +38,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${serephixBold.variable} ${serephixRegular.variable}`}
+      className={`${serephixBold.variable} ${serephixNew.variable}`}
     >
     <body className={inter.className}>
       {children}

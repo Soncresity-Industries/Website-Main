@@ -80,7 +80,7 @@ const config = {
       },
       fontFamily: {
         serephixBold: ['var(--font-serephixbold)'],
-        serephixRegular: ['var(--font-serephixregular)'],
+        serephixRegular: ['var(--font-serephixnew)'],
       }
     },
   },

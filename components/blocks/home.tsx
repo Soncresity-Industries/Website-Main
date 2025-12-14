@@ -45,7 +45,7 @@ export default function Home() {
                 </span> Experiences
             </h1>
 
-            <p className="text-lg text-foreground/80 max-w-lg font-serephixRegular">
+            <p className="text-lg text-foreground/80 max-w-lg font-serephixNew">
               Creators of immersive worlds, game mechanics, and stories tailored for Minecraft players and server
               communities worldwide
             </p>

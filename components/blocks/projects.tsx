@@ -96,7 +96,7 @@ export default function Projects({py, viewall}: ProjectsProps) {
             </div>
 
             <Tabs defaultValue="All" className="w-full" onValueChange={setActiveTab}>
-              <div className="flex justify-center mb-8 font-serephixRegular">
+              <div className="flex justify-center mb-8 font-serephixNew">
                 {isMobile ? (
                   <Select value={activeTab} onValueChange={setActiveTab}>
                     <SelectTrigger className="w-full max-w-xs">

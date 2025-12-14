@@ -50,7 +50,7 @@ export default function NotFound() {
               transition={{delay: 0.2, duration: 0.5}}
             >
               <h1 className="text-3xl font-serephixBold mb-2 text-primary">Page not found</h1>
-              <p className="text-muted-foreground mb-6 font-serephixRegular">
+              <p className="text-muted-foreground mb-6 font-serephixNew">
                 The requested page could not be found. It may have been removed, renamed, or is temporarily
                 unavailable.
               </p>
