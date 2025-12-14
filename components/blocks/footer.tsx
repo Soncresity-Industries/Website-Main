@@ -2,7 +2,6 @@
 
 import {motion} from "framer-motion"
 import {
-  Heart,
   ExternalLink,
 } from "lucide-react"
 import {Button} from "@/components/ui/button"
@@ -180,12 +179,6 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex flex-col md:flex-row items-center gap-4 text-sm text-foreground/60">
             <p>© {new Date().getFullYear()} Soncresity Industries | All Rights Reserved</p>
-          </div>
-
-          <div className="flex items-center gap-2 text-sm text-foreground/60">
-            <span>Made with</span>
-            <Heart size={14} className="text-primary animate-pulse"/>
-            <span>by Soncresity Industries</span>
           </div>
         </div>
       </div>
