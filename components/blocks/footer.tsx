@@ -2,11 +2,8 @@
 
 import {motion} from "framer-motion"
 import {
-  Mail,
   Heart,
   ExternalLink,
-  Code,
-  MessageSquare,
 } from "lucide-react"
 import {Button} from "@/components/ui/button"
 import {Separator} from "@/components/ui/separator"
@@ -89,7 +86,7 @@ export default function Footer() {
             transition={{duration: 0.5, delay: 0.1}}
           >
             <h3 className="font-serephixBold text-lg mb-6 flex items-center gap-2">
-              <Code size={18} className="text-primary"/>
+              <img src="/icons/code.png" alt="Code" width={18} height={18} className="h-[18px] w-[18px]"/>
               Quick Links
             </h3>
             <ul className="space-y-3">
@@ -145,7 +142,7 @@ export default function Footer() {
             className="max-w-sm"
           >
             <h3 className="font-serephixBold text-lg mb-6 flex items-center gap-2">
-              <MessageSquare size={18} className="text-primary"/>
+              <img src="/icons/chat.png" alt="Chat" width={24} height={24} className="h-6 w-6"/>
               Join Our Community
             </h3>
 
@@ -154,7 +151,7 @@ export default function Footer() {
               className="glass-card rounded-xl p-6 hover-scale">
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-12 h-12 bg-[#5865F2] rounded-full flex items-center justify-center">
-                  <MessageSquare size={24} className="text-white"/>
+                  <img src="/icons/discord.png" alt="Discord" width={24} height={24} className="h-6 w-6"/>
                 </div>
                 <div>
                   <h4 className="font-serephixBold text-foreground">Discord Server</h4>
