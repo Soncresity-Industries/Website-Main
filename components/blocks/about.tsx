@@ -4,24 +4,23 @@ import {motion, type MotionValue, useAnimation} from "framer-motion"
 import {Card, CardHeader, CardTitle} from "@/components/ui/card";
 import {sectionTopSpacing} from "@/components/variables";
 import {useEffect, useRef} from "react";
-import {ActivityIcon, Code, Package, Server} from "lucide-react";
 
 export default function About() {
   const features = [
     {
-      icon: <Package className="h-6 w-6 text-primary"/>,
+      icon: <img src="/icons/modpack.png" alt="Modpack" width={24} height={24} className="h-6 w-6"/>,
       title: "Minecraft Modpacks",
     },
     {
-      icon: <Code className="h-6 w-6 text-primary"/>,
+      icon: <img src="/icons/mod.png" alt="Mod" width={24} height={24} className="h-6 w-6"/>,
       title: "Minecraft Mods",
     },
     {
-      icon: <Server className="h-6 w-6 text-primary"/>,
+      icon: <img src="/icons/plugin.png" alt="Plugin" width={24} height={24} className="h-6 w-6"/>,
       title: "Server Plugins",
     },
     {
-      icon: <ActivityIcon className="h-6 w-6 text-primary"/>,
+      icon: <img src="/icons/tool.png" alt="Tool" width={24} height={24} className="h-6 w-6"/>,
       title: "Tools & Utilities",
     },
   ]
@@ -103,7 +102,7 @@ export default function About() {
                 <Card className="hover-scale h-full border-border/50">
                   <CardHeader>
                     <div
-                      className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                      className="w-12 h-12 rounded-full flex items-center justify-center mb-4">
                       {feature.icon}
                     </div>
                     <CardTitle className="font-serephixBold">{feature.title}</CardTitle>
