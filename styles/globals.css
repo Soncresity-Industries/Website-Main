@@ -24,19 +24,19 @@ body {
 @layer base {
   :root {
     --background: 3 5 10;
-    --foreground: 210 80% 95%;
+    --foreground: 255 255 255;
     --card: 3 5 10;
-    --card-foreground: 210 80% 95%;
+    --card-foreground: 255 255 255;
     --popover: 3 5 10;
-    --popover-foreground: 210 80% 95%;
-    --primary: 206 65% 53%;  /* #2F97DD */
-    --primary-foreground: 0 0% 100%;
+    --popover-foreground: 255 255 255;
+    --primary: 255 255 255;  /* Changed to white */
+    --primary-foreground: 0 0% 0%;
     --secondary: 3 5 10;
-    --secondary-foreground: 210 80% 95%;
+    --secondary-foreground: 255 255 255;
     --muted: 3 5 10;
-    --muted-foreground: 205 25% 70%;
+    --muted-foreground: 200 200 200;
     --accent: 3 5 10;
-    --accent-foreground: 210 80% 95%;
+    --accent-foreground: 255 255 255;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
     --border: 205 60% 85%;
@@ -210,6 +210,51 @@ body {
 .data-\[state\=open\]\:bg-accent[data-state="open"],
 .data-\[state\=selected\]\:bg-accent[data-state="selected"] {
   background: rgba(3, 5, 10, 0.7) !important;
+}
+
+/* NUCLEAR OVERRIDE - Force ALL text to be white EXCEPT rotating text */
+*:not(.rotating-text):not(.rotating-text *) {
+  color: white !important;
+}
+
+/* Keep rotating text component with its original colors */
+.rotating-text,
+.rotating-text * {
+  color: inherit;
+}
+
+/* Force all text to be white/light */
+body,
+h1, h2, h3, h4, h5, h6,
+p, span, div,
+.text-foreground,
+.text-muted-foreground,
+.text-blue-500,
+.text-blue-600,
+.text-blue-700,
+.text-slate-600,
+.text-slate-700,
+.text-slate-800,
+.text-gray-600,
+.text-gray-700,
+.text-gray-800 {
+  color: rgb(255, 255, 255) !important;
+}
+
+.text-muted-foreground {
+  color: rgb(200, 200, 200) !important;
+}
+
+/* Button text colors */
+.btn-transparent,
+.btn-transparent-blue,
+button {
+  color: rgb(255, 255, 255) !important;
+}
+
+/* Links and interactive text */
+a, .text-primary {
+  color: rgb(255, 255, 255) !important;
 }
 
 /* Glassmorphism effect for cards over background images */
