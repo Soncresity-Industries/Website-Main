@@ -111,16 +111,8 @@ export default function Projects({py, viewall}: ProjectsProps) {
                     <TabsTrigger value="Mod">Mods</TabsTrigger>
                     <TabsTrigger value="Modpack">Modpacks</TabsTrigger>
                     <TabsTrigger value="Plugin">Plugins</TabsTrigger>
-                    <TabsTrigger value="Datapack" className="group">
-                    <span
-                      className="block group-[&[data-state=inactive]]:block group-[&[data-state=active]]:hidden">DPs</span>
-                      <span className="hidden group-[&[data-state=active]]:block">Datapacks</span>
-                    </TabsTrigger>
-                    <TabsTrigger value="Resourcepack" className="group">
-                    <span
-                      className="block group-[&[data-state=inactive]]:block group-[&[data-state=active]]:hidden">RPs</span>
-                      <span className="hidden group-[&[data-state=active]]:block">Resourcepacks</span>
-                    </TabsTrigger>
+                    <TabsTrigger value="Datapack">Datapacks</TabsTrigger>
+                    <TabsTrigger value="Resourcepack">Resourcepacks</TabsTrigger>
                     <TabsTrigger value="Tool">Tools</TabsTrigger>
                     <TabsTrigger value="Other">Other</TabsTrigger>
                   </TabsList>
