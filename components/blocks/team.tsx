@@ -167,7 +167,7 @@ export default function Team() {
                       <Card className="h-full hover-scale border-border/50">
                         <CardHeader className="text-center pb-2">
                           <div className="mx-auto mb-4">
-                            <Avatar className="w-24 h-24 border-2 border-primary/30">
+                            <Avatar className="w-24 h-24">
                               <AvatarImage src={member.image || "/placeholder.svg"}
                                            alt={member.name}/>
                               <AvatarFallback>
