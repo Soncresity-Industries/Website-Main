@@ -65,12 +65,6 @@ export function BackgroundSlideshow({ interval = 30000, className = "" }: Backgr
         <source src="/bg.mp4" type="video/webm" />
         Your browser does not support the video tag.
       </video>
-      
-      {/* Dark overlay for better text readability */}
-      <div className="absolute inset-0 bg-black/40 z-20" />
-      
-      {/* Light/dark mode overlay for theme consistency */}
-      <div className="absolute inset-0 bg-background/20 dark:bg-background/40 z-30" />
     </div>
   )
 }
