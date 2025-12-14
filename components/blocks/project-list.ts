@@ -20,7 +20,7 @@ export const projects = [
     image: "/projects/si_refined_obsidian.png?height=300&width=500",
     category: "Mod",
     partner: false,
-    tags: ["Building", "Armor Trims"],
+    tags: ["Minecraft", "Building", "Armor Trims"],
     //downloads: "",
     links: {
       github: LINKS.ro_gh_rep,
@@ -36,7 +36,7 @@ export const projects = [
     image: "/projects/si_death_bolt.png?height=300&width=500",
     category: "Mod",
     partner: false,
-    tags: ["Customisation", "Multiplayer"],
+    tags: ["Minecraft", "Customisation", "Multiplayer"],
     //downloads: "",
     links: {
       github: LINKS.db_gh_rep,
@@ -52,7 +52,7 @@ export const projects = [
     image: "/projects/height_datapack_generator.png?height=300&width=500",
     category: "Resourcepack",
     partner: false,
-    tags: ["Archived", "Customisation", "The Broken Script"],
+    tags: ["Minecraft", "Archived", "Customisation", "The Broken Script"],
     //downloads: "",
     links: {
       github: "",
@@ -68,7 +68,7 @@ export const projects = [
     image: "/projects/height_datapack_generator.png?height=300&width=500",
     category: "Tool",
     partner: false,
-    tags: ["Customization", "Generator", "World Generation"],
+    tags: ["Minecraft", "Customization", "Generator", "World Generation"],
     //downloads: "",
     links: {
       github: "",

@@ -153,11 +153,20 @@ export default function Projects({py, viewall}: ProjectsProps) {
                               Partner
                             </Badge>
                           }
-                          {project.tags.map((tag, i) => (
-                            <Badge key={i} variant="outline" className="text-xs">
-                              {tag}
-                            </Badge>
-                          ))}
+                          {project.tags.map((tag, i) => {
+                            // Determine badge variant based on tag
+                            let variant: "outline" | "minecraft" | "vintageStory" | "game" | "unrealEngine" = "outline"
+                            if (tag === "Minecraft") variant = "minecraft"
+                            else if (tag === "Vintage Story") variant = "vintageStory"
+                            else if (tag === "Game") variant = "game"
+                            else if (tag === "Unreal Engine") variant = "unrealEngine"
+                            
+                            return (
+                              <Badge key={i} variant={variant} className="text-xs">
+                                {tag}
+                              </Badge>
+                            )
+                          })}
                         </div>
                         <CardTitle className="line-clamp-1 font-serephixBold">{project.title}</CardTitle>
                         <CardDescription
