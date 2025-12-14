@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     description: "The official Website of Soncresity Industries",
     images: [
       {
-        url: "https://soncresityindustries.vercel.app/assets/si-logo-transparent.png",
+        url: "https://soncresityindustries.vercel.app/logo.png",
         width: metadataImageWidth,
         height: metadataImageHeight,
       },

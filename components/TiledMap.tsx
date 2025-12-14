@@ -69,7 +69,7 @@ export function TiledMap({tileSize, tiles}: TiledMapProps) {
                 height: newHeight
             });
         };
-        img.src = `/assets/map/${tiles[0][0]}`;
+        img.src = `/map/${tiles[0][0]}`;
     }, [tiles]);
 
 
@@ -281,7 +281,7 @@ export function TiledMap({tileSize, tiles}: TiledMapProps) {
                                     <img
                                         key={`${rowIndex}-${colIndex}`}
                                         ref={imgRef}
-                                        src={`/assets/map/${tile}`}
+                                        src={`/map/${tile}`}
                                         alt={`Map tile ${rowIndex+1}-${colIndex+1}`}
                                         style={{
                                             position: 'absolute',

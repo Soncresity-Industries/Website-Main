@@ -36,7 +36,7 @@ export default function Footer() {
             <div className="flex items-center gap-3 mb-6">
               <div className="relative w-10 h-10">
                 <img
-                  src="/assets/si-logo-transparent.png"
+                  src="/logo.png"
                   alt="SI Logo"
                   className="w-full h-full object-cover"
                 />
@@ -76,14 +76,14 @@ export default function Footer() {
               </Button>
               <Button size="icon" variant="ghost" className="rounded-full hover-glow" asChild>
                 <a href={`${LINKS.curseforge_profile}`} target="_blank" rel="noopener noreferrer" aria-label="YouTube">
-                  <img src="/assets/curseforge.svg" alt="CurseForge"
+                  <img src="/icons/curseforge.png" alt="CurseForge"
                        width={20} height={20}
-                       className="invert-on-dark"/>
+                       className=""/>
                 </a>
               </Button>
               <Button size="icon" variant="ghost" className="rounded-full hover-glow" asChild>
                 <a href={`${LINKS.modrinth_org}`} target="_blank" rel="noopener noreferrer" aria-label="YouTube">
-                  <img src="/assets/modrinth.png" alt="Modrinth"
+                  <img src="/icons/modrinth.png" alt="Modrinth"
                        width={20} height={20}
                        className="h-5 w-5"/>
                 </a>

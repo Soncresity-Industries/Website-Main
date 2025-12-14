@@ -41,7 +41,7 @@ export default function Partners() {
                 transition={{duration: 0.5}}
               >
 
-                <img src="/assets/partners/kinetic-logo.png"
+                <img src="/partners/kinetic-logo.png"
                      alt="KineticHosting Logo"
                      className="w-16 h-16 mr-4 inline-block"
                 />

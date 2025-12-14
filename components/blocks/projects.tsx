@@ -196,9 +196,9 @@ export default function Projects({py, viewall}: ProjectsProps) {
                             <Button size="sm" variant="ghost" className="w-9 h-9 p-0" asChild>
                               <a href={project.links.curseforge} target="_blank"
                                  rel="noopener noreferrer">
-                                <img src="/assets/curseforge.svg" alt="CurseForge"
+                                <img src="/icons/curseforge.png" alt="CurseForge"
                                      width={20} height={20}
-                                     className="invert-on-dark h-5 w-5"/>
+                                     className="h-5 w-5"/>
                                 <span className="sr-only">CurseForge</span>
                               </a>
                             </Button> : null
@@ -207,7 +207,7 @@ export default function Projects({py, viewall}: ProjectsProps) {
                             <Button size="sm" variant="ghost" className="w-9 h-9 p-0" asChild>
                               <a href={project.links.modrinth} target="_blank"
                                  rel="noopener noreferrer">
-                                <img src="/assets/modrinth.png" alt="Modrinth"
+                                <img src="/icons/modrinth.png" alt="Modrinth"
                                      className="h-5 w-5"/>
                                 <span className="sr-only">Modrinth</span>
                               </a>

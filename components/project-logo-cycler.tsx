@@ -10,16 +10,17 @@ interface ProjectLogoCyclerProps {
 }
 
 const PROJECT_LOGOS = [
-  '/assets/project-logos/si_api.png',
-  '/assets/project-logos/si_biomes.png',
-  '/assets/project-logos/si_credits.png',
-  '/assets/project-logos/si_crownfall.png',
-  '/assets/project-logos/si_death_bolt.png',
-  '/assets/project-logos/si_item_remover.png',
-  '/assets/project-logos/si_library.png',
-  '/assets/project-logos/si_refined_obsidian.png',
-  '/assets/project-logos/si_scriptified.png',
-  '/assets/project-logos/si_skillpoints.png',
+  '/projects/si_credits.png',
+  '/projects/si_crownfall.png',
+  '/projects/si_death_bolt.png',
+  '/projects/si_item_remover.png',
+  '/projects/si_lifesteal.png',
+  '/projects/si_refined_obsidian.png',
+  '/projects/si_scriptified.png',
+  '/projects/si_spectre.png',
+  '/projects/soncresity_aftermath.png',
+  '/projects/soncresity_fractured_horizons.png',
+  '/projects/height_datapack_generator.png',
 ]
 
 export function ProjectLogoCycler({ 

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     description: "Wiki for the SI: API Minecraft Mod by Soncresity Industries",
     images: [
       {
-        url: "https://soncresityindustries.vercel.app/assets/si-logo-transparent.png",
+        url: "https://soncresityindustries.vercel.app/logo.png",
         width: metadataImageWidth,
         height: metadataImageHeight,
       },

@@ -63,7 +63,7 @@ export default function Team() {
     {
       name: "SkyKing_PX",
       role: "Lead Developer",
-      image: "/assets/team/skyking_px.png?height=200&width=200",
+      image: "/team/skyking_px.png?height=200&width=200",
       bio: "A young German developer with a passion for Minecraft and coding.",
       skills: ["Java", "Next.js", "Modding", "PC Hardware"],
       social: {
@@ -77,7 +77,7 @@ export default function Team() {
     {
       name: "Jovalot",
       role: "Beta Tester",
-      image: "/assets/team/jovalot.png?height=200&width=200",
+      image: "/team/jovalot.png?height=200&width=200",
       bio: "A dedicated beta tester ensuring quality and reliability of Soncresity Industries projects.",
       skills: ["Quality Assurance", "Bug Testing", "User Experience"],
       social: {

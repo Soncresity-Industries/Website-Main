@@ -43,7 +43,7 @@ export default function Header() {
         <a href="/#home" className="flex items-center gap-2">
           <div className="relative flex-shrink-0 w-10 h-10 sm:w-8 sm:h-8">
             <img
-              src="/assets/si-logo-transparent.png"
+              src="/logo.png"
               alt="SI Logo"
               className="w-full h-full object-contain"
             />

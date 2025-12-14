@@ -5,7 +5,7 @@ export const wikis = [
     href: "/wiki/refined-obsidian",
     status: "Complete",
     category: "Minecraft Mod",
-    icon: "/assets/refined-obsidian/ro-icon.png",
+    icon: "/projects/si_refined_obsidian.png",
     features: ["Block Variants", "Recipes", "Armor Trims"],
     loaders: ["Fabric", "Forge", "NeoForge"]
   },
@@ -15,7 +15,7 @@ export const wikis = [
     href: "/wiki/death-bolt",
     status: "Complete",
     category: "Minecraft Mod",
-    icon: "/assets/death-bolt/db-icon.png",
+    icon: "/projects/si_death_bolt.png",
     features: ["Customisation", "Multiplayer", "Serverside"],
     loaders: ["Forge", "NeoForge"]
   },

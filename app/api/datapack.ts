@@ -18,7 +18,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     }, null, 2));
 
     // fetch pack.png from public folder
-    const imageRes = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL || ""}/assets/height-dp/pack.png`);
+    const imageRes = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL || ""}/downloads/current/height_datapack_generator/pack.png`);
     const imgBuffer = Buffer.from(await imageRes.arrayBuffer());
     zip.file("pack.png", imgBuffer);
 

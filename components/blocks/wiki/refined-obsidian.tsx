@@ -186,7 +186,7 @@ export default function ROWiki() {
               <div className="relative p-6 md:p-8 lg:p-10">
                 <div className="flex flex-col items-center text-center">
                   <Image
-                    src="/assets/refined-obsidian/ro-icon.png"
+                    src="/projects/si_refined_obsidian.png"
                     alt="Refined-Obsidian Icon"
                     width={96}
                     height={96}
