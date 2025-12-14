@@ -59,14 +59,6 @@ export default function Projects({py, viewall}: ProjectsProps) {
       }}
       className={`py-${py} relative overflow-hidden ${sectionTopSpacing}`}
     >
-      {/* Background Elements */}
-      <div className="absolute inset-0 -z-10">
-        <div
-          className="absolute top-1/4 right-1/3 w-64 h-64 bg-primary rounded-full blur-3xl opacity-15 animate-pulse-slow"/>
-        <div
-          className="absolute bottom-1/3 left-1/4 w-72 h-72 bg-secondary rounded-full blur-3xl opacity-10 animate-pulse-slow"/>
-      </div>
-
       {/* Projects */}
       <div className="container mx-auto px-4">
         <div className="content-backdrop rounded-2xl p-8 mx-4">
