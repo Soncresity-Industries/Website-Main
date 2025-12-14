@@ -167,35 +167,35 @@ body {
 /* Content backdrop for better readability over background images */
 .content-backdrop {
   backdrop-filter: blur(8px);
-  background: rgba(78, 78, 78, 0.196);
-  border: 1px solid rgba(78, 78, 78, 0.392);
+  background: rgba(3, 5, 10, 0.5);
+  border: 1px solid rgba(3, 5, 10, 0.5);
 }
 
 /* Glassmorphism effect for cards over background images */
 .glass-card {
   backdrop-filter: blur(12px);
-  background: rgba(78, 78, 78, 0.196);
-  border: 1px solid rgba(78, 78, 78, 0.392);
+  background: rgba(3, 5, 10, 0.5);
+  border: 1px solid rgba(3, 5, 10, 0.5);
 }
 
 /* Transparent button styles */
 .btn-transparent {
   backdrop-filter: blur(8px);
-  background: rgba(78, 78, 78, 0.196);
-  border: 1px solid rgba(78, 78, 78, 0.392);
+  background: rgba(3, 5, 10, 0.5);
+  border: 1px solid rgba(3, 5, 10, 0.5);
   transition: all 0.3s ease;
 }
 
 .btn-transparent:hover {
-  background: rgba(78, 78, 78, 0.294);
-  border: 1px solid rgba(78, 78, 78, 0.490);
+  background: rgba(3, 5, 10, 0.7);
+  border: 1px solid rgba(3, 5, 10, 0.7);
 }
 
 /* Blue-tinted transparent button styles */
 .btn-transparent-blue {
   backdrop-filter: blur(8px);
-  background: rgba(78, 120, 180, 0.196);
-  border: 1px solid rgba(78, 120, 180, 0.392);
+  background: rgba(3, 5, 10, 0.5);
+  border: 1px solid rgba(3, 5, 10, 0.5);
   transition: all 0.3s ease;
 }
 
