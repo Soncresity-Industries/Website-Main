@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  /* Override default CSS custom properties */
+  --background: 3 5 10;
+  --card: 3 5 10;
+  --muted: 3 5 10;
+  --accent: 3 5 10;
+  --secondary: 3 5 10;
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -14,20 +23,20 @@ body {
 
 @layer base {
   :root {
-    --background: 210 50% 98%;
-    --foreground: 210 80% 15%;
-    --card: 210 40% 99%;
-    --card-foreground: 210 80% 15%;
-    --popover: 210 40% 99%;
-    --popover-foreground: 210 80% 15%;
+    --background: 3 5 10;
+    --foreground: 210 80% 95%;
+    --card: 3 5 10;
+    --card-foreground: 210 80% 95%;
+    --popover: 3 5 10;
+    --popover-foreground: 210 80% 95%;
     --primary: 206 65% 53%;  /* #2F97DD */
     --primary-foreground: 0 0% 100%;
-    --secondary: 205 65% 90%;
-    --secondary-foreground: 205 80% 15%;
-    --muted: 205 40% 92%;
-    --muted-foreground: 205 25% 40%;
-    --accent: 200 70% 60%;
-    --accent-foreground: 210 80% 15%;
+    --secondary: 3 5 10;
+    --secondary-foreground: 210 80% 95%;
+    --muted: 3 5 10;
+    --muted-foreground: 205 25% 70%;
+    --accent: 3 5 10;
+    --accent-foreground: 210 80% 95%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
     --border: 205 60% 85%;
@@ -167,23 +176,39 @@ body {
 /* Content backdrop for better readability over background images - Updated to darker color */
 .content-backdrop {
   backdrop-filter: blur(8px);
-  background: rgba(3, 5, 10, 0.5);
-  border: 1px solid rgba(3, 5, 10, 0.5);
+  background: rgba(3, 5, 10, 0.5) !important;
+  border: 1px solid rgba(3, 5, 10, 0.5) !important;
 }
 
-/* Override default card backgrounds to be transparent */
+/* Override ALL card and background variants to use transparent dark color */
 .bg-card,
 .bg-card\/80,
 .bg-card\/50,
 .bg-background,
 .bg-background\/80,
-.bg-background\/50 {
+.bg-background\/50,
+.bg-background\/20,
+.bg-background\/40,
+.bg-muted,
+.bg-muted\/50,
+.bg-accent,
+.bg-secondary {
   background: rgba(3, 5, 10, 0.5) !important;
 }
 
 /* Override hover states */
 .hover\:bg-card:hover,
-.hover\:bg-background:hover {
+.hover\:bg-background:hover,
+.hover\:bg-muted:hover,
+.hover\:bg-accent:hover,
+.hover\:bg-secondary:hover {
+  background: rgba(3, 5, 10, 0.7) !important;
+}
+
+/* Override focus and active states */
+.focus\:bg-accent:focus,
+.data-\[state\=open\]\:bg-accent[data-state="open"],
+.data-\[state\=selected\]\:bg-accent[data-state="selected"] {
   background: rgba(3, 5, 10, 0.7) !important;
 }
 
