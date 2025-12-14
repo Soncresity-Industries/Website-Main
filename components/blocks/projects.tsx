@@ -24,16 +24,21 @@ interface ProjectsProps {
 export default function Projects({py, viewall}: ProjectsProps) {
   const isMobile = useIsMobile()
   const [selectedTags, setSelectedTags] = useState<string[]>([])
+  const [filterMode, setFilterMode] = useState<'AND' | 'OR'>('AND')
   
   // Extract all unique tags from projects
   const allTags = Array.from(new Set(projects.flatMap(project => project.tags))).sort()
   
-  // Filter projects based on selected tags
+  // Filter projects based on selected tags and filter mode
   const filteredProjects = selectedTags.length === 0 
     ? projects 
-    : projects.filter(project => 
-        selectedTags.every(tag => project.tags.includes(tag))
-      )
+    : projects.filter(project => {
+        if (filterMode === 'AND') {
+          return selectedTags.every(tag => project.tags.includes(tag))
+        } else {
+          return selectedTags.some(tag => project.tags.includes(tag))
+        }
+      })
       
   const toggleTag = (tag: string) => {
     setSelectedTags(prev => 
@@ -119,7 +124,7 @@ export default function Projects({py, viewall}: ProjectsProps) {
                       )}
                     </Button>
                   </PopoverTrigger>
-                  <PopoverContent className="w-64 p-4">
+                  <PopoverContent className="w-72 p-4">
                     <div className="space-y-3">
                       <div className="flex items-center justify-between">
                         <h4 className="font-semibold text-sm">Filter by Tags</h4>
@@ -132,6 +137,22 @@ export default function Projects({py, viewall}: ProjectsProps) {
                           </Button>
                         )}
                       </div>
+                      
+                      {/* Filter Mode Toggle */}
+                      <div className="flex items-center justify-between p-2 bg-secondary/30 rounded-md">
+                        <span className="text-xs text-muted-foreground">
+                          {filterMode === 'AND' ? 'Must have ALL selected tags' : 'Must have ANY selected tag'}
+                        </span>
+                        <Button 
+                          variant="outline" 
+                          size="sm" 
+                          onClick={() => setFilterMode(filterMode === 'AND' ? 'OR' : 'AND')}
+                          className="h-6 px-2 text-xs"
+                        >
+                          {filterMode}
+                        </Button>
+                      </div>
+                      
                       <div className="max-h-64 overflow-y-auto space-y-2">
                         {allTags.map(tag => (
                           <div key={tag} className="flex items-center space-x-2">
