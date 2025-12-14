@@ -178,7 +178,7 @@ export default function Footer() {
         {/* Bottom Footer */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex flex-col md:flex-row items-center gap-4 text-sm text-foreground/60">
-            <p>© {new Date().getFullYear()} Soncresity Industries | All Rights Reserved</p>
+            <p><img src="/icons/copyright.png" alt="Copyright" width={14} height={14} className="h-[14px] w-[14px] inline"/> {new Date().getFullYear()} Soncresity Industries | All Rights Reserved</p>
           </div>
         </div>
       </div>
