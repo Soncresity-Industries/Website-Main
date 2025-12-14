@@ -36,7 +36,7 @@ export default function Header() {
     <header
       className={cn(
         "fixed top-0 w-full z-50 transition-all duration-300 theme-transition",
-        isScrolled ? "content-backdrop border-b-4 border-[rgba(78,78,78,0.392)] py-3" : "content-backdrop py-5",
+        isScrolled ? "content-backdrop border-b-4 border-[rgba(3,5,10,0.5)] py-3" : "content-backdrop py-5",
       )}
     >
       <div className="container mx-auto flex items-center justify-between">
@@ -82,7 +82,7 @@ export default function Header() {
       {/* Mobile Navigation Menu */}
       {mobileMenuOpen && (
         <motion.div
-          className="md:hidden absolute top-full left-0 w-full content-backdrop border-b-4 border-[rgba(78,78,78,0.392)]"
+          className="md:hidden absolute top-full left-0 w-full content-backdrop border-b-4 border-[rgba(3,5,10,0.5)]"
           initial={{opacity: 0, height: 0}}
           animate={{opacity: 1, height: "auto"}}
           exit={{opacity: 0, height: 0}}
