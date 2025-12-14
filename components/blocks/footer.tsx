@@ -196,7 +196,7 @@ export default function Footer() {
 
             {/* Discord Server Box */}
             <div
-              className="bg-gradient-to-br from-primary/10 to-secondary/10 border border-primary/20 rounded-xl p-6 hover-scale">
+              className="glass-card rounded-xl p-6 hover-scale">
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-12 h-12 bg-[#5865F2] rounded-full flex items-center justify-center">
                   <MessageSquare size={24} className="text-white"/>
