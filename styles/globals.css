@@ -5,10 +5,25 @@
 :root {
   /* Override default CSS custom properties */
   --background: 3 5 10;
+  --foreground: 255 255 255;
   --card: 3 5 10;
-  --muted: 3 5 10;
-  --accent: 3 5 10;
+  --card-foreground: 255 255 255;
+  --popover: 3 5 10;
+  --popover-foreground: 255 255 255;
+  --primary: 255 255 255; /* White text */
+  --primary-foreground: 0 0 0;
   --secondary: 3 5 10;
+  --secondary-foreground: 255 255 255;
+  --muted: 3 5 10;
+  --muted-foreground: 200 200 200;
+  --accent: 3 5 10;
+  --accent-foreground: 255 255 255;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 255 255 255;
+  --border: 3 5 10;
+  --input: 3 5 10;
+  --ring: 255 255 255;
+  --radius: 0.5rem;
 }
 
 body {
@@ -44,51 +59,21 @@ body {
     --ring: 206 65% 53%;  /* #2F97DD */
     --radius: 0.5rem;
   }
-  .dark {
-    --background: 215 70% 8%;
-    --foreground: 210 30% 98%;
-    --card: 215 70% 10%;
-    --card-foreground: 210 30% 98%;
-    --popover: 215 70% 10%;
-    --popover-foreground: 210 30% 98%;
-    --primary: 207 97% 40%;  /* #026DCA */
-    --primary-foreground: 0 0% 100%;
-    --secondary: 210 60% 25%;
-    --secondary-foreground: 210 30% 98%;
-    --muted: 210 60% 20%;
-    --muted-foreground: 210 30% 70%;
-    --accent: 210 80% 45%;
-    --accent-foreground: 210 30% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 210 50% 30%;
-    --input: 210 30% 20%;
-    --ring: 207 97% 40%;  /* #026DCA */
-  }
-}
-
-.invert-on-dark {
-  @apply dark:invert;
-}
-
-
-@layer base {
+  
   * {
     @apply border-border;
   }
+  
   body {
     @apply text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
-    /* Remove solid background to let slideshow show through */
     background: transparent;
+    font-family: Arial, Helvetica, sans-serif;
   }
-}
-
-/* Add smooth scrolling behavior */
-@layer base {
+  
   html {
     scroll-behavior: smooth;
-    scroll-padding-top: 80px; /* Adjust based on your header height */
+    scroll-padding-top: 80px;
   }
 }
 
@@ -103,7 +88,7 @@ body {
   }
 }
 
-.dark .animate-pulse-glow {
+.animate-pulse-glow {
   animation: pulse-glow 3s ease-in-out infinite;
 }
 
@@ -296,17 +281,13 @@ a, .text-primary {
   box-shadow: 0 10px 25px -5px rgba(47, 151, 221, 0.2);
 }
 
-.dark .hover-scale:hover {
-  box-shadow: 0 10px 25px -5px rgba(2, 109, 202, 0.2);
-}
+
 
 .hover-glow:hover {
   box-shadow: 0 0 15px rgba(47, 151, 221, 0.5);
 }
 
-.dark .hover-glow:hover {
-  box-shadow: 0 0 15px rgba(2, 109, 202, 0.5);
-}
+
 
 .hover-scale {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -338,12 +319,4 @@ a, .text-primary {
   transform: translateY(-2px);
 }
 
-.dark .credits-badge {
-  background: linear-gradient(135deg, rgba(2, 109, 202, 0.2) 0%, rgba(2, 109, 202, 0.1) 100%);
-  border: 1px solid rgba(2, 109, 202, 0.3);
-}
 
-.dark .credits-badge:hover {
-  background: linear-gradient(135deg, rgba(2, 109, 202, 0.3) 0%, rgba(2, 109, 202, 0.2) 100%);
-  border: 1px solid rgba(2, 109, 202, 0.5);
-}
