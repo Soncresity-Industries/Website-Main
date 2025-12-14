@@ -185,7 +185,7 @@ export default function Projects({py, viewall}: ProjectsProps) {
                             <Button size="sm" variant="ghost" className="w-9 h-9 p-0" asChild>
                               <a href={project.links.github} target="_blank"
                                  rel="noopener noreferrer">
-                                <img src="/assets/github.svg" alt="GitHub" width={20}
+                                <img src="/icons/github.png" alt="GitHub" width={20}
                                      height={20}
                                      className="invert-on-dark h-5 w-5"/>
                                 <span className="sr-only">GitHub</span>

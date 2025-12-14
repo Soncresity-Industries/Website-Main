@@ -49,7 +49,7 @@ export default function Team() {
     {
       name: "Kalarian Athecila",
       role: "CEO & Founder",
-      image: "/assets/team/kalarianathecila.png?height=200&width=200",
+      image: "/team/kalarianathecila.png?height=200&width=200",
       bio: "A passionate Minecraft mod and OS developer.",
       skills: ["Java", "C#", "C++", "JS", "CSS", "HTML", "Node.js", "Python", "Electron", ".NET", "React"],
       social: {

@@ -280,7 +280,7 @@ export default function RODownloadsPage() {
                             className="hover:border-primary/50 transition-all hover:shadow-lg hover:shadow-primary/10 h-full group">
                             <CardContent className="flex flex-col items-center justify-center p-8 h-full">
                                 <div className="relative mb-4">
-                                    <Image src="/assets/modrinth.png" alt="Modrinth" width={64} height={64}
+                                    <Image src="/icons/modrinth.png" alt="Modrinth" width={64} height={64}
                                            className="transition-transform group-hover:scale-110"/>
                                     <div className="absolute -bottom-2 -right-2">
                                         <Badge variant="secondary" className="text-xs"><Check

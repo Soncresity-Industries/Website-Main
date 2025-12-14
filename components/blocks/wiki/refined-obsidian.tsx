@@ -562,14 +562,14 @@ export default function ROWiki() {
                         href={LINKS.ro_mr_proj}
                         className="text-sm text-primary hover:underline flex items-center gap-1"
                       >
-                        <Image src="/assets/modrinth.png" alt="Modrinth" width={16} height={16}/>
+                        <Image src="/icons/modrinth.png" alt="Modrinth" width={16} height={16}/>
                         Modrinth
                       </a>
                       <a
                         href={LINKS.ro_cf_proj}
                         className="text-sm text-primary hover:underline flex items-center gap-1"
                       >
-                        <Image src="/assets/curseforge.svg" alt="CurseForge" width={16} height={16}
+                        <Image src="/icons/curseforge.png\" alt="CurseForge" width={16} height={16}
                                className="invert-on-dark"/>
                         CurseForge
                       </a>

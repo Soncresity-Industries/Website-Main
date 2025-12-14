@@ -255,7 +255,7 @@ export default function Socials() {
               <Card className="hover-scale h-full border-border/50">
                 <CardHeader>
                   <div className="w-12 h-12 rounded-full bg-[#181717]/10 flex items-center justify-center mb-4">
-                    <img src="/assets/github.svg" alt="GitHub"
+                    <img src="/icons/github.png" alt="GitHub"
                          className="invert-on-dark h-6 w-6"/>
                   </div>
                   <CardTitle>GitHub</CardTitle>
@@ -297,7 +297,7 @@ export default function Socials() {
               <Card className="hover-scale h-full border-border/50">
                 <CardHeader>
                   <div className="w-12 h-12 rounded-full bg-[#1bd96a]/10 flex items-center justify-center mb-4">
-                    <img src="/assets/modrinth.png" alt="Modrinth" className="h-6 w-6"/>
+                    <img src="/icons/modrinth.png" alt="Modrinth" className="h-6 w-6"/>
                   </div>
                   <CardTitle>Modrinth</CardTitle>
                   <CardDescription className="text-foreground/70">
@@ -337,7 +337,7 @@ export default function Socials() {
               <Card className="hover-scale h-full border-border/50">
                 <CardHeader>
                   <div className="w-12 h-12 rounded-full bg-[#F16436]/10 flex items-center justify-center mb-4">
-                    <img src="/assets/curseforge.svg" alt="CurseForge"
+                    <img src="/icons/curseforge.png" alt="CurseForge"
                          className="invert-on-dark h-6 w-6"/>
                   </div>
                   <CardTitle>CurseForge</CardTitle>
