@@ -7,8 +7,7 @@ import {Download, Menu, ExternalLink, Info, Check} from "lucide-react"
 import {Button} from "@/components/ui/button"
 import {Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter} from "@/components/ui/card"
 import {Tabs, TabsContent, TabsList, TabsTrigger} from "@/components/ui/tabs"
-import {ThemeToggle} from "@/components/theme-toggle"
-import {Badge} from "@/components/ui/badge"
+import import {Badge} from "@/components/ui/badge"
 import {Tooltip, TooltipContent, TooltipProvider, TooltipTrigger} from "@/components/ui/tooltip"
 import {useTheme} from "next-themes"
 import {useToast} from "@/hooks/use-toast"
@@ -132,10 +131,8 @@ export default function RODownloadsPage() {
                             <span
                                 className="absolute inset-x-0 -bottom-1 h-0.5 bg-primary scale-x-100 transition-transform"></span>
                         </Link>
-                        <ThemeToggle/>
                     </div>
                     <div className="flex items-center gap-2 md:hidden">
-                        <ThemeToggle/>
                         <Button variant="ghost" size="icon" className="hover:bg-secondary transition-colors">
                             <Menu className="h-5 w-5"/>
                         </Button>

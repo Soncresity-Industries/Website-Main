@@ -111,12 +111,8 @@ export default function ROWiki() {
                 <span
                   className="absolute inset-x-0 -bottom-1 h-0.5 bg-primary scale-x-0 group-hover:scale-x-100 transition-transform"></span>
               </Link>
-              <div className="flex items-center gap-2">
-                <ThemeToggle/>
-              </div>
             </div>
             <div className="flex items-center gap-2 md:hidden">
-              <ThemeToggle/>
               <Button variant="ghost" size="icon" className="transition-colors">
                 <Menu className="h-5 w-5"/>
               </Button>
