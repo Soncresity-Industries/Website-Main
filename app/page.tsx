@@ -4,13 +4,7 @@ import {Analytics} from "@vercel/analytics/next"
 import {PageWrapper} from "@/components/page-wrapper"
 import Header from "@/components/blocks/header"
 import HomeBlock from "@/components/blocks/home"
-import Team from "@/components/blocks/team"
 import Footer from "@/components/blocks/footer"
-import Projects from "@/components/blocks/projects"
-import About from "@/components/blocks/about";
-import Socials from "@/components/blocks/socials";
-import Support from "@/components/blocks/support";
-import Partners from "@/components/blocks/partners";
 import {metadataImageHeight, metadataImageWidth} from "@/components/variables";
 
 export const metadata: Metadata = {
@@ -38,18 +32,6 @@ export default function Home() {
         <Analytics/>
 
         <HomeBlock/>
-
-        <About/>
-
-        <Projects py={0} viewall={true}/>
-
-        <Socials/>
-
-        <Team/>
-
-        <Support/>
-
-        <Partners/>
 
         <Footer/>
       </main>
