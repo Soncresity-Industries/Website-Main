@@ -2,7 +2,6 @@ import type React from "react"
 import type {Metadata} from "next"
 import {Inter} from "next/font/google"
 import "./global.css"
-import {ThemeProvider} from "@/components/theme-provider"
 import { Geist } from 'next/font/google'
 import localFont from 'next/font/local';
 
@@ -42,14 +41,7 @@ export default function RootLayout({
       className={`${serephixBold.variable} ${serephixRegular.variable}`}
     >
     <body className={inter.className}>
-    <ThemeProvider
-      attribute="class"
-      defaultTheme="light"
-      enableSystem={false}
-      disableTransitionOnChange
-    >
       {children}
-    </ThemeProvider>
     </body>
     </html>
   )

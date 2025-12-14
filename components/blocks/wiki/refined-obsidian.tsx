@@ -22,7 +22,6 @@ import {recipes} from "@/app/wiki/refined-obsidian/ro-recipes"
 import {Button} from "@/components/ui/button"
 import {Separator} from "@/components/ui/separator"
 import {Tabs, TabsContent, TabsList, TabsTrigger} from "@/components/ui/tabs"
-import {ThemeToggle} from "@/components/theme-toggle"
 import {trimsPage1, trimsPage2, trimsPage3, trimsPage4} from "@/app/wiki/refined-obsidian/ro-trims-pages"
 import {PageWrapper} from "@/components/page-wrapper"
 import {

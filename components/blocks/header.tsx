@@ -4,7 +4,6 @@ import {useState, useEffect} from "react"
 import {motion, useScroll} from "framer-motion"
 import {Menu, X} from "lucide-react"
 import {Button} from "@/components/ui/button"
-import {ThemeToggle} from "@/components/theme-toggle"
 import {cn} from "@/lib/utils"
 
 export default function Header() {
@@ -62,12 +61,10 @@ export default function Header() {
               {item.name}
             </a>
           ))}
-          <ThemeToggle/>
         </nav>
 
         {/* Mobile Navigation Button */}
         <div className="flex items-center gap-2 md:hidden">
-          <ThemeToggle/>
           <Button
             variant="ghost"
             size="icon"
