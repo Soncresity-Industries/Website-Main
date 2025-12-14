@@ -11,15 +11,6 @@ import ElectricBorder from "@/components/ElectricBorder";
 export default function Partners() {
   return (
     <section id="partners" className={`py-10 md:py-22 relative overflow-hidden ${sectionTopSpacing}`}>
-      {/* Background Elements */}
-      <div className="absolute inset-0 -z-10">
-        <div
-          className="absolute bottom-1/2 left-1/4 w-72 h-72 bg-[#7868E6] rounded-full blur-3xl opacity-40 animate-pulse"/>
-        <div
-          className="absolute bottom-1/4 right-1/3 w-72 h-72 bg-[#2F97DD] rounded-full blur-3xl opacity-40 animate-pulse"/>
-        <div
-          className="absolute bottom-20 left-1/3 w-72 h-72 bg-[#9f5ca5] rounded-full blur-3xl opacity-40 animate-pulse"/>
-      </div>
       <section id="kh">
         <div className="container mx-auto px-4">
           <div className="content-backdrop rounded-2xl p-8 mx-4">
