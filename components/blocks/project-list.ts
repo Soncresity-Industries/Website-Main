@@ -17,7 +17,7 @@ export const projects = [
     title: "Refined Obsidian",
     description: "A Minecraft Mod by Soncresity Industries that adds various obsidian-themed items, blocks and armor trims.",
     wikiid: "refined-obsidian",
-    image: "/projects/si_refined_obsidian.png?height=300&width=500",
+    image: "/projects/siro/logo.png?height=300&width=500",
     category: "Mod",
     partner: false,
     tags: ["Minecraft", "Building", "Armor Trims"],

@@ -5,7 +5,7 @@ export const wikis = [
     href: "/wiki/refined-obsidian",
     status: "Complete",
     category: "Minecraft Mod",
-    icon: "/projects/si_refined_obsidian.png",
+    icon: "/projects/siro/logo.png",
     features: ["Block Variants", "Recipes", "Armor Trims"],
     loaders: ["Fabric", "Forge", "NeoForge"]
   },

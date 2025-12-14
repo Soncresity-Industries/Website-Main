@@ -15,7 +15,7 @@ const PROJECT_LOGOS = [
   '/projects/si_death_bolt.png',
   '/projects/si_item_remover.png',
   '/projects/si_lifesteal.png',
-  '/projects/si_refined_obsidian.png',
+  '/projects/siro/logo.png',
   '/projects/si_scriptified.png',
   '/projects/si_spectre.png',
   '/projects/soncresity_aftermath.png',
