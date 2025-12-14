@@ -1,0 +1,136 @@
+"use client"
+
+import {motion, type MotionValue, useAnimation} from "framer-motion"
+import {Card, CardHeader, CardTitle} from "@/components/ui/card";
+import {sectionTopSpacing} from "@/components/variables";
+import {useEffect, useRef} from "react";
+import {ActivityIcon, Code, Package, Server} from "lucide-react";
+
+export default function About() {
+  const features = [
+    {
+      icon: <Package className="h-6 w-6 text-primary"/>,
+      title: "Minecraft Modpacks",
+    },
+    {
+      icon: <Code className="h-6 w-6 text-primary"/>,
+      title: "Minecraft Mods",
+    },
+    {
+      icon: <Server className="h-6 w-6 text-primary"/>,
+      title: "Server Plugins",
+    },
+    {
+      icon: <ActivityIcon className="h-6 w-6 text-primary"/>,
+      title: "Tools & Utilities",
+    },
+  ]
+
+  const aboutRef = useRef<HTMLElement>(null)
+  const aboutControls = useAnimation()
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.target === aboutRef.current && entry.isIntersecting) {
+            aboutControls.start("visible")
+          }
+        })
+      },
+      {threshold: 0.2},
+    )
+
+    if (aboutRef.current) observer.observe(aboutRef.current)
+
+    return () => {
+      if (aboutRef.current) observer.unobserve(aboutRef.current)
+    }
+  }, [aboutControls])
+
+  return(
+    <motion.section
+      id="about"
+      ref={aboutRef}
+      initial="hidden"
+      animate={aboutControls}
+      variants={{
+        hidden: {opacity: 0, y: 50},
+        visible: {opacity: 1, y: 0, transition: {duration: 0.6}},
+      }}
+      className={`py-10 md:py-22 relative overflow-hidden ${sectionTopSpacing}`}
+    >
+      {/* Background Elements */}
+      <div className="absolute inset-0 -z-10">
+        <div
+          className="absolute top-1/3 left-1/4 w-64 h-64 bg-primary/70 rounded-full blur-3xl opacity-50 animate-pulse-slow"/>
+        <div
+          className="absolute bottom-1/4 right-1/3 w-72 h-72 bg-secondary/60 rounded-full blur-3xl opacity-35 animate-pulse-slow"/>
+      </div>
+
+      <div className="container mx-auto px-4">
+        <div className="content-backdrop rounded-2xl p-8 mx-4">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <motion.h2
+              className="text-3xl md:text-4xl font-serephixBold mb-4"
+              initial={{opacity: 0, y: 20}}
+              whileInView={{opacity: 1, y: 0}}
+              viewport={{once: true}}
+              transition={{duration: 0.5}}
+            >
+              About <span className="text-primary">Soncresity Industries</span>
+            </motion.h2>
+            <motion.p
+              className="text-lg text-foreground/80"
+              initial={{opacity: 0, y: 20}}
+              whileInView={{opacity: 1, y: 0}}
+              viewport={{once: true}}
+              transition={{duration: 0.5, delay: 0.1}}
+            >
+              We create a variety of Minecraft content, including:
+            </motion.p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {features.map((feature, index) => (
+              <motion.div
+                key={index}
+                initial={{opacity: 0, y: 30}}
+                whileInView={{opacity: 1, y: 0}}
+                viewport={{once: true}}
+                transition={{duration: 0.5, delay: index * 0.1}}
+              >
+                <Card className="hover-scale h-full border-border/50">
+                  <CardHeader>
+                    <div
+                      className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                      {feature.icon}
+                    </div>
+                    <CardTitle className="font-serephixBold">{feature.title}</CardTitle>
+                  </CardHeader>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+
+          <motion.div
+            className="hover-scale mt-20 glass-card rounded-2xl p-8"
+            initial={{opacity: 0, y: 30}}
+            whileInView={{opacity: 1, y: 0}}
+            viewport={{once: true}}
+            transition={{duration: 0.5}}
+          >
+            <div className="grid grid-cols-1 md:grid-cols-1 gap-8 items-center">
+              <div>
+                <h3 className="text-2xl font-serephixBold mb-4">Our Journey</h3>
+                <p className="text-foreground/80 mb-4">
+                  Story and lore of SI
+                </p>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </div>
+    </motion.section>
+  )
+}
