@@ -2,7 +2,7 @@
 
 import {motion} from "framer-motion";
 import {Card, CardDescription, CardFooter, CardHeader, CardTitle} from "@/components/ui/card";
-import {ArrowRight, Instagram, Youtube} from "lucide-react";
+import {ArrowRight} from "lucide-react";
 import {sectionTopSpacing, SI_DARK_HEX_STRING} from "@/components/variables";
 import {Button} from "@/components/ui/button";
 import {LINKS} from "@/components/blocks/links";
@@ -46,8 +46,8 @@ export default function Socials() {
             >
               <Card className="hover-scale h-full border-border/50">
                 <CardHeader>
-                  <div className="w-12 h-12 rounded-full bg-[#5865F2]/10 flex items-center justify-center mb-4">
-                    <img src="/icons/discord.png" alt="Discord" className="h-6 w-6"/>
+                  <div className="w-12 h-12 flex items-center justify-center mb-4">
+                    <img src="/icons/discord.png" alt="Discord" className="h-8 w-8"/>
                   </div>
                   <CardTitle>Discord</CardTitle>
                   <CardDescription className="text-foreground/70">
@@ -86,8 +86,8 @@ export default function Socials() {
             >
               <Card className="hover-scale h-full border-border/50">
                 <CardHeader>
-                  <div className="w-12 h-12 rounded-full bg-[#FF0000]/10 flex items-center justify-center mb-4">
-                    <Youtube className="h-6 w-6 text-[#FF0000]"/>
+                  <div className="w-12 h-12 flex items-center justify-center mb-4">
+                    <img src="/icons/youtube.png" alt="YouTube" className="h-8 w-8"/>
                   </div>
                   <CardTitle>YouTube</CardTitle>
                   <CardDescription className="text-foreground/70">
@@ -126,8 +126,8 @@ export default function Socials() {
             >
               <Card className="hover-scale h-full border-border/50">
                 <CardHeader>
-                  <div className="w-12 h-12 rounded-full bg-[#E4405F]/10 flex items-center justify-center mb-4">
-                    <Instagram className="h-6 w-6 text-[#E4405F]"/>
+                  <div className="w-12 h-12 flex items-center justify-center mb-4">
+                    <img src="/icons/instagram.png" alt="Instagram" className="h-8 w-8"/>
                   </div>
                   <CardTitle>Instagram</CardTitle>
                   <CardDescription className="text-foreground/70">
@@ -168,8 +168,8 @@ export default function Socials() {
             >
               <Card className="hover-scale h-full border-border/50">
                 <CardHeader>
-                  <div className="w-12 h-12 rounded-full bg-[#1bd96a]/10 flex items-center justify-center mb-4">
-                    <img src="/icons/modrinth.png" alt="Modrinth" className="h-6 w-6"/>
+                  <div className="w-12 h-12 flex items-center justify-center mb-4">
+                    <img src="/icons/modrinth.png" alt="Modrinth" className="h-8 w-8"/>
                   </div>
                   <CardTitle>Modrinth</CardTitle>
                   <CardDescription className="text-foreground/70">
@@ -208,9 +208,9 @@ export default function Socials() {
             >
               <Card className="hover-scale h-full border-border/50">
                 <CardHeader>
-                  <div className="w-12 h-12 rounded-full bg-[#F16436]/10 flex items-center justify-center mb-4">
+                  <div className="w-12 h-12 flex items-center justify-center mb-4">
                     <img src="/icons/curseforge.png" alt="CurseForge"
-                         className="invert-on-dark h-6 w-6"/>
+                         className="h-8 w-8"/>
                   </div>
                   <CardTitle>CurseForge</CardTitle>
                   <CardDescription className="text-foreground/70">
