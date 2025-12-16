@@ -1,0 +1,4 @@
+[submodule "public/downloads/current/ap_schat_ios"]
+	path = public/downloads/current/ap_schat_ios
+	url = https://github.com/Soncresity-Industries/Website-Downloads
+	branch = schat_ios
