@@ -1,3 +1,6 @@
+'use client'
+
+import { useIsTouchDevice } from '@/hooks/use-is-touch-device';
 import React, { CSSProperties, PropsWithChildren, useEffect, useId, useLayoutEffect, useRef } from 'react';
 
 type ElectricBorderProps = PropsWithChildren<{
@@ -39,6 +42,13 @@ const ElectricBorder: React.FC<ElectricBorderProps> = ({
   const svgRef = useRef<SVGSVGElement | null>(null);
   const rootRef = useRef<HTMLDivElement | null>(null);
   const strokeRef = useRef<HTMLDivElement | null>(null);
+
+  const isTouch = useIsTouchDevice();
+  const [mounted, setMounted] = React.useState(false);
+  
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const updateAnim = () => {
     const svg = svgRef.current;
@@ -91,16 +101,23 @@ const ElectricBorder: React.FC<ElectricBorderProps> = ({
   };
 
   useEffect(() => {
+    if (!mounted || isTouch) return;
     updateAnim();
-  }, [speed, chaos]);
+  }, [mounted, isTouch, speed, chaos]);
 
   useLayoutEffect(() => {
-    if (!rootRef.current) return;
+    if (!mounted || isTouch || !rootRef.current) return;
+
     const ro = new ResizeObserver(() => updateAnim());
     ro.observe(rootRef.current);
     updateAnim();
+
     return () => ro.disconnect();
-  }, []);
+  }, [mounted, isTouch]);
+
+  if (!mounted || isTouch) {
+    return <>{children}</>;
+  }
 
   const inheritRadius: CSSProperties = {
     borderRadius: style?.borderRadius ?? 'inherit'
