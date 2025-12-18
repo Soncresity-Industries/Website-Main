@@ -10,12 +10,12 @@ const nextConfig = {
     return [
       {
         source: '/downloads/snh-server',
-        destination: 'https://github.com/Soncresity-Industries/soncresity-new-horizons/releases/latest/download/server.zip',
+        destination: 'https://github.com/Soncresity-Industries/snh/releases/latest/download/server.zip',
         permanent: true,
       },
       {
         source: '/downloads/snh-client',
-        destination: 'https://github.com/Soncresity-Industries/soncresity-new-horizons/releases/latest/download/mods.zip',
+        destination: 'https://github.com/Soncresity-Industries/snh/releases/latest/download/mods.zip',
         permanent: true,
       },
     ]
