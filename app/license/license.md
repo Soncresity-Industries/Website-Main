@@ -1,6 +1,6 @@
 # Soncresity Standard License (SSL)
 
-**Version 1.0 — 2025**
+**Version 1.0 — 18.12.2025**
 
 Copyright (c) Soncresity Industries and its Contributors
 
