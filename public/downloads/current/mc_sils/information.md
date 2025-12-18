@@ -69,5 +69,5 @@ Or use the [CurseForge](https://www.curseforge.com/download/app) or [Modrinth Ap
 </p>
 
 <p align="center">
-    <i>Copyright Soncresity Industries</i>
+    <i><a href=https://soncresityindustries.vercel.app/license/>Copyright Soncresity Industries</a></i>
 </p>
