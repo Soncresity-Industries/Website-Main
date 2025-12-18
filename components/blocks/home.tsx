@@ -59,7 +59,7 @@ export default function Home() {
                 style={{borderRadius: 5}}
               >
                 <Button size="lg" className="hover-glow">
-                  <a href="#projects">
+                  <a href="/projects">
                     <ShinyText
                       text="Explore Our Work"
                       disabled={false}
@@ -69,13 +69,12 @@ export default function Home() {
                 </Button>
               </ElectricBorder>
               <Button size="lg" variant="outline" className="hover-scale" asChild>
-                <a href="#about">
+                <a href="/about">
                   <ShinyText
                     text="Learn More"
                     disabled={false}
                     speed={2}
                   />
-                  <ArrowDown size={16} className="ml-2"/>
                 </a>
               </Button>
             </div>
