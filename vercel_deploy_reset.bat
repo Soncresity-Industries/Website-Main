@@ -1,9 +1,9 @@
-
 @echo off
 setlocal ENABLEEXTENSIONS ENABLEDELAYEDEXPANSION
 
 REM === SAFETY: required remote URL ===
 set REQUIRED_REMOTE=https://github.com/KalarianAthecila/SI-Website.git
+set TARGET_BRANCH=website
 
 REM === Get current origin URL ===
 for /f "tokens=*" %%i in ('git remote get-url origin 2^>nul') do set CURRENT_REMOTE=%%i
@@ -22,6 +22,7 @@ if /I NOT "%CURRENT_REMOTE%"=="%REQUIRED_REMOTE%" (
 )
 
 echo Repository verified: %CURRENT_REMOTE%
+echo Target branch: %TARGET_BRANCH%
 echo.
 echo WARNING: This will DESTROY ALL GIT HISTORY in this repo.
 echo This action is IRREVERSIBLE for this mirror.
@@ -34,7 +35,7 @@ rmdir /s /q .git
 
 REM === Reinitialize repo ===
 git init
-git branch -M main
+git checkout -b %TARGET_BRANCH%
 git remote add origin %REQUIRED_REMOTE%
 
 REM === Commit everything as one commit ===
@@ -42,9 +43,9 @@ git add -A
 git commit -m "Deploy on Vercel"
 
 REM === Force push to remote ===
-git push origin main --force
+git push origin %TARGET_BRANCH% --force
 
 echo.
-echo SUCCESS: Repository rewritten to a single deploy commit.
+echo SUCCESS: Repository rewritten to a single deploy commit on branch "%TARGET_BRANCH%".
 echo Vercel should now deploy without author issues.
 endlocal
