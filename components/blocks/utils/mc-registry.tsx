@@ -1,6 +1,6 @@
 "use client"
 
-import {useCallback, useMemo, useState} from "react";
+import {Suspense, useCallback, useMemo, useState} from "react";
 import {useRouter, useSearchParams} from "next/navigation";
 import {Card, CardContent, CardDescription, CardHeader, CardTitle} from "@/components/ui/card";
 import {Select, SelectContent, SelectItem, SelectTrigger, SelectValue} from "@/components/ui/select";
@@ -1947,7 +1947,7 @@ interface RegistryType {
   items: RegistryItem[];
 }
 
-export default function MCRegistry() {
+function MCRegistryContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [searchTerm, setSearchTerm] = useState("");
@@ -2183,6 +2183,14 @@ export default function MCRegistry() {
         </div>
       </CardContent>
     </Card>
+  );
+}
+
+export default function MCRegistry() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <MCRegistryContent />
+    </Suspense>
   );
 }
 
