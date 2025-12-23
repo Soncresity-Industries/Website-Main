@@ -1,6 +1,12 @@
 import {Metadata} from "next";
 import {metadataImageHeight, metadataImageWidth} from "@/components/variables";
 import {PageWrapper} from "@/components/page-wrapper";
+import {Card, CardContent, CardDescription, CardHeader, CardTitle} from "@/components/ui/card";
+import {Button} from "@/components/ui/button";
+import {ArrowRight} from "lucide-react";
+import Link from "next/link";
+import Header from "@/components/blocks/header";
+import Footer from "@/components/blocks/footer";
 
 export const metadata: Metadata = {
   title: "Utilities - Soncresity Industries",
@@ -18,18 +24,54 @@ export const metadata: Metadata = {
   },
 }
 
+const utilities = [
+  {
+    id: "mc-registry",
+    title: "Minecraft Registry",
+    description: "Browse Minecraft registry data including Block IDs, Sound Events, and more. Supports multiple versions with easy filtering.",
+    href: "/utils/mc-registry",
+  },
+  {
+    id: "mc-height-dp-gen",
+    title: "Minecraft World Height Datapack Generator",
+    description: "Generate Minecraft datapacks that modify the maximum build height for different dimensions and versions.",
+    href: "/utils/mc-height-dp-gen",
+  },
+];
+
 export default function UtilsPage() {
   return (
     <PageWrapper backgroundInterval={30000}>
-      <div className="container mx-auto px-4 py-8">
-        <h1 className="text-4xl font-serephixBold mb-6">Utilities</h1>
-        <div className="bg-muted p-6 rounded-lg">
-          <h2 className="text-2xl font-semibold mb-4">Work in Progress</h2>
-          <p className="text-muted-foreground">
-            This section is currently under development. Please check back later.
-          </p>
+      <main className="min-h-screen relative">
+        <Header/>
+        <div className="container mx-auto px-4 py-28">
+          <div className="flex flex-col items-center">
+            <h1 className="text-4xl font-serephixBold mb-2">Utilities</h1>
+            <p className="text-muted-foreground mb-8 text-center max-w-2xl">A collection of online tools for developers and users.</p>
+
+            {/* Utilities Grid */}
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-1 max-w-2xl w-full">
+            {utilities.map((utility) => (
+              <Card key={utility.id} className="flex flex-col">
+                <CardHeader>
+                  <CardTitle>{utility.title}</CardTitle>
+                  <CardDescription>{utility.description}</CardDescription>
+                </CardHeader>
+                <CardContent className="flex-grow">
+                  <Link href={utility.href}>
+                    <Button className="w-full">
+                      Open Utility
+                      <ArrowRight className="ml-2 h-4 w-4"/>
+                    </Button>
+                  </Link>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+          </div>
         </div>
-      </div>
+        <Footer/>
+      </main>
     </PageWrapper>
   )
 }
