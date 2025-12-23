@@ -27,6 +27,7 @@ export default function Header() {
     {name: "Projects", href: "/projects"},
     {name: "Socials", href: "/socials"},
     {name: "Team", href: "/team"},
+    {name: "Utilities", href: "/utils"},
     {name: "Partners", href: "/partners"},
   ]
 
