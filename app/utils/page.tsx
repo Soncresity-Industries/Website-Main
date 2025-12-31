@@ -37,6 +37,12 @@ const utilities = [
     description: "Generate Minecraft datapacks that modify the maximum build height for different dimensions and versions.",
     href: "/utils/mc-height-dp-gen",
   },
+  {
+    id: "time-converter",
+    title: "Time System Converter",
+    description: "Convert time between different systems including Earth Time, Sodonian Time, Infernian Time, and Creator Time.",
+    href: "/utils/time-converter",
+  },
 ];
 
 export default function UtilsPage() {
