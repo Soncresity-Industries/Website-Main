@@ -29,17 +29,7 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: '/dc',
-        destination: 'https://discord.gg/uqbQvAHHve',
-        permanent: true,
-      },
-      {
         source: '/curseforge',
-        destination: 'https://www.curseforge.com/members/soncresityindustries/projects',
-        permanent: true,
-      },
-      {
-        source: '/cf',
         destination: 'https://www.curseforge.com/members/soncresityindustries/projects',
         permanent: true,
       },
@@ -49,27 +39,12 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: '/mr',
-        destination: 'https://modrinth.com/user/SoncresityIndustries',
-        permanent: true,
-      },
-      {
         source: '/youtube',
         destination: 'https://www.youtube.com/@SoncresityIndustries',
         permanent: true,
       },
       {
-        source: '/yt',
-        destination: 'https://www.youtube.com/@SoncresityIndustries',
-        permanent: true,
-      },
-      {
-        source: '/kinetichosting',
-        destination: 'https://billing.kinetichosting.com/aff.php?aff=1101',
-        permanent: true,
-      },
-      {
-        source: '/kh',
+        source: '/kinetic-hosting',
         destination: 'https://billing.kinetichosting.com/aff.php?aff=1101',
         permanent: true,
       },
@@ -81,6 +56,16 @@ const nextConfig = {
       {
         source: '/cloudflare',
         destination: 'https://www.cloudflare.com/',
+        permanent: true,
+      },
+      {
+        source: '/discord-terms-of-service',
+        destination: 'https://discord.com/terms',
+        permanent: true,
+      },
+      {
+        source: '/discord-guidelines',
+        destination: 'https://discord.com/guidelines',
         permanent: true,
       },
     ]
