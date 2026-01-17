@@ -73,6 +73,16 @@ const nextConfig = {
         destination: 'https://billing.kinetichosting.com/aff.php?aff=1101',
         permanent: true,
       },
+      {
+        source: '/vercel',
+        destination: 'https://vercel.com/',
+        permanent: true,
+      },
+      {
+        source: '/cloudflare',
+        destination: 'https://www.cloudflare.com/',
+        permanent: true,
+      },
     ]
   },
 }
