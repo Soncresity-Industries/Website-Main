@@ -9,15 +9,20 @@ export const metadata: Metadata = {
   description: "Learn more about Soncresity Industries",
 }
 
+
 export default function AboutPage() {
   return (
     <PageWrapper backgroundInterval={30000}>
-      <main className="min-h-screen relative">
-        <Header/>
-        
-        <About/>
-        
-        <Footer/>
+      <main className="min-h-dvh flex flex-col">
+        <Header />
+
+        <div className="flex-1 pt-header relative">
+          <About />
+
+          <div className="h-[var(--header-h)]" />
+        </div>
+
+        <Footer />
       </main>
     </PageWrapper>
   )

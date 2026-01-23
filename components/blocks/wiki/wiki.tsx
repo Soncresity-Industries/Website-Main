@@ -9,7 +9,7 @@ import Link from "next/link";
 export default function Wiki() {
   return (
     <div className="container mx-auto px-4 py-8">
-      <div className="container mx-auto px-4 mt-20 mb-8">
+      <div className="container mx-auto px-24 mt-20 mb-8">
         <div className="text-center content-backdrop rounded-2xl p-8">
           <div className="flex items-center justify-center gap-3 ">
             <BookOpen className="h-8 w-8 text-primary"/>
@@ -99,7 +99,7 @@ export default function Wiki() {
       </div>
 
       {/* Coming Soon Section */}
-      <div className="text-center py-8 border-t border-border content-backdrop rounded-2xl p-8 mt-8">
+      <div className="text-center py-8 border-t border-accent-dark content-backdrop rounded-2xl mt-8">
         <h2 className="text-2xl font-semibold mb-4 text-foreground">More Wikis Coming Soon</h2>
         <p className="text-muted-foreground mb-6 max-w-md mx-auto">
           We're constantly working on new projects and expanding our documentation. Stay tuned for more

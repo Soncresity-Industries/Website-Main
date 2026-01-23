@@ -116,8 +116,8 @@ export default function RODownloadsPage() {
                     className="sticky top-0 z-50 w-full content-backdrop rounded-b-2xl theme-transition">
                 <div className="container flex h-16 items-center justify-between">
                     <div className="flex items-center gap-2">
-                        <Image src="/assets/refined-obsidian/ro-icon.png" alt="Refined Obsidian Icon" width={24} height={24}
-                               className="animate-pulse-glow"/>
+                        <Image src="/projects/siro/logo.png" alt="Refined Obsidian Icon" width={42} height={42}
+                               className="animate-pulse-glow mr-3"/>
                         <span className="text-xl font-serephixBold text-primary">Refined Obsidian</span>
                     </div>
                     <div className="hidden md:flex items-center gap-6">
@@ -161,7 +161,7 @@ export default function RODownloadsPage() {
                                     </CardHeader>
                                     <CardContent className="pb-2">
                                         <Button
-                                            className="w-full bg-primary hover:bg-primary/90"
+                                            className="w-full"
                                             onClick={() => handleDownload(loader, latest.version, latest.mcVersion, latest.downloadUrl)}
                                         >
                                             <Download className="mr-2 h-4 w-4"/>

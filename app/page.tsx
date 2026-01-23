@@ -26,14 +26,16 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <PageWrapper backgroundInterval={30000}>
-      <main className="min-h-screen relative">
-        <Header/>
+      <main className="min-h-screen flex flex-col">
+        <Header />
         <SpeedInsights/>
         <Analytics/>
 
-        <HomeBlock/>
+        <div className="flex-1 flex flex-col">
+          <HomeBlock />
+        </div>
 
-        <Footer/>
+        <Footer />
       </main>
     </PageWrapper>
   )

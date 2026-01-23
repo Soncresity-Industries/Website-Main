@@ -1,13 +1,13 @@
 "use client";
 
-import React, { useState } from 'react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Calendar, Clock, ArrowRight, RotateCcw } from "lucide-react";
-import { Alert, AlertDescription } from "@/components/ui/alert";
+import React, {useState} from 'react';
+import {Card, CardContent, CardDescription, CardHeader, CardTitle} from "@/components/ui/card";
+import {Button} from "@/components/ui/button";
+import {Input} from "@/components/ui/input";
+import {Label} from "@/components/ui/label";
+import {Select, SelectContent, SelectItem, SelectTrigger, SelectValue} from "@/components/ui/select";
+import {Calendar, Clock, ArrowRight, RotateCcw} from "lucide-react";
+import {Alert, AlertDescription} from "@/components/ui/alert";
 
 type TimeSystem = 'earth' | 'sodonian' | 'infernian' | 'creator';
 
@@ -49,7 +49,7 @@ export default function TimeConverter() {
 
   const timeSystemNames = {
     earth: "Earth Time",
-    sodonian: "Sodonian Time", 
+    sodonian: "Sodonian Time",
     infernian: "Infernian Time",
     creator: "Creator Time"
   };
@@ -92,7 +92,7 @@ export default function TimeConverter() {
   };
 
   const convertCreatorTimeToBaseCycles = (creatorTime: CreatorTimeInput): number => {
-    const { cycles, unit } = creatorTime;
+    const {cycles, unit} = creatorTime;
     switch (unit) {
       case 'cycles':
         return cycles;
@@ -126,9 +126,9 @@ export default function TimeConverter() {
     try {
       // Validate input based on input system
       if (inputSystem !== 'creator') {
-        if (timeInput.year < 1 || timeInput.month < 1 || timeInput.month > 12 || 
-            timeInput.day < 1 || timeInput.day > 31 || timeInput.hour < 0 || 
-            timeInput.hour > 23 || timeInput.minute < 0 || timeInput.minute > 59) {
+        if (timeInput.year < 1 || timeInput.month < 1 || timeInput.month > 12 ||
+          timeInput.day < 1 || timeInput.day > 31 || timeInput.hour < 0 ||
+          timeInput.hour > 23 || timeInput.minute < 0 || timeInput.minute > 59) {
           setResult({
             system: outputSystem,
             display: "Invalid input values",
@@ -141,7 +141,7 @@ export default function TimeConverter() {
 
       // Convert input to Unix timestamp first (as base reference)
       let unixTimestamp: number;
-      
+
       switch (inputSystem) {
         case 'earth':
           unixTimestamp = convertTimeInputToUnixTimestamp(timeInput);
@@ -286,12 +286,12 @@ Petacycles: ${creatorUnits.PC.toExponential(3)}`;
   };
 
   return (
-    <div className="max-w-4xl mx-auto space-y-6">
+    <div className="max-w-7xl mx-auto space-y-6">
       {/* Input Section */}
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-            <Calendar className="h-5 w-5" />
+            <Calendar className="h-5 w-5"/>
             Input Time
           </CardTitle>
           <CardDescription>
@@ -304,7 +304,7 @@ Petacycles: ${creatorUnits.PC.toExponential(3)}`;
               <Label htmlFor="input-system">Input Time System</Label>
               <Select value={inputSystem} onValueChange={(value: TimeSystem) => setInputSystem(value)}>
                 <SelectTrigger>
-                  <SelectValue />
+                  <SelectValue/>
                 </SelectTrigger>
                 <SelectContent>
                   {Object.entries(timeSystemNames).map(([key, name]) => (
@@ -322,7 +322,7 @@ Petacycles: ${creatorUnits.PC.toExponential(3)}`;
               <Label htmlFor="output-system">Output Time System</Label>
               <Select value={outputSystem} onValueChange={(value: TimeSystem) => setOutputSystem(value)}>
                 <SelectTrigger>
-                  <SelectValue />
+                  <SelectValue/>
                 </SelectTrigger>
                 <SelectContent>
                   {Object.entries(timeSystemNames).map(([key, name]) => (
@@ -354,9 +354,10 @@ Petacycles: ${creatorUnits.PC.toExponential(3)}`;
               </div>
               <div className="space-y-2">
                 <Label htmlFor="creator-unit">Unit</Label>
-                <Select value={creatorTimeInput.unit} onValueChange={(value: 'cycles' | 'kC' | 'MC' | 'GC' | 'TC' | 'PC') => handleCreatorTimeChange('unit', value)}>
+                <Select value={creatorTimeInput.unit}
+                        onValueChange={(value: 'cycles' | 'kC' | 'MC' | 'GC' | 'TC' | 'PC') => handleCreatorTimeChange('unit', value)}>
                   <SelectTrigger>
-                    <SelectValue />
+                    <SelectValue/>
                   </SelectTrigger>
                   <SelectContent>
                     <SelectItem value="cycles">Cycles</SelectItem>
@@ -434,15 +435,15 @@ Petacycles: ${creatorUnits.PC.toExponential(3)}`;
 
           <div className="flex gap-2 flex-wrap">
             <Button onClick={convertTime} className="flex-1 md:flex-none">
-              <ArrowRight className="h-4 w-4 mr-2" />
+              <ArrowRight className="h-4 w-4 mr-2"/>
               Convert Time
             </Button>
             <Button variant="outline" onClick={swapSystems}>
-              <RotateCcw className="h-4 w-4 mr-2" />
+              <RotateCcw className="h-4 w-4 mr-2"/>
               Swap Systems
             </Button>
             <Button variant="outline" onClick={resetToCurrentTime}>
-              <Clock className="h-4 w-4 mr-2" />
+              <Clock className="h-4 w-4 mr-2"/>
               Use Current Time
             </Button>
           </div>
@@ -454,7 +455,7 @@ Petacycles: ${creatorUnits.PC.toExponential(3)}`;
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
-              <Clock className="h-5 w-5" />
+              <Clock className="h-5 w-5"/>
               Conversion Result
             </CardTitle>
             <CardDescription>
@@ -504,7 +505,8 @@ Petacycles: ${creatorUnits.PC.toExponential(3)}`;
             <div className="space-y-2">
               <h3 className="font-semibold">Sodonian Time</h3>
               <p className="text-sm text-muted-foreground">
-                Similar calculation method to Earth time but with a different epoch/zero point. Currently set to {Math.abs(SODONIAN_YEAR_OFFSET)} years before Earth time.
+                Similar calculation method to Earth time but with a different epoch/zero point. Currently set
+                to {Math.abs(SODONIAN_YEAR_OFFSET)} years before Earth time.
               </p>
             </div>
             <div className="space-y-2">
@@ -516,7 +518,7 @@ Petacycles: ${creatorUnits.PC.toExponential(3)}`;
             <div className="space-y-2">
               <h3 className="font-semibold">Creator Time</h3>
               <p className="text-sm text-muted-foreground">
-                Time measured in cycles where each cycle equals one second since the Big Bang (~13.8 billion years ago). 
+                Time measured in cycles where each cycle equals one second since the Big Bang (~13.8 billion years ago).
                 Includes units from cycles to petacycles for different scales of measurement.
               </p>
             </div>

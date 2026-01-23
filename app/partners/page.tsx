@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function PartnersPage() {
   return (
     <PageWrapper backgroundInterval={30000}>
-      <main className="min-h-screen relative">
+      <main className="min-h-dvh flex flex-col">
         <Header/>
         
         <Partners/>

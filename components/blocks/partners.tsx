@@ -120,7 +120,7 @@ export default function Partners() {
                     style={{borderRadius: 5}}
                   >
                     <Button
-                      className="bg-gradient-to-r from-[#5A4FCF] via-[#7868E6] to-[#A29BFE] hover:opacity-90 text-white hover-scale"
+                      className="bg-gradient-to-r from-[#5A4FCF] via-[#7868E6] to-[#A29BFE] hover:bg-gradient-to-r from-[#5A4FCF] via-[#7868E6] to-[#A29BFE] text-white hover-scale"
                       asChild>
                       <a href={`${LINKS.kinetic_affiliate}`} target="_blank"
                          rel="noopener noreferrer">
