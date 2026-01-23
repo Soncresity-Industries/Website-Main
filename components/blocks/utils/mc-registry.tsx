@@ -2000,7 +2000,6 @@ function MCRegistryContent() {
         // Default alphabetical sort by name
         result.sort((a, b) => a.name.localeCompare(b.name));
       }
-
       return result;
     },
     [currentRegistry, selectedVersion, searchTerm, sortColumn, sortDirection]
@@ -2112,7 +2111,7 @@ function MCRegistryContent() {
             onChange={(e) => setSearchTerm(e.target.value)}
             className={`max-w-sm text-white placeholder:text-white ${
               searchTerm === "" 
-                ? "border-white"
+                ? "border-accent-dark"
                 : filteredData.length > 0 
                 ? "border-green-500 focus-visible:ring-green-500"
                 : "border-red-500 focus-visible:ring-red-500"
@@ -2121,9 +2120,9 @@ function MCRegistryContent() {
         </div>
 
         {/* Table */}
-        <div className="border rounded-lg overflow-hidden">
-          <Table>
-            <TableHeader>
+        <div className="border border-accent-dark rounded-lg overflow-hidden">
+          <Table className="[&>tbody>tr]:border-accent-dark/40">
+            <TableHeader className="[&_tr]:border-accent-dark/40">
               <TableRow>
                 {/* Dynamic columns */}
                 {currentRegistry.columns.map((column) => {

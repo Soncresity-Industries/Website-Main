@@ -48,9 +48,9 @@ const utilities = [
 export default function UtilsPage() {
   return (
     <PageWrapper backgroundInterval={30000}>
-      <main className="min-h-screen relative">
+      <main className="min-h-dvh flex flex-col">
         <Header/>
-        <div className="container mx-auto px-4 py-28">
+        <div className="container mx-auto px-4 py-28 pb-36">
           <div className="flex flex-col items-center">
             <h1 className="text-4xl font-serephixBold mb-2">Utilities</h1>
             <p className="text-muted-foreground mb-8 text-center max-w-2xl">A collection of online tools for developers and users.</p>

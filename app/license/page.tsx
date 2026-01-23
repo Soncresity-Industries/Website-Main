@@ -1,10 +1,10 @@
-import { Metadata } from 'next'
-import { PageWrapper } from "@/components/page-wrapper"
+import {Metadata} from 'next'
+import {PageWrapper} from "@/components/page-wrapper"
 import Header from "@/components/blocks/header"
 import Footer from "@/components/blocks/footer"
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
-import { promises as fs } from 'fs'
+import {promises as fs} from 'fs'
 import path from 'path'
 
 export const metadata: Metadata = {
@@ -28,20 +28,23 @@ export default async function LicensePage() {
 
   return (
     <PageWrapper backgroundInterval={30000}>
-      <main className="min-h-screen relative">
+      <main className="min-h-dvh flex flex-col">
         <Header/>
-        
-        <div className="container mx-auto px-4 py-16">
-          <div className="max-w-4xl mx-auto">
-            <h1 className="text-4xl font-bold mb-8 text-center">License</h1>
-            <div className="prose prose-lg max-w-none dark:prose-invert prose-headings:text-foreground prose-p:text-foreground prose-strong:text-foreground prose-code:text-foreground prose-pre:bg-muted prose-pre:text-foreground">
-              <ReactMarkdown remarkPlugins={[remarkGfm]}>
-                {licenseContent}
-              </ReactMarkdown>
+
+        <div className="flex-1 pt-header relative">
+          <div className="container mx-auto px-4 py-16">
+            <div className="max-w-4xl mx-auto">
+              <h1 className="text-4xl font-bold mb-8 text-center">License</h1>
+              <div
+                className="prose prose-lg max-w-none dark:prose-invert prose-headings:text-foreground prose-p:text-foreground prose-strong:text-foreground prose-code:text-foreground prose-pre:bg-muted prose-pre:text-foreground">
+                <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                  {licenseContent}
+                </ReactMarkdown>
+              </div>
             </div>
           </div>
         </div>
-        
+
         <Footer/>
       </main>
     </PageWrapper>

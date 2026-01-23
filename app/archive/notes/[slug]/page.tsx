@@ -48,9 +48,10 @@ export default async function ArchiveNotePage({ params }: Props) {
 
   return (
     <PageWrapper backgroundInterval={30000}>
-      <main className="min-h-screen relative">
+      <main className="min-h-dvh flex flex-col">
         <Header/>
-        
+
+        <div className="flex-1 pt-header relative">
         <div className="container mx-auto px-4 py-16">
           <div className="max-w-4xl mx-auto">
             <div className="mb-8">
@@ -64,6 +65,9 @@ export default async function ArchiveNotePage({ params }: Props) {
               </ReactMarkdown>
             </div>
           </div>
+        </div>
+
+          <div className="h-[var(--header-h)]" />
         </div>
         
         <Footer/>

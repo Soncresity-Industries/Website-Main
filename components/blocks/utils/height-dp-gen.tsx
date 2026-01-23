@@ -148,13 +148,13 @@ export default function HeightDPGen() {
   return (
     <div className="container mx-auto px-4 py-32">
       <motion.div initial={{opacity: 0, y: 20}} animate={{opacity: 1, y: 0}} transition={{duration: 0.5}}
-                  className="text-center max-w-3xl mx-auto mb-16">
+                  className="text-center max-w-3xl mx-auto mb-12">
         <h2 className="text-3xl md:text-4xl font-serephixBold mb-4">Height <span
           className="text-primary">Datapack</span> Generator</h2>
         <p className="text-lg text-foreground/80">Customize dimension heights for your Minecraft world</p>
       </motion.div>
 
-      <Card className="max-w-2xl mx-auto border-border/50">
+      <Card className="max-w-2xl mx-auto border border-accent-dark">
         <CardHeader className="text-center">
           <CardTitle>Configuration</CardTitle>
           <CardDescription>Select your Minecraft version and set dimension heights</CardDescription>
@@ -179,14 +179,14 @@ export default function HeightDPGen() {
                 <div>
                   <input type="text" placeholder="Min Height" value={values[idx].miny}
                          onChange={e => handleValueChange(idx, "miny", e.target.value)}
-                         className={`w-full rounded-md border px-3 py-2 text-center ${errors[`${idx}_miny`] ? "border-red-500" : "border-border bg-background"}`}/>
+                         className={`w-full rounded-md border border-accent px-3 py-2 text-center ${errors[`${idx}_miny`] ? "border-red-500" : "border-border bg-background"}`}/>
                   {errors[`${idx}_miny`] &&
                     <p className="mt-1 text-sm text-red-500 text-center">{errors[`${idx}_miny`]}</p>}
                 </div>
                 <div>
                   <input type="text" placeholder="Max Height" value={values[idx].maxy}
                          onChange={e => handleValueChange(idx, "maxy", e.target.value)}
-                         className={`w-full rounded-md border px-3 py-2 text-center ${errors[`${idx}_maxy`] ? "border-red-500" : "border-border bg-background"}`}/>
+                         className={`w-full rounded-md border border-accent px-3 py-2 text-center ${errors[`${idx}_maxy`] ? "border-red-500" : "border-border bg-background"}`}/>
                   {errors[`${idx}_maxy`] &&
                     <p className="mt-1 text-sm text-red-500 text-center">{errors[`${idx}_maxy`]}</p>}
                 </div>

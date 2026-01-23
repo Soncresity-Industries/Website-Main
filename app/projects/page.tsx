@@ -25,11 +25,13 @@ export const metadata: Metadata = {
 export default function ProjectsPage() {
   return (
     <PageWrapper backgroundInterval={45000}>
-      <main className="min-h-screen relative">
+      <main className="min-h-dvh flex flex-col">
         <Header/>
 
-        <Projects py={0} viewall={false} />
-        <div className="mb-14"/>
+        <div className="flex-1 pt-header relative">
+          <Projects viewall={false}/>
+          <div className="h-[var(--header-h)]"/>
+        </div>
 
         <Footer/>
       </main>

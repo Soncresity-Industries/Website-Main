@@ -60,7 +60,6 @@ export default function Help() {
     { name: "Documentation", href: "/wiki", icon: <FileText className="w-4 h-4" /> },
     { name: "Projects", href: "/projects", icon: <ExternalLink className="w-4 h-4" /> },
     { name: "Utilities", href: "/utils", icon: <ExternalLink className="w-4 h-4" /> },
-    { name: "Contact", href: "/socials", icon: <MessageCircle className="w-4 h-4" /> },
   ]
 
   return (
@@ -74,7 +73,7 @@ export default function Help() {
           viewport={{ once: true }}
         >
           <motion.div variants={fadeInUp} className="mb-4">
-            <Badge variant="secondary" className="mb-4">
+            <Badge variant="secondary" className="h-8 w-50 mb-4 font-semibold">
               Help & Support
             </Badge>
           </motion.div>
@@ -105,7 +104,7 @@ export default function Help() {
               <Card className="h-full hover-lift theme-transition">
                 <CardHeader>
                   <div className="flex items-center gap-3 mb-2">
-                    <div className="p-2 rounded-lg bg-primary/10 text-primary">
+                    <div className="p-2 rounded-lg bg-accent-dark/60 text-primary">
                       {category.icon}
                     </div>
                     <CardTitle className="text-xl">{category.title}</CardTitle>
@@ -116,7 +115,7 @@ export default function Help() {
                   <ul className="space-y-2">
                     {category.items.map((item, itemIndex) => (
                       <li key={itemIndex} className="flex items-center text-foreground/70">
-                        <div className="w-1.5 h-1.5 rounded-full bg-primary mr-3" />
+                        <div className="w-1.5 h-1.5 rounded-full bg-accent mr-3" />
                         {item}
                       </li>
                     ))}
@@ -179,7 +178,7 @@ export default function Help() {
               </CardHeader>
               <CardContent className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button className="hover-lift" asChild>
-                  <a href="/socials" className="flex items-center gap-2">
+                  <a href="https://support.soncresity.industries" target="_blank" className="flex items-center gap-2">
                     <MessageCircle className="w-4 h-4" />
                     Contact Us
                   </a>

@@ -68,7 +68,7 @@ export default function Footer() {
                 </a>
               </Button>
               <Button size="icon" variant="ghost" className="rounded-full hover-glow" asChild>
-                <a href="mailto:SoncresityIndustries@outlook.com" aria-label="Email">
+                <a href="mailto:info@soncresity.dev" aria-label="Email">
                   <img src="/icons/mail.png" alt="Email"
                        width={20} height={20}
                        className="h-5 w-5"/>
@@ -115,6 +115,17 @@ export default function Footer() {
                   className="text-foreground/70 hover:text-primary transition-colors hover-lift inline-flex items-center gap-2 group"
                 >
                   Team
+                  <ExternalLink size={14}
+                                className="opacity-0 group-hover:opacity-100 transition-opacity"/>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://support.soncresity.industries"
+                  target="_blank"
+                  className="text-foreground/70 hover:text-primary transition-colors hover-lift inline-flex items-center gap-2 group"
+                >
+                  Support
                   <ExternalLink size={14}
                                 className="opacity-0 group-hover:opacity-100 transition-opacity"/>
                 </a>
@@ -173,7 +184,7 @@ export default function Footer() {
           </motion.div>
         </div>
 
-        <Separator className="mb-8"/>
+        <Separator className="bg-accent mb-8"/>
 
         {/* Bottom Footer */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">

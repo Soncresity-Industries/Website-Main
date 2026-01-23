@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function HelpPage() {
   return (
     <PageWrapper backgroundInterval={30000}>
-      <main className="min-h-screen relative">
+      <main className="min-h-screen relative text-foreground">
         <Header/>
         
         <Help/>

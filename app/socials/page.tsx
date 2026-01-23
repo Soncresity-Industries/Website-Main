@@ -1,4 +1,4 @@
-import { Metadata } from 'next'
+import {Metadata} from 'next'
 import {PageWrapper} from "@/components/page-wrapper"
 import Header from "@/components/blocks/header"
 import Socials from "@/components/blocks/socials"
@@ -12,11 +12,13 @@ export const metadata: Metadata = {
 export default function SocialsPage() {
   return (
     <PageWrapper backgroundInterval={30000}>
-      <main className="min-h-screen relative">
+      <main className="min-h-dvh flex flex-col">
         <Header/>
-        
-        <Socials/>
-        
+
+        <div className="flex-1 pt-header relative">
+          <Socials/>
+        </div>
+
         <Footer/>
       </main>
     </PageWrapper>

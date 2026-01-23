@@ -54,13 +54,13 @@ export default function About() {
       initial="hidden"
       animate={aboutControls}
       variants={{
-        hidden: {opacity: 0, y: 50},
-        visible: {opacity: 1, y: 0, transition: {duration: 0.6}},
+        hidden: { opacity: 0, y: 50 },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
       }}
-      className={`py-10 md:py-22 relative overflow-hidden ${sectionTopSpacing}`}
+      className="relative overflow-visible py-16 md:py-24"
     >
       <div className="container mx-auto px-4">
-        <div className="content-backdrop rounded-2xl p-8 mx-4">
+        <div className="content-backdrop rounded-2xl p-6 sm:p-8 mx-0 sm:mx-4">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <motion.h2
               className="text-3xl md:text-4xl font-serephixBold mb-4"

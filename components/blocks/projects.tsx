@@ -17,11 +17,10 @@ import Header from "@/components/blocks/header";
 import Footer from "@/components/blocks/footer";
 
 interface ProjectsProps {
-  py: number;
   viewall: boolean;
 }
 
-export default function Projects({py, viewall}: ProjectsProps) {
+export default function Projects({viewall}: ProjectsProps) {
   const isMobile = useIsMobile()
   const [selectedTags, setSelectedTags] = useState<string[]>([])
   const [filterMode, setFilterMode] = useState<'AND' | 'OR'>('AND')
@@ -79,14 +78,13 @@ export default function Projects({py, viewall}: ProjectsProps) {
         hidden: {opacity: 0, y: 50},
         visible: {opacity: 1, y: 0, transition: {duration: 0.6}},
       }}
-      className={`py-${py} relative overflow-hidden ${sectionTopSpacing}`}
+      className={`${sectionTopSpacing}`}
     >
       {/* Projects */}
       <div className="container mx-auto px-4">
         <div className="content-backdrop rounded-2xl p-8 mx-4">
-          {/* Projects */}
           <div className="container mx-auto px-4">
-            <div className="text-center max-w-3xl mx-auto mb-16">
+            <div className="text-center max-w-3xl mx-auto mb-8">
               <motion.h2
                 className="text-3xl md:text-4xl font-serephixBold mb-4"
                 initial={{opacity: 0, y: 20}}
@@ -199,11 +197,11 @@ export default function Projects({py, viewall}: ProjectsProps) {
                     transition={{duration: 0.5, delay: index * 0.1}}
                   >
                     <Card className="overflow-hidden hover-scale h-full border-border/50">
-                      <div className="aspect-video relative overflow-hidden">
+                      <div className="relative w-full h-48 sm:h-56 overflow-hidden rounded-t-lg">
                         <img
                           src={project.image}
                           alt={project.title}
-                          className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                          className="w-full h-full object-cover object-center transition-transform duration-300 hover:scale-105"
                         />
                       </div>
                       <CardHeader>
@@ -231,9 +229,9 @@ export default function Projects({py, viewall}: ProjectsProps) {
                             )
                           })}
                         </div>
-                        <CardTitle className="line-clamp-1 font-serephixBold">{project.title}</CardTitle>
+                        <CardTitle className="font-serephixBold">{project.title}</CardTitle>
                         <CardDescription
-                          className="text-foreground/70 line-clamp-2">{project.description}</CardDescription>
+                          className="text-foreground/70">{project.description}</CardDescription>
                       </CardHeader>
                       <CardFooter className="flex justify-between">
                         <div className="flex gap-2">

@@ -12,10 +12,13 @@ export const metadata: Metadata = {
 export default function TeamPage() {
   return (
     <PageWrapper backgroundInterval={30000}>
-      <main className="min-h-screen relative">
+      <main className="min-h-dvh flex flex-col">
         <Header/>
-        
-        <Team/>
+
+        <div className="flex-1 pt-header relative">
+          <Team/>
+          <div className="h-[var(--header-h)]" />
+        </div>
         
         <Footer/>
       </main>

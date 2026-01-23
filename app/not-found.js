@@ -65,7 +65,7 @@ export default function NotFound() {
                   Back
                 </Button>
                 <Link href="/">
-                  <Button className="gap-2 bg-primary hover:bg-primary/90 hover-lift w-full">
+                  <Button className="gap-2 hover:bg-accent/90 hover-lift w-full">
                     <Home className="h-4 w-4"/>
                     Home
                   </Button>
