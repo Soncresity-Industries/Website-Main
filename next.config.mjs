@@ -43,6 +43,31 @@ const nextConfig = {
         destination: 'https://www.youtube.com/@SoncresityIndustries',
         permanent: true,
       },
+      {
+        source: '/kinetic-hosting',
+        destination: 'https://billing.kinetichosting.com/aff.php?aff=1101',
+        permanent: true,
+      },
+      {
+        source: '/vercel',
+        destination: 'https://vercel.com/',
+        permanent: true,
+      },
+      {
+        source: '/cloudflare',
+        destination: 'https://www.cloudflare.com/',
+        permanent: true,
+      },
+      {
+        source: '/discord-terms-of-service',
+        destination: 'https://discord.com/terms',
+        permanent: true,
+      },
+      {
+        source: '/discord-guidelines',
+        destination: 'https://discord.com/guidelines',
+        permanent: true,
+      },
     ]
   },
 }
