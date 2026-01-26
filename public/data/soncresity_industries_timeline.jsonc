@@ -1,0 +1,35 @@
+{
+    "timeline":
+    [
+        {
+            "cycle":7250000000000000, // 3rd August 2019
+            "title":"When It All Began",
+            "description":"The day the idea for Soncresity Industries was born."
+        },
+        {
+            "cycle":7250000027666666, // 17th August 2019
+            "title":"Released the short story 'Birth of the Sonacresity'",
+            "description":"The first draft of the Soncresity Universe creation mythos was shared, introducing the Creators."
+        },
+        {
+            "cycle":7250000295666666, // 2nd September 2019
+            "title":"Released the short story 'A God's Thoughts'",
+            "description":"A short story presenting Kalarian's inner thoughts while shaping the Soncresity."
+        },
+        {
+            "cycle":7250000296541333, // 17th January 2020
+            "title":"Released the short story 'Worlds Beyond Sodonia'",
+            "description":"The concept of multiple inhabited worlds was born, laying the foundation for the Soncresity multiverse."
+        },
+        {
+            "cycle":7250000296333600, // 26th January 2020
+            "title":"Released an excerpt of 'The Living Chronicles'",
+            "description":"The first excerpt of The Living Chronicles detailed the Ny'kara and Varnari, bringing Sodonia's life to paper."
+        },
+        {
+            "cycle":7250000297626665, // 1st April 2020
+            "title":"released an excerpt of ",
+            "description":"Originally an April Fools joke, this entry introduced the Aetheri, now canon in the Living Chronicles."
+        },
+    ]
+}

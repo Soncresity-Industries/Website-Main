@@ -9,13 +9,13 @@ const nextConfig = {
   async redirects() {
     return [
       {
-        source: '/downloads/snh-server',
+        source: '/downloads/snh/server/latest',
         destination: 'https://github.com/Soncresity-Industries/snh/releases/latest/download/server.zip',
         permanent: true,
       },
       {
-        source: '/downloads/snh-client',
-        destination: 'https://github.com/Soncresity-Industries/snh/releases/latest/download/mods.zip',
+        source: '/downloads/snh/client/latest',
+        destination: 'https://github.com/Soncresity-Industries/snh/releases/latest/download/client.zip',
         permanent: true,
       },
       {

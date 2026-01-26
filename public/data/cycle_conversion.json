@@ -1,0 +1,50 @@
+{
+    "cycleTypes":
+    [
+        {
+            "name": "Nanocycle",
+            "id": "nanocycle",
+            "cycleCount": 0.000000001
+        },
+        {
+            "name": "Microcycle",
+            "id": "microcycle",
+            "cycleCount": 0.000001
+        },
+        {
+            "name": "Milicycle",
+            "id": "milicycle",
+            "cycleCount": 0.001
+        },
+        {
+            "name": "Cycle",
+            "id": "cycle",
+            "cycleCount": 1
+        },
+        {
+            "name": "Kilocycle",
+            "id": "kilocycle",
+            "cycleCount": 1000
+        },
+        {
+            "name": "Megacycle",
+            "id": "megacycle",
+            "cycleCount": 1000000
+        },
+        {
+            "name": "Gigacycle",
+            "id": "gigacycle",
+            "cycleCount": 1000000000
+        },
+        {
+            "name": "Terracycle",
+            "id": "terracycle",
+            "cycleCount": 1000000000000
+        },
+        {
+            "name": "Exacycle",
+            "id": "exacycle",
+            "cycleCount": 1000000000000000
+        }
+    ]
+}
