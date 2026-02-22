@@ -12,7 +12,7 @@ jobs:
       - name: Sync Upstream
         uses: zhangnew/sync-upstream@v1
         with:
-          upstream: ORG/REPO
+          upstream: Soncresity-Industries/website
           upstream-branch: main
           branch: main
           token: ${{ secrets.GITHUB_TOKEN }}
