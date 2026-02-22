@@ -1,0 +1,7 @@
+{
+  "title": "Home",
+  "description": "The main landing page for the wiki!",
+  "root": true,
+  "icon": "/logos/home.png",
+  "pages": ["---Main---", "index"]
+}

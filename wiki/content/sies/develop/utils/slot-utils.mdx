@@ -1,0 +1,42 @@
+---
+title: "Slot Utilities"
+description: "Allows getting the x and y position of a slot in a large chest GUI"
+curseforgeUrl: https://www.curseforge.com/minecraft/mc-mods/sies
+modrinthUrl: https://modrinth.com/mod/sies
+---
+
+<Callout title="Introduction" type="info">
+  A fully functional Version of this class has first been introduced in Version `2.1.0`
+</Callout>
+
+<Callout title="Attention" type="warning">
+  This class will probably receive a rework in the future to support more GUIs. As such the current method names may change in future versions.
+</Callout>
+
+The Slot Utilities class allows you to get the x and y position of a slot in a large chest GUI.
+This is useful for our [**Slot presets**]()
+
+# Class
+File: `SlotUtils.java`
+Package: `dev.soncresityindustries.es.api.util`
+
+# Methods
+## `getXPos`
+```java tab="sies >=2.1.0"
+public static int getXPos(int slot) {}
+```
+
+### Usage [!toc]
+```java tab="sies >=2.1.0"
+int x = SlotUtils.getXPos(slot);
+```
+
+## `getYPos`
+```java tab="sies >=2.1.0"
+public static int getYPos(int slot) {}
+```
+
+### Usage [!toc]
+```java tab="sies >=2.1.0"
+int y = SlotUtils.getYPos(slot);
+```

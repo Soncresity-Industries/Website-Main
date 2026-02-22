@@ -1,0 +1,27 @@
+---
+title: "Decimal Utilities"
+description: "Allows rounding decimal values to a set number of decimal points"
+curseforgeUrl: https://www.curseforge.com/minecraft/mc-mods/sies
+modrinthUrl: https://modrinth.com/mod/sies
+---
+
+<Callout title="Introduction" type="info">
+  A fully functional Version of this class has first been introduced in Version `2.1.0`
+</Callout>
+
+The Decimal Utilities class allows you to round a decimal value to a set number of decimal points / places after the comma.
+
+# Class
+File: `DecimalUtils.java`  
+Package: `dev.soncresityindustries.es.api.util`
+
+# Methods
+## `roundWithBigDecimal`
+```java tab="sies >=2.1.0"
+public static double roundWithBigDecimal(double value, int places) {}
+```
+
+### Usage [!toc]
+```java tab="sies >=2.1.0"
+float rounded = DecimalUtils.roundWithBigDecimal(value, places);
+```

@@ -1,0 +1,55 @@
+---
+title: "Registry Utilities"
+description: "Makes the process of registering Items and Blocks easier"
+curseforgeUrl: https://www.curseforge.com/minecraft/mc-mods/sies
+modrinthUrl: https://modrinth.com/mod/sies
+---
+
+<Callout title="Introduction" type="info">
+  A fully functional Version of this class has first been introduced in Version `2.2.0`
+</Callout>
+
+<Callout title="Warning" type="warn">
+  This Utility class is currently **only available on `fabric`!**
+</Callout>
+
+The Registry Utilities class makes the process of registering Items and Blocks easier by providing useful helper methods.
+
+# Class
+File: `RegistryUtils.java`  
+Package: `dev.soncresityindustries.es.api.util`
+
+# Methods
+## `registerBlock`
+```java tab="sies >=2.2.0-fabric"
+public static Block registerBlock(String name, Function<BlockBehaviour.Properties, Block> function, boolean registerBlockItem, boolean fireResistant, boolean explosionResistant) {}
+```
+
+### Usage [!toc]
+```java tab="sies >=2.2.0-fabric"
+public static final Block MY_BLOCK = RegistryUtils.registerBlock("my_block", props -> new Block(props), registerBlockItem, fireResistant, explosionResistant);
+```
+
+## `registerBlockItem`
+<Callout title="Warning" type="warn">
+  This method should usually only be used within the [`registerBlock`](#registerblock) method by providing the `registerBlockItem` boolean
+</Callout>
+
+```java tab="sies >=2.2.0-fabric"
+public static void registerBlockItem(String name, Block block, boolean fireResistant, boolean explosionResistant) {}
+```
+
+### Usage [!toc]
+```java tab="sies >=2.2.0-fabric"
+RegistryUtils.registerBlockItem("my_block", block, fireResistant, explosionResistant);
+```
+
+## `registerItem`
+```java tab="sies >=2.2.0-fabric"
+public static Item registerItem(String name, Function<Item.Properties, Item> itemFactory, Item.Properties settings) {}
+```
+
+### Usage [!toc]
+```java tab="sies >=2.2.0-fabric"
+public static final Item MY_ITEM = RegistryUtils.registerItem("my_item", Item::new, new Item.Properties());
+```

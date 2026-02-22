@@ -1,0 +1,55 @@
+---
+title: "Title Utilities"
+description: "Allows you to show and broadcast fully customizable Titles to players"
+curseforgeUrl: https://www.curseforge.com/minecraft/mc-mods/sies
+modrinthUrl: https://modrinth.com/mod/sies
+---
+
+<Callout title="Introduction" type="info">
+  A fully functional Version of this class has first been introduced in Version `2.1.0`
+</Callout>
+
+The Decimal Utilities class allows you to show and broadcast fully customizable Titles to players using the [Adventure/MiniMessage API](https://docs.papermc.io/adventure/minimessage/format/).
+
+# Class
+File: `TitleUtils.java`
+Package: `dev.soncresityindustries.es.api.util`
+
+# Methods
+## `showTitle`
+<Callout title="Optional Arguments" type="idea">
+  Method arguments that are inside of square brackets (`[]`) are optional, however you must either provide no timings or all timings (`fadein`, `stay` and `fadeout`)
+</Callout>
+
+```java tab="sies >=2.1.0"
+public static void showTitle(@NotNull ServerPlayer player, @NotNull String title, [@NotNull String subtitle], [@NotNull long fadein], [@NotNull long stay], [@NotNull long fadeout]) {}
+```
+<Callout title="Formatting" type="info">
+  Both `title` and `subtitle` support [**MiniMessage Formatting**](https://docs.papermc.io/adventure/minimessage/format/)
+</Callout>
+
+### Usage [!toc]
+```java tab="sies >=2.1.0"
+TitleUtils.showTitle(player, title, subtitle, fadein, stay, fadeout);
+```
+
+## `broadcastTitle`
+<Callout title="Optional Arguments" type="idea">
+  Method arguments that are inside of square brackets (`[]`) are optional, however you must either provide no timings or all timings (`fadein`, `stay` and `fadeout`)
+</Callout>
+
+```java tab="sies >=2.2.0"
+public static void broadcastTitle(@NotNull MinecraftServer server, @NotNull String title, [@NotNull String subtitle], [@NotNull long fadein], [@NotNull long stay], [@NotNull long fadeout]) {}
+```
+<Callout title="Formatting" type="info">
+  Both `title` and `subtitle` support [**MiniMessage Formatting**](https://docs.papermc.io/adventure/minimessage/format/)
+</Callout>
+
+### Usage [!toc]
+```java tab="sies >=2.2.0"
+TitleUtils.broadcastTitle(server, title, subtitle, fadein, stay, fadeout);
+```
+
+<Callout title="Tip" type="idea">
+  If you can only access a `ServerPlayer` instance and not `MinecraftServer` directly, you can use `player.level().getServer()` as the argument.
+</Callout>

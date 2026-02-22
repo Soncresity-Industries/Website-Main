@@ -1,0 +1,9 @@
+{
+  "title": "SI: Essentials",
+  "description": "A Library mod by Soncresity Industries that not only adds useful tools for developers but also players.",
+  "root": true,
+  "icon": "/logos/sies.png",
+  "collapsible": false,
+  "defaultOpen": true,
+  "pages": ["---General---", "index", "general-configuration", "---Remover Module---", "remover", "remover-configuration", "---Development---", "develop", "logger", "cnfg-api", "utils", "..."]
+}

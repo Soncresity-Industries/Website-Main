@@ -1,0 +1,118 @@
+---
+title: "Logger"
+description: "A guide on how to use the custom Logger of SI: Essentials"
+curseforgeUrl: https://www.curseforge.com/minecraft/mc-mods/sies
+modrinthUrl: https://modrinth.com/mod/sies
+---
+
+<Callout title="Warning for developers updating from sies 2.2.0 to 2.3.0" type="warning">
+  In version 2.3.0 of **SI: Essentials**, the `DebugLogger` got merged into the `Logger` class to avoid confusion.  
+  Please update your `DebugLogger.debug()` references to `MYMOD.LOGGER.debug()` while `LOGGER` is the Logger instance in your main Mod class. ([More Info](#getting-started))
+</Callout>
+
+# Our custom Logger
+**SI: Essentials** comes with a custom logger, that is based on the `slf4j` logger that is commonly used in Minecraft Mods.  
+With our setup, we allow to create separate log files for each world that only contain the output of your mod. This makes finding issues in your code faster.  
+
+Our logger also comes with a debug option that is controlled with the global [`debug_enabled` value of the SI: Essentials Common Cnfg](/sies/general-configuration#debug_enabled). While debug output is only visible depending on that value in the Minecraft logs, debug output will **always** be logged to your custom logfile that was explained above.
+
+## Getting Started
+To start using our logger, simply create a public Logger field that uses the Logger class from `dev.soncresityindustries.api.logger`:
+```java
+import dev.soncresityindustries.es.api.logger.Logger;
+
+public static final String MOD_ID = "my_mod";
+public static final Logger LOGGER = new Logger(MOD_ID);
+```
+
+<Callout title="Design Choice" type="info">
+  We designed this logger in its current form to enable a seamless and efficient migration to our Logging System.  
+  Its methods mirror those of the original `slf4j` Logger while providing additional functionality.
+</Callout>
+
+Now everything is set up to continue with the **File Logger**.
+
+## File Logger
+As mentioned previously, we support creating custom log files, just for your own mod output.
+You can choose the location of that file freely inside a world folder.
+
+<Callout title="Note" type="info">
+  We might introduce a file logger that is created on game launch instead of on world launch in the future.  
+  Therefore we would like to hear your feedback about this in our [Discord Server](https://soncresity.industries/discord).
+</Callout>
+
+Due to Events being different on Fabric and NeoForge, you have to set them up differently, while the functionality stays the same.
+
+**Method:**
+```java tab="sies >=2.3.0"
+public void initializeFileLogging(@NotNull MinecraftServer server, @NotNull String path, @NotNull String filePrefix) {}
+```
+```java tab="sies 2.2.0"
+public void initializeFileLogging(@NotNull MinecraftServer server, @NotNull String modID) {}
+```
+
+### Fabric
+```java tab="sies >=2.3.0"
+@Override
+public void onInitialize() {
+    ServerLifecycleEvents.SERVER_STARTING.register((server) -> {
+        // "modid/logs" will result in this path: "/<mcRoot>/saves/<world>/modid/logs"
+        // The logfile will be named "<MODID>-log-dd.MM.yyyy_HH-mm-ss.log"
+        // Since sies 2.3.0 you can customize the location of the file a well as its file name.
+        LOGGER.initializeFileLogging(server, "modid/logs", MODID);
+    });
+
+    ServerLifecycleEvents.SERVER_STOPPED.register(server -> {
+        LOGGER.close();
+    });
+}
+```
+```java tab="sies 2.2.0"
+// Not recommended in terms of customizability. Please update to 2.3.0.
+@Override
+public void onInitialize() {
+    ServerLifecycleEvents.SERVER_STARTING.register((server) -> {
+        // This will result in this path: "/<mcRoot>/saves/<world>/modid/logs"
+        // The logfile will be named "<MODID>-log-dd.MM.yyyy_HH-mm-ss.log"
+        LOGGER.initializeFileLogging(server, MODID);
+    });
+
+    ServerLifecycleEvents.SERVER_STOPPED.register(server -> {
+        LOGGER.close();
+    });
+}
+```
+
+### NeoForge
+```java tab="sies >=2.3.0"
+@SubscribeEvent
+public void onServerStarting(ServerStartingEvent event) {
+    // "modid/logs" will result in this path: "/<mcRoot>/saves/<world>/modid/logs"
+    // The logfile will be named "<MODID>-log-dd.MM.yyyy_HH-mm-ss.log"
+    // Since sies 2.3.0 you can customize the location of the file a well as its file name.
+    LOGGER.initializeFileLogging(event.getServer(), "modid/logs", MODID);
+}
+
+@SubscribeEvent
+public void onServerStopping(ServerStoppingEvent event) {
+    LOGGER.close();
+}
+```
+```java tab="sies 2.2.0"
+// Not recommended in terms of customizability. Please update to 2.3.0.
+@SubscribeEvent
+public void onServerStarting(ServerStartingEvent event) {
+    // This will result in this path: "/<mcRoot>/saves/<world>/modid/logs"
+    // The logfile will be named "<MODID>-log-dd.MM.yyyy_HH-mm-ss.log"
+    LOGGER.initializeFileLogging(event.getServer(), MODID);
+}
+
+@SubscribeEvent
+public void onServerStopping(ServerStoppingEvent event) {
+    LOGGER.close();
+}
+```
+
+### Conclusion
+Now your file logger should be set up and you can use `LOGGER.info()`, `LOGGER.warn()`, `LOGGER.error()` and `LOGGER.debug()`.  
+All mod output will be saved to the file you specified above if it's loaded.

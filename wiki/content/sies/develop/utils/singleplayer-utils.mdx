@@ -1,0 +1,28 @@
+---
+title: "Singleplayer Utilities"
+description: "Allows checking whether a player is the host of a Singleplayer World"
+curseforgeUrl: https://www.curseforge.com/minecraft/mc-mods/sies
+modrinthUrl: https://modrinth.com/mod/sies
+---
+
+<Callout title="Introduction" type="info">
+  A fully functional Version of this class has first been introduced in Version `2.1.0`
+</Callout>
+
+The Singleplayer Utilities class allows check whether a `ServerPlayer` is the host of a Singleplayer World.
+This may be useful when your Mod includes banning players but you don't want to ban the world host as otherwise their world **wouldn't get saved properly** and other players **would get kicked**.
+
+# Class
+File: `SingleplayerUtils.java`
+Package: `dev.soncresityindustries.es.api.util`
+
+# Methods
+## `isSingleplayerHost`
+```java tab="sies >=2.1.0"
+public static boolean isSingleplayerHost(ServerPlayer player) {}
+```
+
+### Usage [!toc]
+```java tab="sies >=2.1.0"
+boolean isHost = SingleplayerUtils.isSingleplayerHost(player);
+```

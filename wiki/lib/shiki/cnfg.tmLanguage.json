@@ -1,0 +1,87 @@
+{
+  "name": "cnfg",
+  "scopeName": "source.cnfg",
+  "fileTypes": ["cnfg"],
+  "patterns": [
+    { "include": "#comments" },
+    { "include": "#assignments" },
+    { "include": "#strings" },
+    { "include": "#numbers" },
+    { "include": "#booleans" },
+    { "include": "#anchors" }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.line.number-sign.cnfg",
+          "match": "#.*$"
+        }
+      ]
+    },
+
+    "assignments": {
+      "patterns": [
+        {
+          "match": "^[ \\t]*([^\\s=][^=]*?)(\\s*=\\s*)",
+          "captures": {
+            "1": { "name": "entity.name.tag.cnfg" },
+            "2": { "name": "keyword.operator.assignment.cnfg" }
+          }
+        }
+      ]
+    },
+
+    "strings": {
+      "patterns": [
+        {
+          "name": "string.quoted.double.cnfg",
+          "begin": "\"",
+          "end": "\"",
+          "patterns": [
+            {
+              "name": "constant.character.escape.cnfg",
+              "match": "\\\\."
+            }
+          ]
+        },
+        {
+          "name": "string.quoted.single.cnfg",
+          "begin": "'",
+          "end": "'"
+        }
+      ]
+    },
+
+    "numbers": {
+      "patterns": [
+        {
+          "name": "constant.numeric.cnfg",
+          "match": "\\b[0-9]+(\\.[0-9]+)?\\b"
+        }
+      ]
+    },
+
+    "booleans": {
+      "patterns": [
+        {
+          "name": "constant.language.boolean.cnfg",
+          "match": "\\b(true|false)\\b"
+        }
+      ]
+    },
+
+    "anchors": {
+      "patterns": [
+        {
+          "name": "variable.other.anchor.cnfg",
+          "match": "&[A-Za-z0-9_-]+"
+        },
+        {
+          "name": "variable.other.alias.cnfg",
+          "match": "\\*[A-Za-z0-9_-]+"
+        }
+      ]
+    }
+  }
+}

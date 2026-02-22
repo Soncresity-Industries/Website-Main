@@ -1,0 +1,149 @@
+---
+title: Configuration
+description: "A guide on how to configure SI: Death Bolt properly"
+curseforgeUrl: https://www.curseforge.com/minecraft/mc-mods/sidb
+modrinthUrl: https://modrinth.com/mod/sidb
+---
+
+## Server-side Configuration
+By default, **SI: Death Bolt** generates a configuration in `/<minecraftDir>/config/` called `sidb-server.toml`.
+However, if you want to have a configuration that is specific to each world, you can copy over the `sidb-server.toml` file from your `/<minecraftDir>/config/` folder to your world folder in `/<minecraftDir>/saves/<world>/serverconfig/`.
+
+<Callout title="Migration to new config system (.cnfg)" type="warning">
+  In the future, NeoForge 1.21.1 and 1.21.4 will be **discontinued** and we will start using our own config API using [**SI: Essentials**](/sies) to even allow **SI: Death Bolt** to run on Fabric.
+  Therefore the config path for the mod will change and you will need to **manually migrate to the new format**.
+</Callout>
+
+## Configuration Values
+### `modPrefix`
+The Mod prefix. This String will be prepended to all messages the mod outputs that can be seen in the chat **except** in the **death messages**.
+
+<Callout title="Message Formatting" type="info">
+  This value supports [**MiniMessage Formatting**](https://docs.papermc.io/adventure/minimessage/format/), a more advanced way to style messages.
+</Callout>
+
+- Type: `String`
+- Default Value: `<bold><white>[</white><gradient:#2F97DD:#026DCA>SI: Death Bolt</gradient><white>]</white></bold> `
+
+### `enableLightningBolt`
+Whether a Lightning Bolt should be spawned at the players death location. Setting this to `false` will prevent most features of the mod to function.
+- Type: `Boolean`
+- Default Value: `true`
+
+### `boltVisual`
+Whether the Lightning Bolt should only be visual and therefore should not damage entities or burn Items.
+- Type: `Boolean`
+- Default Value: `true`
+- Requires: [`enableLightningBolt = true`](#enablelightningbolt)
+
+### `globalSound`
+Whether the Lightning Bolt should be heard from anywhere in the world or not.
+
+<Callout title="Notice" type="warning">
+  The sound cannot be heard by players that are in a different dimension than the player that died.
+</Callout>
+
+- Type: `Boolean`
+- Default Value: `false`
+- Requires: [`enableLightningBolt = true`](#enablelightningbolt)
+
+### `blacklistedWorlds`
+Worlds in which a Lightning Bolt should <u>**not**</u> strike upon a player's death.
+
+<Callout title="Syntax" type="warning">
+  This setting will **only work** if you supply the **actual dimension ID**, e.g.: `minecraft:overworld`
+  You can find the ID of the dimension you're currently in by **opening the F3 debug screen**.
+</Callout>
+
+- Type: `List<String>`
+- Default Value: `[""]`
+- Requires: [`enableLightningBolt = true`](#enablelightningbolt)
+
+### `deathAction`
+What action should be taken upon a players death.
+- Type: `String / Enum`
+- Allowed Values: `NONE / MSG / KICK / BAN / TITLE`
+- Default Value: `MSG`
+- Requires: [`enableLightningBolt = true`](#enablelightningbolt)
+
+### `overrideDeathMessage`
+Whether the vanilla death message should be overridden or not. If enabled, the value of [`punishMessage`](#punishmessage) will be used.
+
+<Callout title="Independant setting" type="warning">
+  This setting is **independant from every other setting**. That means you can, for example, disable the spawning of a lightning bolt but still override everyone's death messages.
+  However, this also means that if you set [`deathAction`](#deathaction) to **`MSG`, two messages will appear in chat**. Therefore setting [`deathAction`](#deathaction) to **anything else than `MSG`** is recommended.
+</Callout>
+
+- Type: `Boolean`
+- Default Value: `false` (Since Version 1.1.1)
+- Requires: [`enableLightningBolt = true`](#enablelightningbolt)
+
+### `msgType`
+What type of message should be sent upon a player's death.
+
+- Type: `String / Enum`
+- Allowed Values: `MSG_PRIVATE / MSG_BROADCAST / MSG_PRIVATE_ACTIONBAR / MSG_BROADCAST_ACTIONBAR`
+- Default Value: `MSG_BROADCAST`
+- Requires: [`deathAction = "MSG"`](#deathaction)
+
+### `punishMessage`
+Message to be sent upon a player's death or the message to be displayed upon disconnecting due to kicking/banning them.
+
+<Callout title="Message Formatting" type="info">
+  This value supports [**MiniMessage Formatting**](https://docs.papermc.io/adventure/minimessage/format/), a more advanced way to style messages.
+</Callout>
+
+- Type: String
+- Available Placeholders: `%player%`
+- Default Value: `<red>☠ <b>%player%</b> died!`
+- Requires: [`deathAction = "MSG"`](#deathaction) / [`deathAction = "KICK"`](#deathaction) / [`deathAction = "BAN"`](#deathaction)
+
+### `titleType`
+What type of title should be sent upon a player's death
+
+- Type: `String / Enum`
+- Allowed Values: `TITLE_PRIVATE / TITLE_BROADCAST`
+- Default Value: `TITLE_BROADCAST`
+- Requires: [`deathAction = "TITLE"`](#deathaction)
+
+### `titleTitle`
+The message that the title should show.
+
+<Callout title="Message Formatting" type="info">
+  This value supports [**MiniMessage Formatting**](https://docs.papermc.io/adventure/minimessage/format/), a more advanced way to style messages.
+</Callout>
+
+- Type: `String`
+- Available Placeholders: `%player%`
+- Default Value: `<red>%player%`
+- Requires: [`deathAction = "TITLE"`](#deathaction)
+
+### `titleSubtitle`
+The message that the subtitle should show.
+
+<Callout title="Message Formatting" type="info">
+  This value supports [**MiniMessage Formatting**](https://docs.papermc.io/adventure/minimessage/format/), a more advanced way to style messages.
+</Callout>
+
+- Type: `String`
+- Available Placeholders: `%player%`
+- Default Value: `<yellow>died because they weren't careful enough.`
+- Requires: [`deathAction = "TITLE"`](#deathaction)
+
+### `titleFadeIn`
+How long (in milliseconds) the title fade in animation should take.
+- Type: `Long`
+- Default Value: `1000`
+- Requires: [`deathAction = "TITLE"`](#deathaction)
+
+### `titleStay`
+For how long (in milliseconds) the title should stay on the screen.
+- Type: `Long`
+- Default Value: `3000`
+- Requires: [`deathAction = "TITLE"`](#deathaction)
+
+### `titleFadeOut`
+How long (in milliseconds) the title fade out animation should take.
+- Type: `Long`
+- Default Value: `1000`
+- Requires: [`deathAction = "TITLE"`](#deathaction)

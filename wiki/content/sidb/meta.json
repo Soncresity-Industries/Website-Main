@@ -1,0 +1,7 @@
+{
+  "title": "SI: Death Bolt",
+  "description": "A Mod that spawns configurable Lightning Bolts upon a player's death.",
+  "root": true,
+  "icon": "/logos/sidb.png",
+  "pages": ["---General---", "index", "configuration"]
+}

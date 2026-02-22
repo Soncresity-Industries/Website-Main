@@ -1,0 +1,125 @@
+---
+title: "Developing with SI: Essentials"
+description: "A guide on how to start developing with SI: Essentials"
+curseforgeUrl: https://www.curseforge.com/minecraft/mc-mods/sies
+modrinthUrl: https://modrinth.com/mod/sies
+---
+
+# Introduction
+SI: Essentials offers many useful features for developers, such as Utility classes, a configuration system, a custom logger and much more.  
+All of those features are designed to work on both Fabric and NeoForge in the same way to achieve the best possible experience.  
+If this is not the case, you will see a notice at the top of the page.
+
+# Getting Started
+## Adding the dependency
+<Callout title="Maven repo" type="info">
+  Currently we do not have a Maven repo set up, so you will need to use CurseMaven for the time being.  
+  Of course modrinth is an option too, but we will only be covering CurseForge here.
+</Callout>
+
+### Fabric
+<Callout title="Fabric API" type="warning">
+  The Fabric version of **SI: Essential** requires [Fabric API](https://www.curseforge.com/minecraft/mc-mods/fabric-api/files/all?page=1&pageSize=20&showAlphaFiles=hide)!  
+  Building the Mod requires Fabric Loom `1.15-SNAPSHOT` or higher.
+</Callout>
+#### Gradle dependency [#fabric-gradle-dependency]
+```groovy tab="2.2.0-1.21.11"
+// Groovy
+modImplementation "curse.maven:sies-1306319:7644312"
+modImplementation "net.fabricmc.fabric-api:fabric-api:0.141.2+1.21.11"
+
+// Kotlin
+modImplementation("curse.maven:sies-1306319:7644312")
+modImplementation("net.fabricmc.fabric-api:fabric-api:0.141.2+1.21.11")
+```
+```groovy tab="2.2.0-1.21.10"
+// Groovy
+modImplementation "curse.maven:sies-1306319:7644311"
+modImplementation "net.fabricmc.fabric-api:fabric-api:0.138.4+1.21.10"
+
+// Kotlin
+modImplementation("curse.maven:sies-1306319:7644311")
+modImplementation("net.fabricmc.fabric-api:fabric-api:0.138.4+1.21.10")
+```
+```groovy tab="2.2.0-1.21.8"
+// Groovy
+modImplementation "curse.maven:sies-1306319:7644310"
+modImplementation "net.fabricmc.fabric-api:fabric-api:0.136.1+1.21.8"
+
+// Kotlin
+modImplementation("curse.maven:sies-1306319:7644310")
+modImplementation("net.fabricmc.fabric-api:fabric-api:0.136.1+1.21.8")
+```
+
+#### `fabric.mods.json`
+```json tab="2.2.0-1.21.11"
+"depends": {
+  "fabricloader": ">=0.18",
+  "minecraft": "1.21.11",
+  "fabric-api": ">=0.141.2+1.21.11",
+  "sies": "2.2.0"
+}
+```
+```json tab="2.2.0-1.21.10"
+"depends": {
+  "fabricloader": ">=0.18",
+  "minecraft": "1.21.10",
+  "fabric-api": ">=0.138.4+1.21.10",
+  "sies": "2.2.0"
+}
+```
+```json tab="2.2.0-1.21.8"
+"depends": {
+  "fabricloader": ">=0.18",
+  "minecraft": "1.21.8",
+  "fabric-api": ">=0.136.1+1.21.8",
+  "sies": "2.2.0"
+}
+```
+### NeoForge
+#### Gradle dependency [#neoforge-gradle-dependency]
+```groovy tab="2.2.0-1.21.11"
+// Groovy
+modImplementation "curse.maven:sies-1306319:7644337"
+
+// Kotlin
+modImplementation("curse.maven:sies-1306319:7644337")
+```
+```groovy tab="2.2.0-1.21.10"
+// Groovy
+modImplementation "curse.maven:sies-1306319:7644315"
+
+// Kotlin
+modImplementation("curse.maven:sies-1306319:7644315")
+```
+```groovy tab="2.2.0-1.21.8"
+// Groovy
+modImplementation "curse.maven:sies-1306319:7644313"
+
+// Kotlin
+modImplementation("curse.maven:sies-1306319:7644313")
+```
+
+#### `neoforge.mods.toml`
+```toml
+[[dependencies.your_mod_id]]
+modId="sies"
+type="required"
+versionRange="2.2.0"
+ordering="AFTER"
+side="BOTH"
+```
+
+# Next steps
+For your next steps, we recommend setting up our custom [Logger](/sies/develop/logger) and (re)writing your configs using the [Cnfg API](/sies/develop/cnfg-api).  
+If you run into any issues, need help setting everything up, or don't understand something, don't hesitate to message us on [Discord](https://soncresity.industries/discord) ~~or create a ticket on our Support page~~ *(Coming soon)*.
+
+
+<Cards>
+  <Card icon={<File color="#026DCA"/>} href="/sies/develop/logger" title="Logger">
+    Set up our custom Logger in a few steps!
+  </Card>
+  <Card icon={<Cog color="#026DCA"/>} href="/sies/develop/cnfg-api" title="Cnfg API">
+    Set up our Cnfg API to start using a configuration system that is the same for all modloaders!
+  </Card>
+</Cards>

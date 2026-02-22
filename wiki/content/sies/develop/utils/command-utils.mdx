@@ -1,0 +1,33 @@
+---
+title: "Command Utilities"
+description: "Allows execution of commands as a player"
+curseforgeUrl: https://www.curseforge.com/minecraft/mc-mods/sies
+modrinthUrl: https://modrinth.com/mod/sies
+---
+
+<Callout title="Introduction" type="info">
+  A fully functional Version of this class has first been introduced in Version `2.2.0`
+</Callout>
+
+The Command Utilities class allows you to execute commands as a player while being able to customize the permissions, position and rotation.
+
+# Class
+File: `CommandUtils.java`  
+Package: `dev.soncresityindustries.es.api.util`
+
+# Methods
+## `executeCommands`
+```java tab="sies >=2.2.0 & MC >=1.21.11"
+public static void executeCommands(List<String> commands, ServerPlayer player, PermissionSet permissionSet, Vec3 position, Vec2 rotation) {}
+```
+```java tab="sies >=2.2.0 & MC <1.21.11"
+public static void executeCommands(List<String> commands, ServerPlayer player, int permissionLevel, Vec3 position, Vec2 rotation) {}
+```
+
+### Usage [!toc]
+```java tab="sies >=2.2.0 & MC >=1.21.11"
+CommandUtils.executeCommands(commands, player, PermissionSet.ALL_PERMISSIONS, player.position(), player.rotation());
+```
+```java tab="sies >=2.2.0 & MC <1.21.11"
+CommandUtils.executeCommands(commands, player, permissionLevel, player.position(), player.rotation());
+```
