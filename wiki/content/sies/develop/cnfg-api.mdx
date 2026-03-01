@@ -9,3 +9,87 @@ modrinthUrl: https://modrinth.com/mod/sies
   Please be aware that, while we try to to deliver a good and easy-to-understand Configuration API, breaking changes are common for each **SI: Essentials** update, as the Cnfg API is actively being worked on and isn't finished yet!  
   If you need help updating, feel free to join our [Discord server](https://soncresity.industries/discord) or create a ticket on our [Support page](https://support.soncresity.industries).
 </Callout>
+
+# Introduction 
+Our Cnfg API allows you, as a developer, to create multiple configurations in your projects and access and set Cnfg keys and values.  
+You can choose from the `CLIENT`, `COMMON` and `SERVER` Cnfg types based on your use case. You can read more about Cnfg Types [here](#cnfg-types)
+
+# Getting Started
+<Callout title="Notice" type="warning">
+  Before starting to use the Cnfg API, make sure that you've [added the dependency to your project](/sies/develop#adding-the-dependency)!
+</Callout>
+
+## Creating a simple Cnfg
+To create a Cnfg you need a place to register it, a separate class (for ease of use) and a couple of helper methods.  
+<Callout title="Notice" type="info">
+  On this page we will refer to the main Mod class as `MyMod` and to the Cnfg class as `MyCnfg`.
+</Callout>
+
+### Prepare the `MyCnfg` Class
+Feel free to copy the code below. If you want to use a `CLIENT` or `SERVER` Cnfg Type, you will need to adjust the `init()` method.
+```java tab="sies >=2.2.0"
+package com.example.mymod;
+
+import dev.soncresityindustries.es.api.cnfg.CnfgBuilder;
+import dev.soncresityindustries.es.api.cnfg.CnfgKey;
+import dev.soncresityindustries.es.api.cnfg.CnfgManager;
+
+public class MyCnfg {
+    public static dev.soncresityindustries.es.api.cnfg.Cnfg MY_COMMON_CNFG = null;
+
+    /* Values can be created as fields here */
+
+    private static CnfgBuilder createSchema() {
+        return new CnfgBuilder()
+        /* Comments and values will be defined here */
+        ;
+    }
+
+    protected static void init() {
+        MY_COMMON_CNFG = CnfgManager.loadCommonCnfg(
+            "mymod_common",
+            "mymod/common.cnfg",
+            createSchema()
+        );
+
+        // If your Cnfg Type is CLIENT you might want to change/remove this
+        if (MY_COMMON_CNFG == null) {
+            throw new RuntimeException("Failed to load client config!");
+        }
+    }
+}
+```
+
+### Registering the Cnfg
+Due to the Mod initialization being different on Fabric and NeoForge Cnfgs need to be registered differently for each modloader. However the base principle stays the same.
+#### Fabric
+```java tab="sies >=2.2.0"
+public class ES implements ModInitializer {
+    @Override
+    public void onInitialize() {
+        MyCnfg.init();
+    }
+}
+```
+
+#### NeoForge
+```java tab="sies >=2.2.0"
+
+```
+
+## Cnfg Types
+### `CLIENT`
+The `CLIENT` Cnfg Type is mostly used for client-side settings that are not related to gameplay. (e.g. UI settings)
+- Will only generate on the client side in `<mcRoot>/config/`.  
+- Cnfg Instance will be `null` on dedicated servers.
+
+### `COMMON`
+The `COMMON` Cnfg Type is used for general configurations that apply globally on a client **and** dedicated server. 
+- Will generate in `<mcRoot>/config/`.  
+- When a client joins a dedicated server, the configuration of the server will be used.
+
+### `SERVER`
+The `SERVER` Cnfg Type is used for **world-specific** configurations that can be set for **each world**.  
+A Cnfg with the `SERVER` type will still be created on both the client and server, but only on world load!  
+- Will generate in `<mcRoot>/saves/<world>/` (Client) or `<serverRoot>/<world>/` (Server).  
+
