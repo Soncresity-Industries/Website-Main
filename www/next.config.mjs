@@ -58,6 +58,11 @@ const nextConfig = {
         destination: 'https://discord.com/guidelines',
         permanent: true,
       },
+      {
+        source: '/twitch',
+        destination: 'https://www.twitch.tv/soncresityindustries',
+        permanent: true,
+      }
     ]
   },
 }
