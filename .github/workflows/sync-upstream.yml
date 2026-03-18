@@ -19,6 +19,6 @@ jobs:
       - name: Sync Upstream
         uses: zhangnew/sync-upstream@v2
         with:
-          upstream: Soncresity-Industries/wiki.soncresity.industries
+          upstream: Soncresity-Industries/Website-Main
           upstream-branch: main
           branch: main
