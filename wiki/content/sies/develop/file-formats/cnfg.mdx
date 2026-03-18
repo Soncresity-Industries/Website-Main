@@ -1,0 +1,66 @@
+---
+title: "Cnfg"
+description: "A List of File formats supported by SI: Essentials"
+curseforgeUrl: https://www.curseforge.com/minecraft/mc-mods/sies
+modrinthUrl: https://modrinth.com/mod/sies
+---
+
+# Cnfg file format
+A Cnfg is a configuration file with the extension `.cnfg`.  
+The Cnfg file syntax is similar to YAML.
+
+# Syntax
+## Comments
+Comments are declared with a `#`.
+
+#### Example: [!toc]
+```cnfg
+# This is a comment
+```
+
+## Keys & Values
+Keys and Values are defined with `key = value`.
+
+#### Example: [!toc]
+```cnfg
+my_key = value
+```
+
+### String Values
+A String value is enclosed in double quotes.
+
+#### Example [!toc]
+```cnfg
+my_key = "string_value"
+```
+
+### Numerical Values
+Numerical values don't require any quotes.  
+Float, Long, etc. values don't require any suffixes (e.g `f` or `l`) and will be parsed automatically. (Decimal values still need a decimal point!)
+
+#### Example [!toc]
+```cnfg
+my_number = 3
+```
+
+## Lists
+Lists can hold Strings or Numerical values. (Not both at the same time!)  
+A list is always enclosed in squared brackets.  
+
+#### Example [!toc]
+```cnfg
+my_list = ["my", "values"]
+```
+
+## Maps
+Maps can hold Strings or Numerical values. (Not both at the same time!)  
+A map is always enclosed in curly brackets.
+
+<Callout title="Important" type="warning">
+  This feature is experimental and **will** change in the future. We are aware of the issues that may be caused by the current syntax.
+</Callout>
+
+#### Example [!toc]
+```cnfg
+my_map = {key: "value"}
+```

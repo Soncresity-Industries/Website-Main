@@ -1,0 +1,80 @@
+---
+title: "Getting Started"
+description: "A guide on how to get started with the Configuration API of SI: Essentials"
+curseforgeUrl: https://www.curseforge.com/minecraft/mc-mods/sies
+modrinthUrl: https://modrinth.com/mod/sies
+---
+
+# Getting Started
+<Callout title="Notice" type="warning">
+  Before starting to use the Configuration API, make sure that you've [added the dependency to your project](/sies/develop#adding-the-dependency)!
+</Callout>
+
+## Creating a simple Configuration (Cnfg)
+To create a configuration with the Cnfg file format you need a place to register it, a separate class (for ease of use) and a couple of helper methods.  
+<Callout title="Notice" type="info">
+  On this page we will refer to the main Mod class as `MyMod` and to the Cnfg class as `MyCnfg`.
+</Callout>
+
+### Prepare the `MyCnfg` Class
+Feel free to copy the code below. If you want to use a `CLIENT` or `SERVER` Cnfg Type, you will need to adjust the `init()` method.
+```java tab="sies >=2.2.0"
+package com.example.mymod;
+
+import dev.soncresityindustries.es.api.cnfg.CnfgBuilder;
+import dev.soncresityindustries.es.api.cnfg.CnfgKey;
+import dev.soncresityindustries.es.api.cnfg.CnfgManager;
+
+public class MyCnfg {
+    public static dev.soncresityindustries.es.api.cnfg.Cnfg MY_COMMON_CNFG = null;
+
+    /* Values can be created as fields here */
+
+    private static CnfgBuilder createSchema() {
+        return new CnfgBuilder()
+        /* Comments and values will be defined here */
+        ;
+    }
+
+    protected static void init() {
+        MY_COMMON_CNFG = CnfgManager.loadCommonCnfg(
+            "mymod_common",
+            "mymod/common.cnfg",
+            createSchema()
+        );
+
+        // If your Cnfg Type is CLIENT you might want to change/remove this
+        if (MY_COMMON_CNFG == null) {
+            throw new RuntimeException("Failed to load client config!");
+        }
+    }
+}
+```
+
+### Registering the Cnfg
+Due to the Mod initialization being different on Fabric and NeoForge Cnfgs need to be registered differently for each modloader. However the base principle stays the same.
+#### Fabric
+```java tab="sies >=2.2.0"
+public class MyMod implements ModInitializer {
+    @Override
+    public void onInitialize() {
+        MyCnfg.init();
+    }
+}
+```
+
+#### NeoForge
+```java tab="sies >=2.2.0"
+@Mod(MyMod.MODID)
+public class MyMod {
+    public MyMod(IEventBus modEventBus, ModContainer modContainer) {
+        modEventBus.addListener(this::commonSetup);
+
+        NeoForge.EVENT_BUS.register(this);
+    }
+
+    private void commonSetup(final FMLCommonSetupEvent event) {
+        MyCnfg.init();
+    }
+}
+```
