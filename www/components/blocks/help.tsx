@@ -57,7 +57,7 @@ export default function Help() {
   ]
 
   const quickLinks = [
-    { name: "Documentation", href: "/wiki", icon: <FileText className="w-4 h-4" /> },
+    { name: "Wiki", href: "https://wiki.soncresity.industries", icon: <FileText className="w-4 h-4" /> },
     { name: "Projects", href: "/projects", icon: <ExternalLink className="w-4 h-4" /> },
     { name: "Utilities", href: "/utils", icon: <ExternalLink className="w-4 h-4" /> },
   ]
